@@ -1,0 +1,32 @@
+.percentage {
+  display: inline-block;
+  width: 134px;
+  height: 134px;
+  transform: rotate(-180deg);
+
+}
+
+.circle {
+  fill: transparent;
+  stroke: #363636;
+  stroke-width: 3px;
+}
+
+.curcle__above {
+  stroke-width: 9px;
+  stroke: #f29400;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation: fill 100s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 251;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
