@@ -1,0 +1,79 @@
+.slider {
+  display: flex;
+}
+.slider__list {
+  display: flex;
+  position: absolute;
+  left: 20.5%;
+  top: 70%;
+}
+.slider__col {
+  width: 20%;
+  margin-left: 200px;
+
+}
+.slider__col_left {
+  position: relative;
+  width: 65%;
+  margin-left: 0;
+}
+.slider__pic_big {
+  display: inline-block;
+}
+
+.slider__pic_small {
+  height: 100%;
+  cursor: pointer;
+}
+
+.slider__img {
+  &::after {
+    content: "2";
+    color: #f0f0f0;
+    font-size: 400px;
+    font-weight: 900;
+    position: absolute;
+    left: 93%;
+    bottom: 6%;
+    z-index: -5;
+  }
+}
+
+.slider__text-list {
+  display: flex;
+}
+.slider__text-link {
+  text-decoration: none;
+  color: rgba(#283340, .7);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.slider__text-title {
+  color: #2d3c4e;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.slider__school-icon {
+  width: 15px;
+  height: 15px;
+  fill: #4b6fd7;
+  margin-right: 20px;
+}
+
+.slider__school-link {
+color: #4b6fd7;
+font-size: 18px;
+font-weight: 700;
+text-decoration: none;
+}
+
+.slider__text-desc {
+  color: rgba(#2b3948, .7);
+  font-weight: 600;
+}
+
+.slider__item_active {
+  border: 2px solid #f29400;
+}

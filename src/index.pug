@@ -63,18 +63,49 @@ html(lang="en")
                 td.table___cell_left Родилась:
                 td.table___cell 20 октября 1993
           .user__col
-            .text Привет, меня зовут Екатерина Исмиляева. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            .text Привет, меня зовут 
+            .user__title.title Екатерина Исмиляева
+            p.text__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
             .site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-      section.skilles
-        .container
-          h2.skilles__title Чем я могу быть полезен вам
-          .skilles__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      section.skills
+        +image('content/hands.png', 'skills__pic')
+        .container.skills__container
+          h2.skills__title.title Чем я могу быть полезен вам
+          .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
       section.works
-        .container
-          h2.works__title Мои работы
+        .container.works__container
+          h2.works__title.title Мои работы
+          .slider
+            .slider__col.slider__col_left
+              .slider__img
+                +image('content/work1_big.png', 'slider__pic_big')
+                ul.slider__list
+                  li.slider__item.slider__item_active
+                    +image('content/work1.png', 'slider__pic_small')
+                  li.slider__item
+                    +image('content/work2.png', 'slider__pic_small')
+                  li.slider__item
+                    +image('content/work3.png', 'slider__pic_small')
+                  li.slider__item
+                    +image('content/work4.png', 'slider__pic_small')
+            .slider__col
+              .slider__text
+                ul.slider__text-list
+                  li.slider__text-item
+                    a(href="#").slider__text-link HTML
+                  li.slider__text-item
+                    a(href="#").slider__text-link CSS
+                  li.slider__text-item
+                    a(href="#").slider__text-link JavaScript
+              .slider__text-title Сайт школы образование
+              .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+              .slider__school
+                 +icon('link', 'slider__school-icon')
+                 a(href="#").slider__school-link Посмотреть сайт
+
       section.reviews
         .container
-          h2.reviews__title Что обо мне говорят
+          h2.reviews__title.title Что обо мне говорят
       section.contact
         .container
           h2.contact__title Связаться со мной
