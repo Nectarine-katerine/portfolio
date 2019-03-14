@@ -48,4 +48,15 @@ align-items: center;
 .site {
   font-weight: 400;
   font-style: italic;
+  position: relative;
+  &::before {
+    content: "*";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    font-size: 48px;
+    line-height: 0;
+    font-style: italic;
+    color: rgba(#ff0000, .1);
+   }
 }

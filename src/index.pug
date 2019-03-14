@@ -73,6 +73,7 @@ html(lang="en")
           h2.skills__title.title Чем я могу быть полезен вам
           .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
           .skills__list
+            .skills__list-title Front-end
             .skills__row
               .skills__item
                 .skills__name HTML5
@@ -90,10 +91,11 @@ html(lang="en")
                   circle(cx="50", cy="50", r="40").circle.curcle__under
                   circle(cx="50", cy="50", r="40", style="animation-delay: -75s").circle.curcle__above
               .skills__item
-                .skills__name Jquery и Vue.js
+                .skills__name.skills__name_width Jquery и Vue.js
                 svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
                   circle(cx="50", cy="50", r="40").circle.curcle__under
                   circle(cx="50", cy="50", r="40", style="animation-delay: -25s").circle.curcle__above
+            .skills__list-title Workflow
             .skills__row
               .skills__item
                 .skills__name GIT
@@ -131,6 +133,10 @@ html(lang="en")
                     +image('content/work3.png', 'slider__pic_small')
                   li.slider__item
                     +image('content/work4.png', 'slider__pic_small')
+                .arrow__left
+                  +icon('arrow-down', 'arrow__left-icon')
+                .arrow__right
+                  +icon('arrow-down', 'arrow__right-icon')
             .slider__col
               .slider__text
                 ul.slider__text-list
@@ -145,15 +151,91 @@ html(lang="en")
               .slider__school
                  +icon('link', 'slider__school-icon')
                  a(href="#").slider__school-link Посмотреть сайт
+      .feedback
+        section.reviews
+          .container.reviews__container
+            .reviews__top
+              h2.reviews__title.title Что обо мне говорят
+              .arrow__left_round
+                +icon('arrow-down', 'arrow__left_round-icon')
+              .arrow__right_round
+                +icon('arrow-down', 'arrow__right_round-icon')
+            ul.reviews__list
+              li.reviews__item
+                .reviews__text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .autor
+                  .autor__photo
+                    +image('content/dima.png', 'autor-pic')
+                  .autor__desc
+                    .autor__name Ковальчук Дмитрий
+                    .autor__position Основатель Loftschool
+              li.reviews__item
+                .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                .autor
+                  .autor__photo
+                    +image('content/vova.png', 'autor-pic')
+                  .autor__desc
+                    .autor__name Владимир Сабанцев
+                    .autor__position Преподаватель
+        section.contact
+          .container.contact__container
+            h2.contact__title.title Связаться со мной
+            form.form(action="#")
+              .form__row
+                label.form__block
+                  .form__block-title Введите ваше имя
+                  input(type="text", name="name", placeholder="Ковальчук Дмитрий").form__block-input
+                label.form__block
+                  .form__block-title Введите ваш email
+                  input(type="text", name="email", placeholder="loftschool@study.com").form__block-input
+              .form__row
+                label.form__block
+                  .form__block-title Сообщение к письму
+                  textarea(name="comment", placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса").form__block-input.form__block-input-textarea
+              button.button Отправить
 
-      section.reviews
-        .container
-          h2.reviews__title.title Что обо мне говорят
-      section.contact
-        .container
-          h2.contact__title Связаться со мной
-          form.form
       footer.footer
+        .copyrights
+          .copyrights__col
+            .copyrights__year 2019
+          .copyrights__col
+            .copyrights__name Екатерина Исмиляева
+            .copyrights__text Личный сайт веб-разработчика
+        .footer__content
+          nav.footer__menu
+            ul.menu__list
+                li.menu__item 
+                  a(href="#").menu__link Главная
+                li.menu__item 
+                  a(href="#").menu__link Обо мне
+                li.menu__item
+                  a(href="#").menu__link Навыки
+                li.menu__item
+                  a(href="#").menu__link Работы
+                li.menu__item
+                  a(href="#").menu__link Отзывы
+                li.menu__item 
+                  a(href="#").menu__link Связаться
+          .footer__col
+            .footer__content-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+            .footer__social
+              ul.social__list
+                li.social__item
+                  a(href="#").social__link
+                    +icon('insta', 'social__icon')
+                li.social__item
+                  a(href="#").social__link
+                    +icon('vk', 'social__icon')
+                li.social__item
+                  a(href="#").social__link
+                    +icon('github', 'social__icon')
+          .footer__col
+            .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+            .quote__autor Martin Golding
+
+
+
+
         //- +image('content/user.jpg', 'user-pic')
         //- +icon('link', 'link-class')
         //- .icon-bg
