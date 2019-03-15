@@ -10,247 +10,252 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-      section.hero
-        +image('content/train.png', 'hero__bg')
-        .container.hero__container
-          .hero__content
-            header.header
-              .logo ЕИ
-              nav.menu
-                ul.menu__list
-                  li.menu__item 
-                    a(href="#").menu__link Главная
-                  li.menu__item 
-                    a(href="#").menu__link Обо мне
-                  li.menu__item
-                    a(href="#").menu__link Навыки
-                  li.menu__item
-                    a(href="#").menu__link Работы
-                  li.menu__item
-                    a(href="#").menu__link Отзывы
-                  li.menu__item 
-                    a(href="#").menu__link Связаться
-              .social
-                ul.social__list
-                  li.social__item
-                    a(href="#").social__link
-                      +icon('insta', 'social__icon')
-                  li.social__item
-                    a(href="#").social__link
-                      +icon('vk', 'social__icon')
-                  li.social__item
-                    a(href="#").social__link
-                      +icon('github', 'social__icon')
-            .hero__desc
-              .hero__text Личный сайт веб разработчика
-              .hero__title Екатерина Исмиляева
-            .scroll
-              .scroll__text Скролл
-              a(href="#").scroll__link
-                +icon('scroll', 'scroll__icon')
-
-
-      section.user
-        //- .user__bg(style="url(../images/content/me_bg.png)")
-        .container.user__container
-          .user__col.user__col_centered
-            +image('content/me.jpeg', 'user__pic')
-            table.user__table
-              tr.table__row
-                td.table___cell_left Проживаю:
-                td.table___cell Балашиха
-              tr.table__row
-                td.table___cell_left Возраст:
-                td.table___cell 25 лет
-              tr.table__row
-                td.table___cell_left Родилась:
-                td.table___cell 20 октября 1993
-          .user__col
-            .text Привет, меня зовут 
-            .user__title.title Екатерина Исмиляева
-            p.text__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-            .site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-      section.skills
-        +image('content/hands.png', 'skills__pic')
-        .container.skills__container
-          h2.skills__title.title Чем я могу быть полезен вам
-          .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-          .skills__list
-            .skills__list-title Front-end
-            .skills__row
-              .skills__item
-                .skills__name HTML5
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -125s").circle.curcle__above
-              .skills__item
-                .skills__name CSS3
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -15s").circle.curcle__above
-              .skills__item
-                .skills__name Javascript
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -75s").circle.curcle__above
-              .skills__item
-                .skills__name.skills__name_width Jquery и Vue.js
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -25s").circle.curcle__above
-            .skills__list-title Workflow
-            .skills__row
-              .skills__item
-                .skills__name GIT
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -15s").circle.curcle__above
-              .skills__item
-                .skills__name Terminal
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -25s").circle.curcle__above
-              .skills__item
-                .skills__name Gulp
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -50s").circle.curcle__above
-              .skills__item
-                .skills__name Webpack
-                svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                  circle(cx="50", cy="50", r="40").circle.curcle__under
-                  circle(cx="50", cy="50", r="40", style="animation-delay: -40s").circle.curcle__above
-      section.works
-        .container.works__container
-          h2.works__title.title Мои работы
-          .slider
-            .slider__col.slider__col_left
-              .slider__img
-                +image('content/work1_big.png', 'slider__pic_big')
-                ul.slider__list
-                  li.slider__item.slider__item_active
-                    +image('content/work1.png', 'slider__pic_small')
-                  li.slider__item
-                    +image('content/work2.png', 'slider__pic_small')
-                  li.slider__item
-                    +image('content/work3.png', 'slider__pic_small')
-                  li.slider__item
-                    +image('content/work4.png', 'slider__pic_small')
-                .arrow__left
-                  +icon('arrow-down', 'arrow__left-icon')
-                .arrow__right
-                  +icon('arrow-down', 'arrow__right-icon')
-            .slider__col
-              .slider__text
-                ul.slider__text-list
-                  li.slider__text-item
-                    a(href="#").slider__text-link HTML
-                  li.slider__text-item
-                    a(href="#").slider__text-link CSS
-                  li.slider__text-item
-                    a(href="#").slider__text-link JavaScript
-              .slider__text-title Сайт школы образование
-              .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              .slider__school
-                 +icon('link', 'slider__school-icon')
-                 a(href="#").slider__school-link Посмотреть сайт
-      .feedback
-        +image('content/leaf1.png', 'feedback__pic_one')
-        +image('content/leaf2.png', 'feedback__pic_two')
-        +image('content/leaf3.png', 'feedback__pic_three')
-        +image('content/leaf4.png', 'feedback__pic_four')
-        section.reviews
-          .container.reviews__container
-            .reviews__top
-              h2.reviews__title.title Что обо мне говорят
-              .arrow__left_round
-                +icon('arrow-down', 'arrow__left_round-icon')
-              .arrow__right_round
-                +icon('arrow-down', 'arrow__right_round-icon')
-            ul.reviews__list
-              li.reviews__item
-                .reviews__text 
-                  +icon('quote', 'reviews__text-icon')
-                  .reviews__desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                .autor
-                  .autor__photo
-                    +image('content/dima.png', 'autor-pic')
-                  .autor__desc
-                    .autor__name Ковальчук Дмитрий
-                    .autor__position Основатель Loftschool
-              li.reviews__item
-                .reviews__text 
-                  +icon('quote', 'reviews__text-icon')
-                  .reviews__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                .autor
-                  .autor__photo
-                    +image('content/vova.png', 'autor-pic')
-                  .autor__desc
-                    .autor__name Владимир Сабанцев
-                    .autor__position Преподаватель
-        section.contact
-          .container.contact__container
-            h2.contact__title.title Связаться со мной
-            form.form(action="#")
-              .form__row
-                label.form__block
-                  .form__block-title Введите ваше имя
-                  .input
-                    +icon('avatar', 'form__block-icon')
-                    input(type="text", name="name", placeholder="Ковальчук Дмитрий").form__block-input
-                label.form__block
-                  .form__block-title Введите ваш email
-                  .input
-                    +icon('envelope', 'form__block-icon')
-                    input(type="text", name="email", placeholder="loftschool@study.com").form__block-input
-              .form__row
-                label.form__block
-                  .form__block-title Сообщение к письму
-                  .input
-                    +icon('chat', 'form__block-icon')
-                    textarea(name="comment", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__block-input.form__block-input-textarea
-              button.button Отправить
-
-      footer.footer
-        .container.footer__container
-          .copyrights
-            .copyrights__col
-              .copyrights__year 2019
-            .copyrights__col
-              .copyrights__name Екатерина Исмиляева
-              .copyrights__text Личный сайт веб-разработчика
-          .footer__content
-            nav.footer__menu
-              ul.menu__list
-                  li.menu__item 
-                    a(href="#").menu__link Главная
-                  li.menu__item 
-                    a(href="#").menu__link Обо мне
-                  li.menu__item
-                    a(href="#").menu__link Навыки
-                  li.menu__item
-                    a(href="#").menu__link Работы
-                  li.menu__item
-                    a(href="#").menu__link Отзывы
-                  li.menu__item 
-                    a(href="#").menu__link Связаться
-            .footer__content-desc
-              .footer__col
-                .footer__content-text Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
-                .footer__social
+        section.hero
+          +image('content/train.png', 'hero__bg')
+          .container.hero__container
+            .hero__content
+              header.header
+                .logo ЕИ
+                .header__menu
+                  nav.menu
+                    ul.menu__list
+                      li.menu__item 
+                        a(href="#").menu__link Главная
+                      li.menu__item 
+                        a(href="#").menu__link Обо мне
+                      li.menu__item
+                        a(href="#").menu__link Навыки
+                      li.menu__item
+                        a(href="#").menu__link Работы
+                      li.menu__item
+                        a(href="#").menu__link Отзывы
+                      li.menu__item 
+                        a(href="#").menu__link Связаться
+                .social
                   ul.social__list
                     li.social__item
                       a(href="#").social__link
-                        +icon('insta', 'social__icon footer__icon')
+                        +icon('insta', 'social__icon')
                     li.social__item
                       a(href="#").social__link
-                        +icon('vk', 'social__icon footer__icon')
+                        +icon('vk', 'social__icon')
                     li.social__item
                       a(href="#").social__link
-                        +icon('github', 'social__icon footer__icon')
-              .footer__col
-                .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                .quote__autor Martin Golding
+                        +icon('github', 'social__icon')
+              .hero__info
+                .hero__desc
+                  .hero__text Личный сайт веб разработчика
+                  .hero__title Екатерина Исмиляева
+              .scroll
+                .scroll__text Скролл
+                a(href="#").scroll__link
+                  +icon('scroll', 'scroll__icon')
+
+
+        section.user
+          //- .user__bg(style="url(../images/content/me_bg.png)")
+          .container.user__container
+            .user__col.user__col_centered
+              +image('content/me.jpeg', 'user__pic')
+              table.user__table
+                tr.table__row
+                  td.table___cell_left Проживаю:
+                  td.table___cell Балашиха
+                tr.table__row
+                  td.table___cell_left Возраст:
+                  td.table___cell 25 лет
+                tr.table__row
+                  td.table___cell_left Родилась:
+                  td.table___cell 20 октября 1993
+            .user__col
+              .text Привет, меня зовут 
+              .user__title.title Екатерина Исмиляева
+              p.text__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              .site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        section.skills
+          +image('content/hands.png', 'skills__pic')
+          .container.skills__container
+            h2.skills__title.title Чем я могу быть полезен вам
+            .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .skills__list
+              .skills__list-title Front-end
+              .skills__row
+                .skills__item
+                  .skills__name HTML5
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -125s", stroke="url(#gradient)").circle.circle__above
+                    linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                      stop(offset="0%" stop-color="#ea7400")
+                      stop(offset="100%" stop-color="#f29400")
+                .skills__item
+                  .skills__name CSS3
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -15s", stroke="url(#gradient)").circle.circle__above
+                .skills__item
+                  .skills__name Javascript
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -75s", stroke="url(#gradient)").circle.circle__above
+                .skills__item
+                  .skills__name.skills__name_width Jquery и Vue.js
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -25s", stroke="url(#gradient)").circle.circle__above
+              .skills__list-title Workflow
+              .skills__row
+                .skills__item
+                  .skills__name GIT
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -15s", stroke="url(#gradient)").circle.circle__above
+                .skills__item
+                  .skills__name Terminal
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -25s", stroke="url(#gradient)").circle.circle__above
+                .skills__item
+                  .skills__name Gulp
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -50s", stroke="url(#gradient)").circle.circle__above
+                .skills__item
+                  .skills__name Webpack
+                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
+                    circle(cx="50", cy="50", r="40").circle.circle__under
+                    circle(cx="50", cy="50", r="40", style="animation-delay: -40s", stroke="url(#gradient)").circle.circle__above
+        section.works
+          .container.works__container
+            h2.works__title.title Мои работы
+            .slider
+              .slider__col.slider__col_left
+                .slider__img
+                  +image('content/work1_big.png', 'slider__pic_big')
+                  ul.slider__list
+                    li.slider__item.slider__item_active
+                      +image('content/work1.png', 'slider__pic_small')
+                    li.slider__item
+                      +image('content/work2.png', 'slider__pic_small')
+                    li.slider__item
+                      +image('content/work3.png', 'slider__pic_small')
+                    li.slider__item
+                      +image('content/work4.png', 'slider__pic_small')
+                  .arrow__left
+                    +icon('arrow-down', 'arrow__left-icon')
+                  .arrow__right
+                    +icon('arrow-down', 'arrow__right-icon')
+              .slider__col
+                .slider__text
+                  ul.slider__text-list
+                    li.slider__text-item
+                      a(href="#").slider__text-link HTML
+                    li.slider__text-item
+                      a(href="#").slider__text-link CSS
+                    li.slider__text-item
+                      a(href="#").slider__text-link JavaScript
+                .slider__text-title Сайт школы образование
+                .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .slider__school
+                  +icon('link', 'slider__school-icon')
+                  a(href="#").slider__school-link Посмотреть сайт
+        .feedback
+          +image('content/leaf1.png', 'feedback__pic_one')
+          +image('content/leaf2.png', 'feedback__pic_two')
+          +image('content/leaf3.png', 'feedback__pic_three')
+          +image('content/leaf4.png', 'feedback__pic_four')
+          section.reviews
+            .container.reviews__container
+              .reviews__top
+                h2.reviews__title.title Что обо мне говорят
+                .arrow__left_round
+                  +icon('arrow-down', 'arrow__left-icon')
+                .arrow__right_round
+                  +icon('arrow-down', 'arrow__right-icon')
+              ul.reviews__list
+                li.reviews__item
+                  .reviews__text 
+                    +icon('quote', 'reviews__text-icon')
+                    .reviews__desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .autor
+                    .autor__photo
+                      +image('content/dima.png', 'autor-pic')
+                    .autor__desc
+                      .autor__name Ковальчук Дмитрий
+                      .autor__position Основатель Loftschool
+                li.reviews__item
+                  .reviews__text 
+                    +icon('quote', 'reviews__text-icon')
+                    .reviews__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .autor
+                    .autor__photo
+                      +image('content/vova.png', 'autor-pic')
+                    .autor__desc
+                      .autor__name Владимир Сабанцев
+                      .autor__position Преподаватель
+          section.contact
+            .container.contact__container
+              h2.contact__title.title Связаться со мной
+              form.form(action="#")
+                .form__row
+                  label.form__block
+                    .form__block-title Введите ваше имя
+                    .input
+                      +icon('avatar', 'form__block-icon')
+                      input(type="text", name="name", placeholder="Ковальчук Дмитрий").form__block-input
+                  label.form__block
+                    .form__block-title Введите ваш email
+                    .input
+                      +icon('envelope', 'form__block-icon')
+                      input(type="text", name="email", placeholder="loftschool@study.com").form__block-input
+                .form__row
+                  label.form__block
+                    .form__block-title Сообщение к письму
+                    .input
+                      +icon('chat', 'form__block-icon')
+                      textarea(name="comment", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__block-input.form__block-input-textarea
+                button.button Отправить
+
+        footer.footer
+          .container.footer__container
+            .copyrights
+              .copyrights__col
+                .copyrights__year 2019
+              .copyrights__col
+                .copyrights__name Екатерина Исмиляева
+                .copyrights__text Личный сайт веб-разработчика
+            .footer__content
+              nav.footer__menu
+                ul.menu__list
+                    li.menu__item 
+                      a(href="#").menu__link Главная
+                    li.menu__item 
+                      a(href="#").menu__link Обо мне
+                    li.menu__item
+                      a(href="#").menu__link Навыки
+                    li.menu__item
+                      a(href="#").menu__link Работы
+                    li.menu__item
+                      a(href="#").menu__link Отзывы
+                    li.menu__item 
+                      a(href="#").menu__link Связаться
+              .footer__content-desc
+                .footer__col
+                  .footer__content-text Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
+                  .footer__social
+                    ul.social__list
+                      li.social__item
+                        a(href="#").social__link.footer__link
+                          +icon('insta', 'social__icon')
+                      li.social__item
+                        a(href="#").social__link.footer__link
+                          +icon('vk', 'social__icon')
+                      li.social__item
+                        a(href="#").social__link.footer__link
+                          +icon('github', 'social__icon')
+                .footer__col.footer__col_padding
+                  .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .quote__autor Martin Golding
 
 
 

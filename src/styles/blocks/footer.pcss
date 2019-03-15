@@ -20,6 +20,10 @@ color: #ffffff;
 font-size: 48px;
 font-weight: 600;
 margin-right: 60px;
+&::before {
+  content: "\00a9";
+  padding-right: 10px; 
+}
 }
 
 .copyrights__name {
@@ -37,7 +41,7 @@ line-height: 1.62em;
 }
 
 .footer__menu {
-  width: 70%;
+  width: 90%;
   margin-bottom: 60px;
 }
 .footer__content {
@@ -45,10 +49,6 @@ line-height: 1.62em;
 }
 .footer__content-desc {
   display: flex;
-}
-
-.footer__col {
-  width: 40%;
 }
 
 .footer__content-text, .quote {
@@ -68,17 +68,23 @@ line-height: 1.62em;
   font-style: italic;
 }
 
-.social__link {
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #fff;
+.footer__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  transition: border-color .3s;
+
+  &:hover {
+    border-color: $orange;
+    transition: border-color .3s;
   }
+}
+
+.footer__col_padding {
+  padding: 0 40px;
 }
 

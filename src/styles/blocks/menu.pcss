@@ -1,5 +1,8 @@
-.menu {
-  width: 45%;
+.header__menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
 }
 
 .menu__list {
@@ -8,5 +11,20 @@
 }
 
 .menu__link {
+  display: inline-block;
   text-decoration: none;
+  transition: color .3s;
+
+  &:hover {
+    color: $orange;
+    transition: color .3s;
+  }
 }
+
+.menu__item {
+  margin-right: 60px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+

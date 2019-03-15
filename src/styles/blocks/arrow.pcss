@@ -14,15 +14,25 @@
   justify-content: center;
   left: 100%;
   cursor: pointer;
+  transition: fill .3s;
 }
 
 .arrow__left {
   transform: rotate(180deg);
   bottom: 10%;
+
+  &:hover .arrow__left-icon {
+    fill: $orange;
+    transition: fill .3s;
+  }
 }
 
 .arrow__right {
   bottom: 19.9%;
+  &:hover .arrow__right-icon {
+    fill: $orange;
+    transition: fill .3s;
+  }
 }
 
 .arrow__left_round-icon, .arrow__right_round-icon {
@@ -41,13 +51,32 @@
   justify-content: center;
   left: 40%;
   cursor: pointer;
-  border: 1px solid #2d3c4e;
+  border: 1px solid #fff;
+  transition: border-color .3s;
 }
 
 .arrow__left_round {
   transform: rotate(180deg);
+  &:hover {
+    border-color: $orange;
+    transition: border-color .3s;
+    .arrow__left-icon {
+    fill: $orange;
+    transition: fill .3s;
+  }
+  }
+  
+
 }
 
 .arrow__right_round {
   left: 50%;
+  &:hover {
+    border-color: $orange;
+    transition: border-color .3s;
+    .arrow__right-icon {
+    fill: $orange;
+    transition: fill .3s;
+  }
+  }
 }

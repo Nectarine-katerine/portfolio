@@ -1,5 +1,6 @@
 .social__list {
   display: flex;
+  list-style: none;
 }
 
 .social__item {
@@ -11,4 +12,12 @@
 .social__icon {
   width: 25px;
   fill: rgba(#fff, .5);
+  transition: fill .3s;
+}
+
+.social__link {
+  &:hover .social__icon {
+    fill: $orange;
+    transition: fill .3s;
+  }
 }
