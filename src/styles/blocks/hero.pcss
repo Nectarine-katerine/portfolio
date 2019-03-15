@@ -1,17 +1,36 @@
 .hero {
-  background: url(../images/content/train.png) center center / cover no-repeat;
+  min-height: 1000px;
+  position: relative;
+  height: 100%;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  max-height: inherit;
+
 }
 .hero__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 80%;
+  justify-content: center;
+  height: 100%;
 }
 .hero__content {
+  z-index: 3;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  min-height: 600px;
 }
-
+.hero__desc {
+  align-self: center;
+  display: flex;
+}
 .hero__text {
   font-size: 18px;
   font-weight: 600;

@@ -1,5 +1,6 @@
 .user {
   background: url(../images/content/me_bg.png) center center / cover no-repeat;
+  z-index: 3;
 }
 
 .user__container {
@@ -10,6 +11,7 @@
 
 .user__col {
   width: 50%;
+  z-index: 3;
 }
 
 .user__col_centered {
@@ -52,11 +54,12 @@ align-items: center;
   &::before {
     content: "*";
     position: absolute;
-    top: 0;
-    left: -15px;
+    top: 22px;
+    right: 100%;
     font-size: 48px;
     line-height: 0;
     font-style: italic;
     color: rgba(#ff0000, .1);
+        margin-right: 15px;
    }
 }

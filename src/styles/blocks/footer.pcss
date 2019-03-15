@@ -1,9 +1,15 @@
 .footer {
   background-color: #1b1f22;
+  min-height: 370px;
+}
+
+.footer__container {
   display: flex;
+  padding: 90px 0;
 }
 .copyrights {
   display: flex;
+  margin-right: 100px;
 }
 .copyrights__col {
 flex: 1;
@@ -13,6 +19,7 @@ opacity: 0.1;
 color: #ffffff;
 font-size: 48px;
 font-weight: 600;
+margin-right: 60px;
 }
 
 .copyrights__name {
@@ -20,9 +27,58 @@ color: #ffffff;
 font-size: 18px;
 font-weight: 700;
 text-transform: uppercase;
+line-height: 1.62em;
+margin-bottom: 30px;
 }
 
 .copyrights__text {
-opacity: 0.15;
-color: #ffffff;
+color: rgba(#fff, .15);
+line-height: 1.62em;
 }
+
+.footer__menu {
+  width: 70%;
+  margin-bottom: 60px;
+}
+.footer__content {
+  width: 92%
+}
+.footer__content-desc {
+  display: flex;
+}
+
+.footer__col {
+  width: 40%;
+}
+
+.footer__content-text, .quote {
+color: rgba(#fff, .3);
+line-height: 1.62em;
+}
+
+.footer__content-text {
+  margin-bottom: 45px;
+}
+
+.quote {
+  margin-bottom: 30px;
+}
+
+.quote__autor {
+  font-style: italic;
+}
+
+.social__link {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+  }
+}
+
