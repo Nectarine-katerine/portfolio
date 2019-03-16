@@ -2,6 +2,14 @@
   align-self: center;
   align-items: center;
   display: flex;
+  &:hover {
+    color: $orange;
+    transition: color .3;
+    .scroll__icon {
+      fill: $orange;
+      transition: fill .3;
+    }
+  }
 }
 .scroll__text {
   font-size: 18px;
@@ -17,4 +25,5 @@
   width: 20px;
   height: 20px;
   fill: #fff;
+  transition: fill .3;
 }
