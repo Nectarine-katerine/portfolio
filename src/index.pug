@@ -10,68 +10,69 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        section.hero
-          +image('content/train.png', 'hero__bg')
-          .container.hero__container
-            .hero__content
-              header.header
-                .logo ЕИ
-                .header__menu
-                  nav.menu
-                    ul.menu__list
-                      li.menu__item 
-                        a(href="#").menu__link Главная
-                      li.menu__item 
-                        a(href="#").menu__link Обо мне
-                      li.menu__item
-                        a(href="#").menu__link Навыки
-                      li.menu__item
-                        a(href="#").menu__link Работы
-                      li.menu__item
-                        a(href="#").menu__link Отзывы
-                      li.menu__item 
-                        a(href="#").menu__link Связаться
-                .social
-                  ul.social__list
-                    li.social__item
-                      a(href="#").social__link
-                        +icon('insta', 'social__icon')
-                    li.social__item
-                      a(href="#").social__link
-                        +icon('vk', 'social__icon')
-                    li.social__item
-                      a(href="#").social__link
-                        +icon('github', 'social__icon')
-              .hero__info
-                .hero__desc
-                  .hero__text Личный сайт веб разработчика
-                  .hero__title Екатерина Исмиляева
-              .scroll
-                .scroll__text Скролл
-                a(href="#").scroll__link
-                  +icon('scroll', 'scroll__icon')
+        .parallax
+          section.hero
+            +image('content/train.png', 'hero__bg')
+            .container.hero__container
+              .hero__content
+                header.header
+                  .logo ЕИ
+                  .header__menu
+                    nav.menu
+                      ul.menu__list
+                        li.menu__item 
+                          a(href="#").menu__link Главная
+                        li.menu__item 
+                          a(href="#").menu__link Обо мне
+                        li.menu__item
+                          a(href="#").menu__link Навыки
+                        li.menu__item
+                          a(href="#").menu__link Работы
+                        li.menu__item
+                          a(href="#").menu__link Отзывы
+                        li.menu__item 
+                          a(href="#").menu__link Связаться
+                  .social
+                    ul.social__list
+                      li.social__item
+                        a(href="#").social__link
+                          +icon('insta', 'social__icon')
+                      li.social__item
+                        a(href="#").social__link
+                          +icon('vk', 'social__icon')
+                      li.social__item
+                        a(href="#").social__link
+                          +icon('github', 'social__icon')
+                .hero__info
+                  .hero__desc
+                    .hero__text Личный сайт веб разработчика
+                    .hero__title Екатерина Исмиляева
+                .scroll
+                  .scroll__text Скролл
+                  a(href="#").scroll__link
+                    +icon('scroll', 'scroll__icon')
 
 
-        section.user
-          //- .user__bg(style="url(../images/content/me_bg.png)")
-          .container.user__container
-            .user__col.user__col_centered
-              +image('content/me.jpeg', 'user__pic')
-              table.table
-                tr.table__row
-                  td.table___cell_left Проживаю:
-                  td.table___cell Балашиха
-                tr.table__row
-                  td.table___cell_left Возраст:
-                  td.table___cell 25 лет
-                tr.table__row
-                  td.table___cell_left Родилась:
-                  td.table___cell 20 октября 1993
-            .user__col
-              .user__text Привет, меня зовут 
-              .user__title.title Екатерина Исмиляева
-              p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              .user__site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          section.user
+            //- .user__bg(style="url(../images/content/me_bg.png)")
+            .container.user__container
+              .user__col.user__col_centered
+                +image('content/me.jpeg', 'user__pic')
+                table.table
+                  tr.table__row
+                    td.table___cell_left Проживаю:
+                    td.table___cell Балашиха
+                  tr.table__row
+                    td.table___cell_left Возраст:
+                    td.table___cell 25 лет
+                  tr.table__row
+                    td.table___cell_left Родилась:
+                    td.table___cell 20 октября 1993
+              .user__col
+                .user__text Привет, меня зовут 
+                .user__title.title Екатерина Исмиляева
+                p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .user__site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         section.skills
           +image('content/hands.png', 'skills__pic')
           .skills__container
