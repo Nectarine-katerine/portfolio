@@ -1,7 +1,6 @@
 .hero {
-  min-height: 1000px;
+  min-height: 1080px;
   position: relative;
-  height: 100%;
 }
 
 .hero__bg {
@@ -10,7 +9,6 @@
   left: 0;
   z-index: 2;
   width: 100%;
-  /* max-height: inherit; */
   height: 100%;
 }
 .hero__container {
@@ -24,7 +22,7 @@
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
-  min-height: 750px;
+  min-height: 630px;
 }
 .hero__info {
   align-self: center;
@@ -45,11 +43,6 @@
   text-align: right;
   /* margin-right: 60px; */
   padding-left: 21%;
-  @include tablets {
-    padding: 0 40% 6%;
-    text-align: center;
-    line-height: 1.62em;
-  }
 }
 .hero__title {
   font-size: 72px;
@@ -57,9 +50,5 @@
   line-height: 0.91em;
   /* width: 50%; */
   padding: 0 6%;
-  @include tablets {
-    padding: 0;
-    text-align: center;
-  }
 }
 

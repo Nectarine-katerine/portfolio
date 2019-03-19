@@ -90,3 +90,20 @@ transition: text-decoration .3s;
 .slider__item_active {
   border: 2px solid #f29400;
 }
+
+.slider__item {
+  position: relative;
+  cursor: pointer;
+  &:hover {
+  &::before {
+    content: "";
+    background-color: $orange;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  }
+ }
