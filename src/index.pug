@@ -56,7 +56,6 @@ html(lang="en")
           section.user
             //- .user__bg(style="url(../images/content/me_bg.png)")
             .container.user__container
-              .user__col.user__col_centered
                 +image('content/me.jpeg', 'user__pic')
                 table.table
                   tr.table__row
@@ -68,10 +67,10 @@ html(lang="en")
                   tr.table__row
                     td.table___cell_left Родилась:
                     td.table___cell 20 октября 1993
-              .user__col
-                .user__text Привет, меня зовут 
-                .user__title.title Екатерина Исмиляева
-                p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .user__content
+                  .user__text Привет, меня зовут 
+                  .user__title.title Екатерина Исмиляева
+                  p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .user__site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         section.skills
           +image('content/hands.png', 'skills__pic')
