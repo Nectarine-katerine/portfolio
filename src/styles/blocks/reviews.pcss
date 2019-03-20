@@ -8,8 +8,12 @@
 
 .reviews__top {
   display: flex;
-  position: relative;
+  justify-content: space-between;
   padding-top: 150px;
+  width: 50%;
+  @include tablets {
+    width: 68%;
+  }
 }
 
 .reviews__list {

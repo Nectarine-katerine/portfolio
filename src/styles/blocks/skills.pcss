@@ -5,6 +5,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include tablets {
+    height: 100%;
+    min-height: inherit;
+    align-items: center;
+  }
 }
 .skills__list {
   display: flex;
@@ -15,6 +20,9 @@
 
 .skills__row {
   display: flex;
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 .skills__item {
   position: relative;
@@ -22,6 +30,9 @@
   flex-direction: column;
   align-items: center;
   margin-right: 8%;
+  @include phones {
+    width: 50%;
+  }
 }
 .skills__name {
   position: absolute;
@@ -40,10 +51,26 @@ font-weight: 700;
   position: absolute;
   left: 0;
   top: 85px;
+  @include tablets {
+    transform: rotate(-90deg);
+    width: 50%;
+    text-align: center;
+    position: static;
+    justify-content: flex-end;
+  }
 }
 .skills__container {
   position: absolute;
   left: 40%;
+  width: 52%;
+  @include tablets {
+    position: static;
+    text-align: center;
+    width: 100%;
+  }
+  @include phones {
+    text-align: left;
+  }
 }
 .skills__title {
   font-size: 30px;
@@ -56,6 +83,9 @@ font-weight: 700;
   width: 87%;
   line-height: 1.9em;
   padding-bottom: 40px;
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .skills__list-title {

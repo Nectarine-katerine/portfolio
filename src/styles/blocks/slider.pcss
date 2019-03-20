@@ -1,11 +1,14 @@
 .slider {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 .slider__list {
   display: flex;
   position: absolute;
-  left: 20.5%;
-  top: 70%;
+  left: 166px;
+  top: 323px;
 }
 .slider__col {
   width: 25%;
