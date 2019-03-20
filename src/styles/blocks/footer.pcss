@@ -6,9 +6,13 @@
 .footer__container {
   display: flex;
   padding: 90px 0;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__menu {
+  display: block;
   width: 90%;
   margin-bottom: 60px;
 }

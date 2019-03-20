@@ -16,6 +16,10 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 0 50px;
+  @include phones {
+    flex-wrap: wrap;
+    padding: 0;
+  }
 }
 
 .skills__row {
@@ -32,6 +36,7 @@
   margin-right: 8%;
   @include phones {
     width: 50%;
+    margin-right: 0;
   }
 }
 .skills__name {
@@ -54,10 +59,9 @@ font-weight: 700;
   @include tablets {
     transform: rotate(-90deg);
     width: 50%;
-    text-align: center;
     position: static;
-    justify-content: flex-end;
-  }
+    text-align: center;
+   }
 }
 .skills__container {
   position: absolute;
@@ -66,15 +70,19 @@ font-weight: 700;
   @include tablets {
     position: static;
     text-align: center;
-    width: 100%;
+    
   }
   @include phones {
     text-align: left;
+    width: 85%;
   }
 }
 .skills__title {
   font-size: 30px;
   margin-bottom: 60px;
+  @include phones {
+  font-size: 24px;
+  }
 }
 
 .skills__text {
@@ -86,10 +94,16 @@ font-weight: 700;
   @include tablets {
     width: 100%;
   }
+  @include phones {
+  font-size: 14px;
+  }
 }
 
 .skills__list-title {
   margin: 40px 0;
   font-size: 24px;
   font-weight: 700;
+  @include phones {
+    text-align: center;
+  }
 }

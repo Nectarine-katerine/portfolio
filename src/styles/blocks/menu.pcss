@@ -1,8 +1,13 @@
+.menu {
+  @include tablets {
+    display: none;
+  }
+}
 .menu__list {
   display: flex;
   justify-content: space-between;
   @include tablets {
-    display: none;
+    flex-wrap: wrap;
   }
 }
 

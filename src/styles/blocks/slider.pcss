@@ -9,16 +9,27 @@
   position: absolute;
   left: 166px;
   top: 323px;
+  @include phones {
+      display: none;
+    }
 }
 .slider__col {
   width: 25%;
   margin-left: 158px;
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+    }
 
 }
 .slider__col_left {
   position: relative;
   width: 65%;
   margin-left: 0;
+  @include phones {
+    width: 100%;
+    margin-bottom: 60px;
+    }
 }
 .slider__pic_big {
   display: inline-block;
@@ -39,6 +50,9 @@
     left: 93%;
     bottom: 3.5%;
     z-index: -5;
+    @include phones {
+      display: none;
+    }
   }
 }
 

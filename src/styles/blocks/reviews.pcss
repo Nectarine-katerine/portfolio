@@ -4,6 +4,9 @@
 
 .reviews__title {
  margin-bottom: 100px;
+ @include phones {
+   margin-bottom: 25px;
+  }
 }
 
 .reviews__top {
@@ -14,12 +17,29 @@
   @include tablets {
     width: 68%;
   }
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+.reviews__btn {
+  @include phones {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  }
 }
 
 .reviews__list {
   display: flex;
   justify-content: space-between;
   width: 90%;
+  @include phones {
+  overflow: hidden;
+  width: 100%;
+  }
+  
 }
 
 .reviews__item {
@@ -27,6 +47,9 @@
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+   @include phones {
+  width: 100%;
+  }
 }
 
 .reviews__text {
@@ -50,4 +73,7 @@
 }
 .reviews__desc {
   width: 52%;
+   @include phones {
+  width: 100%;
+  }
 }

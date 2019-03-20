@@ -1,6 +1,9 @@
 .copyrights {
   display: flex;
   margin-right: 100px;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 .copyrights__col {
 flex: 1;
