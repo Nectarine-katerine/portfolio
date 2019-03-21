@@ -1,7 +1,15 @@
 .works__title {
   color: #2b3948;
   margin-bottom: 92px;
+  @include phones {
+  margin-bottom: 30px;
+  text-align: center;
+  }  
 }
 .works__container {
   margin: 200px auto;
+  @include phones {
+width: 100%;
+  margin: 100px auto;
+  } 
 }

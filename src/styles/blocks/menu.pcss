@@ -8,6 +8,7 @@
   justify-content: space-between;
   @include tablets {
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
@@ -17,8 +18,7 @@
   transition: color .3s;
   padding: 20px 0;
   border-bottom: 3px solid transparent;
-
-
+  
   &:hover {
     color: $orange;
     border-color: $orange;
@@ -30,6 +30,9 @@
   margin-right: 60px;
   &:last-child {
     margin-right: 0;
+  }
+  @include tablets {
+    margin-right: 40px;
   }
 }
 

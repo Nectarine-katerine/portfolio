@@ -8,19 +8,26 @@
   padding: 90px 0;
   @include phones {
     flex-direction: column;
+     padding: 60px 0;
   }
 }
 
 .footer__menu {
   display: block;
   width: 90%;
-  margin-bottom: 60px;
+  margin-bottom: 2.75rem;
+  .menu__link {
+    padding-top: 0;
+  }
 }
 .footer__content {
   width: 86%
 }
 .footer__content-desc {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .footer__content-text, .quote {
@@ -30,6 +37,9 @@ line-height: 1.62em;
 
 .footer__content-text {
   margin-bottom: 45px;
+ @include tablets {
+  margin-bottom: 19px;
+  } 
 }
 
 .footer__link {
@@ -50,5 +60,8 @@ line-height: 1.62em;
 
 .footer__col_padding {
   padding: 0 40px;
+  @include tablets {
+    padding: 60px 0 0;
+  }
 }
 

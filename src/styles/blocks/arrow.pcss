@@ -1,6 +1,6 @@
 .arrow__left-icon, .arrow__right-icon {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   fill: rgba(#fff, .3);
 }
 
@@ -37,19 +37,20 @@
       fill: #fff;
     }
   }
+@include phones {
+bottom: 0.5%;
+  } 
 }
 
 .arrow__right {
   bottom: 19.9%;
-}
-
-.arrow__left_round-icon, .arrow__right_round-icon {
-  width: 20px;
-  height: 20px;
-  fill: #fff;
+  @include phones {
+bottom: 24.9%;
+  } 
 }
 
 .arrow__left_round, .arrow__right_round {
+  margin-left: 60px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -72,8 +73,6 @@
     transition: fill .3s;
   }
   }
-  
-
 }
 
 .arrow__right_round {

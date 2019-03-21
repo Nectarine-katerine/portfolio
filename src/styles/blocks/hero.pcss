@@ -1,6 +1,7 @@
 .hero {
   min-height: 1080px;
   position: relative;
+  height: 100vh;
 }
 
 .hero__bg {
@@ -41,11 +42,14 @@
   text-align: right;
   padding-left: 21%;
   @include tablets {
-    padding-left: 0;
-    padding-bottom: 30px;
+    padding: 0 280px 30px;
+    text-align: center;
+    line-height: 1.62em;
   }
   @include phones {
       font-size: 14px;
+      padding: 0 80px 30px;
+
   }
 }
 .hero__title {

@@ -6,9 +6,23 @@
   flex-direction: column;
   justify-content: center;
   @include tablets {
-    height: 100%;
     min-height: inherit;
     align-items: center;
+  }
+}
+.skills__container {
+  position: absolute;
+  left: 40%;
+  width: 52%;
+  @include tablets {
+    position: static;
+    text-align: center;
+    padding-top: 100px;
+    width: 80%;
+  }
+  @include phones {
+    text-align: left;
+    width: 85%;
   }
 }
 .skills__list {
@@ -52,50 +66,50 @@ font-weight: 700;
   top: 40%;
   text-align: center;
 }
-.skills__pic {
+
+.skills__photo {
   position: absolute;
   left: 0;
-  top: 85px;
+  top: 11%;
   @include tablets {
-    transform: rotate(-90deg);
-    width: 50%;
     position: static;
-    text-align: center;
+  width: 100%;
    }
 }
-.skills__container {
-  position: absolute;
-  left: 40%;
-  width: 52%;
+.skills__pic {
+  width: 90%;
   @include tablets {
-    position: static;
-    text-align: center;
-    
-  }
-  @include phones {
-    text-align: left;
-    width: 85%;
-  }
+    transform: rotate(-90deg);
+    transform-origin: 57.5% 60%;
+   }
 }
+
 .skills__title {
   font-size: 30px;
   margin-bottom: 60px;
+  @include tablets {
+padding: 0 120px;
+line-height: 1.42em;
+  }
   @include phones {
   font-size: 24px;
+  padding: 0;
   }
 }
 
 .skills__text {
   font-weight: 600;
   color: rgba(#fff, .5);
-  width: 87%;
   line-height: 1.9em;
   padding-bottom: 40px;
   @include tablets {
-    width: 100%;
+    padding: 0 85px;
+    margin-bottom: 40px;
   }
   @include phones {
   font-size: 14px;
+      padding: 0;
+
   }
 }
 

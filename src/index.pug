@@ -127,28 +127,30 @@ html(lang="en").gr__localhost
                   svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
                     circle(cx="50", cy="50", r="40").circle.circle__under
                     circle(cx="50", cy="50", r="40", style="animation-delay: -40s", stroke="url(#gradient)").circle.circle__above
-          +image('content/hands.png', 'skills__pic', 'Клавиатура', 'presentation')
+          .skills__photo
+            +image('content/hands.png', 'skills__pic', 'Клавиатура', 'presentation')
         section.works
           .container.works__container
             h2.works__title.title Мои работы
             .slider
-              .slider__col.slider__col_left
-                .slider__img
-                  +image('content/work1_big.png', 'slider__pic_big')
-                  ul.slider__list
-                    li.slider__item.slider__item_active
-                      +image('content/work1.png', 'slider__pic_small')
-                    li.slider__item
-                      +image('content/work2.png', 'slider__pic_small')
-                    li.slider__item
-                      +image('content/work3.png', 'slider__pic_small')
-                    li.slider__item
-                      +image('content/work4.png', 'slider__pic_small')
-                  button(type="button").arrow__left
-                    +icon('arrow-down', 'arrow__left-icon')
-                  button(type="button").arrow__right
-                    +icon('arrow-down', 'arrow__right-icon')
-              .slider__col
+              .slider__col_left
+                .slider__images
+                  .slider__img
+                    +image('content/work1_big.png', 'slider__img_big')
+                    ul.slider__list
+                      li.slider__item.slider__item_active
+                        +image('content/work1.png', 'slider__pic_small')
+                      li.slider__item
+                        +image('content/work2.png', 'slider__pic_small')
+                      li.slider__item
+                        +image('content/work3.png', 'slider__pic_small')
+                      li.slider__item
+                        +image('content/work4.png', 'slider__pic_small')
+                    button(type="button").arrow__left
+                        +icon('arrow-down', 'arrow__left-icon')
+                    button(type="button").arrow__right
+                      +icon('arrow-down', 'arrow__right-icon')
+              .slider__col_right
                 .slider__text
                   ul.slider__text-list
                     li.slider__text-item HTML
@@ -211,10 +213,10 @@ html(lang="en").gr__localhost
                       input(id="email" type="text" name="email" placeholder="loftschool@study.com").form__block-input
                 .form__row
                   label(for="comment").form__block-title Сообщение к письму
-                  .input
+                  .input.input_textarea
                     +icon('chat', 'form__block-icon')
                     textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__block-input.form__block-input-textarea
-                button(type="submit").button Отправить
+              button(type="submit").button Отправить
 
         footer.footer
           .container.footer__container

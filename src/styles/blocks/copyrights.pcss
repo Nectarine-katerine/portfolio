@@ -4,19 +4,24 @@
   @include tablets {
     flex-direction: column;
   }
+  @include phones {
+  margin-right: 0;
+  }
 }
-.copyrights__col {
-flex: 1;
-}
+
 .copyrights__year {
 opacity: 0.1;
 color: #ffffff;
 font-size: 48px;
 font-weight: 600;
 margin-right: 60px;
+line-height: .9em;
 &::before {
   content: "\00a9";
   padding-right: 10px; 
+}
+@include tablets {
+  padding-bottom: 31px;
 }
 }
 
@@ -32,4 +37,7 @@ margin-bottom: 30px;
 .copyrights__text {
 color: rgba(#fff, .15);
 line-height: 1.62em;
+  @include phones {
+padding-bottom: 50px;
+  }
 }

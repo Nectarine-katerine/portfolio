@@ -1,46 +1,40 @@
 .slider {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 0.3fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+   "slider w-info";
   @include tablets {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 1fr;
+    grid-template-areas: 
+    "slider"
+    "w-info";
   }
 }
-.slider__list {
-  display: flex;
-  position: absolute;
-  left: 166px;
-  top: 323px;
-  @include phones {
-      display: none;
-    }
-}
-.slider__col {
-  width: 25%;
-  margin-left: 158px;
-  @include phones {
-    width: 100%;
-    margin-left: 0;
-    }
-
-}
 .slider__col_left {
-  position: relative;
-  width: 65%;
-  margin-left: 0;
-  @include phones {
+  grid-area: slider;
+  /* @include phones {
     width: 100%;
     margin-bottom: 60px;
+    } */
+}
+.slider__col_right {
+grid-area: w-info;
+  @include phones {
+    width: 90%;
+    margin: 0 auto;
     }
-}
-.slider__pic_big {
-  display: inline-block;
-}
 
-.slider__pic_small {
-  height: 100%;
-  cursor: pointer;
 }
-
+.slider__images {
+  padding-right: 160px;
+  @include phones {
+    padding: 0;
+  } 
+}
 .slider__img {
+  position: relative;
   &::after {
     content: "2";
     color: #f0f0f0;
@@ -56,10 +50,35 @@
   }
 }
 
+.slider__img_big {
+  display: block;
+}
+
+.slider__list {
+  display: flex;
+  position: absolute;
+  left: 166px;
+  top: 323px;
+  @include phones {
+      display: none;
+    }
+}
+
+
+.slider__pic_small {
+  height: 100%;
+  cursor: pointer;
+}
+
+
+
 .slider__text-list {
   display: flex;
   justify-content: space-between;
   margin-bottom: 45px;
+  @include phones {
+    margin-bottom: 27px;
+  }
 }
 .slider__text-item {
   color: rgba(#283340, .7);
@@ -75,6 +94,9 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 40px;
+   @include phones {
+    margin-bottom: 21px;
+  }
 }
 
 .slider__school-icon {
@@ -101,6 +123,9 @@ transition: text-decoration .3s;
   font-weight: 600;
   line-height: 1.72em;
   margin-bottom: 45px;
+   @include phones {
+    margin-bottom: 38px;
+  }
 }
 
 .slider__item_active {

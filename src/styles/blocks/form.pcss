@@ -44,6 +44,9 @@ margin-left: 50px;
   margin-right: 0;
   }
 }
+.input_textarea {
+  align-items: baseline;
+}
 .form__block-icon {
   width: 30px;
   height: 30px;
@@ -70,14 +73,16 @@ margin-left: 50px;
   line-height: 1.72em;
   @include tablets {
     width: 100%;
+    min-height: 120px;
   }
 }
 
 .button {
-  width: 39%;
-  padding: 25px 100px;
- background-image: linear-gradient(to right, #ea7400 0%, #f29400 100%);  
- text-transform: uppercase;
+  display: inline-block;
+  padding: 25px 99.2px;
+  outline: none;
+  background-image: linear-gradient(to right, #ea7400 0%, #f29400 100%);  
+  text-transform: uppercase;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
@@ -86,6 +91,6 @@ margin-left: 50px;
     background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
   }
   @include tablets {
-    width: 100%;
+    align-self: center;
   }
 }
