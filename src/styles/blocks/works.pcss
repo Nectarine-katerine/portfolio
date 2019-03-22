@@ -13,3 +13,16 @@ width: 100%;
   margin: 100px auto;
   } 
 }
+
+.works-slider__pics::before {
+  content: attr(data-slide);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  line-height: 1;
+  left: 100%;
+  font-size: 25rem;
+  font-weight: 800;
+  margin-left: -8%;
+  color: rgba(65, 76, 99, .05);
+}

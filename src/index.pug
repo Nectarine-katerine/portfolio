@@ -11,52 +11,61 @@ html(lang="en").gr__localhost
   body
     .wrapper
       .maincontent
-        .parallax
-          section.hero
-            +image('content/train.png', 'hero__bg', 'Фон приветственной секции', 'presentation')
-            .container.hero__container
-              .hero__content
-                header.header
-                  .logo ЕИ
-                  .header__menu
-                    nav.menu
-                      ul.menu__list
-                        li.menu__item 
-                          a(href="#").menu__link Главная
-                        li.menu__item 
-                          a(href="#").menu__link Обо мне
-                        li.menu__item
-                          a(href="#").menu__link Навыки
-                        li.menu__item
-                          a(href="#").menu__link Работы
-                        li.menu__item
-                          a(href="#").menu__link Отзывы
-                        li.menu__item 
-                          a(href="#").menu__link Связаться
-                  .social
-                    ul.social__list
-                      li.social__item
-                        a(href="#").social__link
-                          +icon('insta', 'social__icon')
-                      li.social__item
-                        a(href="#").social__link
-                          +icon('vk', 'social__icon')
-                      li.social__item
-                        a(href="#").social__link
-                          +icon('github', 'social__icon')
-                  .hamburger__menu
-                    a(href="#").hamburger__menu-link
-                .hero__info
-                  h1.hero__desc
-                    .hero__text Личный сайт веб разработчика
-                    .hero__title Екатерина Исмиляева
-                .scroll
-                  .scroll__text Скролл
-                  a(href="#").scroll__link
-                    +icon('scroll', 'scroll__icon')
+        section.hero
+          .parallax
+            .parallax__layer(data-speed='0.01')
+              +image('content/1.png', 'parallax__image')
+            .parallax__layer(data-speed='0.02')
+              +image('content/2.png', 'parallax__image')
+            .parallax__layer(data-speed='0.03')
+              +image('content/3.png', 'parallax__image')
+            .parallax__layer(data-speed='0.05')
+              +image('content/4.png', 'parallax__image')
+            .parallax__layer(data-speed='0.08')
+            .parallax__layer(data-speed='0.08')
+          .container.hero__container
+            .hero__content
+              header.header
+                .logo ЕИ
+                .header__menu
+                  nav.menu
+                    ul.menu__list
+                      li.menu__item 
+                        a(href="#").menu__link Главная
+                      li.menu__item 
+                        a(href="#").menu__link Обо мне
+                      li.menu__item
+                        a(href="#").menu__link Навыки
+                      li.menu__item
+                        a(href="#").menu__link Работы
+                      li.menu__item
+                        a(href="#").menu__link Отзывы
+                      li.menu__item 
+                        a(href="#").menu__link Связаться
+                .social
+                  ul.social__list
+                    li.social__item
+                      a(href="#").social__link
+                        +icon('insta', 'social__icon')
+                    li.social__item
+                      a(href="#").social__link
+                        +icon('vk', 'social__icon')
+                    li.social__item
+                      a(href="#").social__link
+                        +icon('github', 'social__icon')
+                .hamburger__menu
+                  a(href="#").hamburger__menu-link
+              .hero__info
+                h1.hero__desc
+                  .hero__text Личный сайт веб разработчика
+                  .hero__title Екатерина Исмиляева
+              .scroll
+                .scroll__text Скролл
+                a(href="#").scroll__link
+                  +icon('scroll', 'scroll__icon')
 
 
-          section.user
+        section.user
             //- .user__bg(style="url(../images/content/me_bg.png)")
             .container.user__container
                 +image('content/me.jpeg', 'user__pic', 'Мой аватар')
@@ -75,92 +84,52 @@ html(lang="en").gr__localhost
                   h2.user__title.title Екатерина Исмиляева
                   p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .user__site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        section.skills
-          .container.skills__container
-            h2.skills__title.title Чем я могу быть полезен вам
-            .skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .skills__list
-              .skills__list-title Front-end
-              .skills__row
-                .skills__item
-                  .skills__name HTML5
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -125s", stroke="url(#gradient)").circle.circle__above
-                    linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                      stop(offset="0%" stop-color="#ea7400")
-                      stop(offset="100%" stop-color="#f29400")
-                .skills__item
-                  .skills__name CSS3
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -15s", stroke="url(#gradient)").circle.circle__above
-                .skills__item
-                  .skills__name Javascript
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -75s", stroke="url(#gradient)").circle.circle__above
-                .skills__item
-                  .skills__name.skills__name_width Jquery и Vue.js
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -25s", stroke="url(#gradient)").circle.circle__above
-              .skills__list-title Workflow
-              .skills__row
-                .skills__item
-                  .skills__name GIT
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -15s", stroke="url(#gradient)").circle.circle__above
-                .skills__item
-                  .skills__name Terminal
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -25s", stroke="url(#gradient)").circle.circle__above
-                .skills__item
-                  .skills__name Gulp
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -50s", stroke="url(#gradient)").circle.circle__above
-                .skills__item
-                  .skills__name Webpack
-                  svg.percentage(viewBox="0 0 100 100", preserveAspectRatio="none")
-                    circle(cx="50", cy="50", r="40").circle.circle__under
-                    circle(cx="50", cy="50", r="40", style="animation-delay: -40s", stroke="url(#gradient)").circle.circle__above
+        section.values
+          .container.values__container
+            .values__wrapper
+              .values__top
+                .values__top-container
+                  h2.values__title.title Чем я могу быть полезен вам
+                  .values__content
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .values__widget
+              #skills-component
           .skills__photo
             +image('content/hands.png', 'skills__pic', 'Клавиатура', 'presentation')
         section.works
           .container.works__container
             h2.works__title.title Мои работы
-            .slider
-              .slider__col_left
-                .slider__images
-                  .slider__img
-                    +image('content/work1_big.png', 'slider__img_big')
-                    ul.slider__list
-                      li.slider__item.slider__item_active
-                        +image('content/work1.png', 'slider__pic_small')
-                      li.slider__item
-                        +image('content/work2.png', 'slider__pic_small')
-                      li.slider__item
-                        +image('content/work3.png', 'slider__pic_small')
-                      li.slider__item
-                        +image('content/work4.png', 'slider__pic_small')
-                    button(type="button").arrow__left
-                        +icon('arrow-down', 'arrow__left-icon')
-                    button(type="button").arrow__right
-                      +icon('arrow-down', 'arrow__right-icon')
-              .slider__col_right
-                .slider__text
-                  ul.slider__text-list
-                    li.slider__text-item HTML
-                    li.slider__text-item CSS
-                    li.slider__text-item JavaScript
-                .slider__text-title Сайт школы образование
-                .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .slider__school
-                  +icon('link', 'slider__school-icon')
-                  a(href="#").slider__school-link Посмотреть сайт
+            .works__content
+              #slider-component
+            //- .slider
+            //-   .slider__col_left
+            //-     .slider__images
+            //-       .slider__img
+            //-         +image('content/work1_big.png', 'slider__img_big')
+            //-         ul.slider__list
+            //-           li.slider__item.slider__item_active
+            //-             +image('content/work1.png', 'slider__pic_small')
+            //-           li.slider__item
+            //-             +image('content/work2.png', 'slider__pic_small')
+            //-           li.slider__item
+            //-             +image('content/work3.png', 'slider__pic_small')
+            //-           li.slider__item
+            //-             +image('content/work4.png', 'slider__pic_small')
+            //-         button(type="button").arrow__left
+            //-             +icon('arrow-down', 'arrow__left-icon')
+            //-         button(type="button").arrow__right
+            //-           +icon('arrow-down', 'arrow__right-icon')
+            //-   .slider__col_right
+            //-     .slider__text
+            //-       ul.slider__text-list
+            //-         li.slider__text-item HTML
+            //-         li.slider__text-item CSS
+            //-         li.slider__text-item JavaScript
+            //-     .slider__text-title Сайт школы образование
+            //-     .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            //-     .slider__school
+            //-       +icon('link', 'slider__school-icon')
+            //-       a(href="#").slider__school-link Посмотреть сайт
         .feedback
           +image('content/leaf1.png', 'feedback__pic_one', 'Падающие листья', 'presentation')
           +image('content/leaf2.png', 'feedback__pic_two', 'Падающие листья', 'presentation')
@@ -259,7 +228,7 @@ html(lang="en").gr__localhost
                   .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .quote__autor Martin Golding
 
-
+include ./templates/entry.pug
 
 
         //- +image('content/user.jpg', 'user-pic')
