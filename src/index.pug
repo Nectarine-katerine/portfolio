@@ -85,51 +85,23 @@ html(lang="en").gr__localhost
                   p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .user__site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         section.values
+          .values__photo
+            +image('content/hands.png', 'values__pic', 'Клавиатура', 'presentation')
           .container.values__container
             .values__wrapper
-              .values__top
-                .values__top-container
-                  h2.values__title.title Чем я могу быть полезен вам
+              .values__title
+                .values__title-container
+                  .values__title-text Чем я могу быть полезен вам
                   .values__content
-                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .values__widget
-              #skills-component
-          .skills__photo
-            +image('content/hands.png', 'skills__pic', 'Клавиатура', 'presentation')
+                    p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .values__widget
+                #skills-component
+          
         section.works
-          .container.works__container
-            h2.works__title.title Мои работы
-            .works__content
-              #slider-component
-            //- .slider
-            //-   .slider__col_left
-            //-     .slider__images
-            //-       .slider__img
-            //-         +image('content/work1_big.png', 'slider__img_big')
-            //-         ul.slider__list
-            //-           li.slider__item.slider__item_active
-            //-             +image('content/work1.png', 'slider__pic_small')
-            //-           li.slider__item
-            //-             +image('content/work2.png', 'slider__pic_small')
-            //-           li.slider__item
-            //-             +image('content/work3.png', 'slider__pic_small')
-            //-           li.slider__item
-            //-             +image('content/work4.png', 'slider__pic_small')
-            //-         button(type="button").arrow__left
-            //-             +icon('arrow-down', 'arrow__left-icon')
-            //-         button(type="button").arrow__right
-            //-           +icon('arrow-down', 'arrow__right-icon')
-            //-   .slider__col_right
-            //-     .slider__text
-            //-       ul.slider__text-list
-            //-         li.slider__text-item HTML
-            //-         li.slider__text-item CSS
-            //-         li.slider__text-item JavaScript
-            //-     .slider__text-title Сайт школы образование
-            //-     .slider__text-desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-            //-     .slider__school
-            //-       +icon('link', 'slider__school-icon')
-            //-       a(href="#").slider__school-link Посмотреть сайт
+            .container.works__container
+              .title.works__title Мои работы
+              .works__content
+                #slider-component
         .feedback
           +image('content/leaf1.png', 'feedback__pic_one', 'Падающие листья', 'presentation')
           +image('content/leaf2.png', 'feedback__pic_two', 'Падающие листья', 'presentation')
@@ -228,7 +200,7 @@ html(lang="en").gr__localhost
                   .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .quote__autor Martin Golding
 
-include ./templates/entry.pug
+        include ./templates/entry.pug
 
 
         //- +image('content/user.jpg', 'user-pic')

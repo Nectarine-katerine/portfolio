@@ -1,28 +1,21 @@
-.works__title {
-  color: #2b3948;
-  margin-bottom: 92px;
+.works__content {
+  padding-bottom: 60px;
   @include phones {
-  margin-bottom: 30px;
-  text-align: center;
-  }  
-}
-.works__container {
-  margin: 200px auto;
-  @include phones {
-width: 100%;
-  margin: 100px auto;
-  } 
+    padding-bottom: 0px;
+  }
 }
 
-.works-slider__pics::before {
-  content: attr(data-slide);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-60%);
-  line-height: 1;
-  left: 100%;
-  font-size: 25rem;
-  font-weight: 800;
-  margin-left: -8%;
-  color: rgba(65, 76, 99, .05);
+.works__container {
+  padding: 200px 0;
+  @include phones {
+    width: 100%;
+  }
+}
+
+.works__title {
+  color: $text-color;
+  @include phones {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }
