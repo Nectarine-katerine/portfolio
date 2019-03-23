@@ -1,14 +1,45 @@
 .menu {
   @include tablets {
-    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -9999px;
+    background: #fff;
+    height: 100%;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 25;
+    transition: left .2s;
+    .social {
+    width: 60%;
+    margin: 50px auto;
   }
+    .social__icon {
+  width: 25px;
+  fill: #414c63;
+  transition: fill .3s;
+}
+    
+  }
+  @include phones {
+    width: 100%;
+    .social{
+      display: flex;
+    }
+
+  }
+  
 }
 .menu__list {
   display: flex;
   justify-content: space-between;
   @include tablets {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    color: $text-color;
+    flex-direction: column;
+    width: 60%;
+    margin: 0px auto;
+    margin-top: 100px;
   }
 }
 
@@ -23,6 +54,10 @@
     color: $orange;
     border-color: $orange;
     transition: .3s;
+  }
+  @include tablets {
+     font-size: 20px;
+     font-weight: 600;
   }
 }
 

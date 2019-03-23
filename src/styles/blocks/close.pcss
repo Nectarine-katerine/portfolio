@@ -1,0 +1,28 @@
+.close {
+  display: none;
+  @include tablets {
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 1.539rem;
+    height: 1.539rem;
+    cursor: pointer;
+    &:before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      content: '';
+      height: 1.539rem;
+      width: 0.24rem;
+      background-color: $text-color;
+      border-radius: 25%;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
