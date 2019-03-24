@@ -51,6 +51,10 @@
   right: 0;
   width: 100%;
   height: 100%; 
+  @include phones {
+   left: 0;
+   bottom: 0;
+  }
 }
 
 .works-slider__fullpic-container {
@@ -65,13 +69,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  @include phones {
+    width: initial;
+    height: initial;
+  }
 }
 
 .works-slider__thumbs {
   display: flex;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 60px;
   width: 659px;
 
 
@@ -115,8 +123,8 @@
   flex-direction: column;
 
   @include phones {
-    top: initial;
-    bottom: 0;
+    left: 86%;
+    bottom: 110px;
   }
 }
 
@@ -191,6 +199,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 26px;
+  color: $text-color;
 }
 
 .works-slider__tag-item {
@@ -201,6 +210,7 @@
 .works-slider__title {
   font-size: 30px;
   margin-bottom: 42px;
+  color: $text-color;
   font-weight: bold;
 }
 
@@ -215,31 +225,27 @@
 }
 
 .works-slider__link {
-  display: block;
+  display: flex;
 }
 
-
-.fade-enter-active, .fade-leave-active {
-  transition: .3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.works-slider__link-icon {
+  width: 16px;
+  height: 16px;
+  fill: $links-color;
+  margin-right: 20px;
 }
 
-.fade-enter {
-  opacity: 0;
+.works__link {
+  color: $links-color;
+  font-weight: 700;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
-
-.fade-enter-to {
-  opacity: 1;
-}
-
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave-to {
-  opacity: 0;
+.tag {
+  font-weight: 600;
+  padding: 17px 20px;
+  border-radius: 20px;
+  background-color: rgba(#7aa0c5, .1)
 }

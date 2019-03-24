@@ -1,22 +1,23 @@
 .close {
   display: none;
   @include tablets {
+    outline: none;
+    background-color: transparent;
     display: block;
     position: absolute;
-    top: 5%;
-    right: 5%;
-    width: 1.539rem;
-    height: 1.539rem;
+    top: 1%;
+    right: 10%;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     &:before,
     &::after {
       position: absolute;
       left: 50%;
       content: '';
-      height: 1.539rem;
-      width: 0.24rem;
+      height: 25px;
+      width: 5px;
       background-color: $text-color;
-      border-radius: 25%;
     }
     &:before {
       transform: rotate(45deg);
