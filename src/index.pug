@@ -14,13 +14,13 @@ html(lang="en").gr__localhost
         section.hero
           .parallax
             .parallax__layer(data-speed='0.01')
-              +image('content/1.png', 'parallax__image')
+              +image('content/1.png', 'parallax__image', 'photo', 'presentation')
             .parallax__layer(data-speed='0.02')
-              +image('content/2.png', 'parallax__image')
+              +image('content/2.png', 'parallax__image', 'photo', 'presentation')
             .parallax__layer(data-speed='0.03')
-              +image('content/3.png', 'parallax__image')
+              +image('content/3.png', 'parallax__image', 'photo', 'presentation')
             .parallax__layer(data-speed='0.05')
-              +image('content/4.png', 'parallax__image')
+              +image('content/4.png', 'parallax__image', 'photo', 'presentation')
             //- .parallax__layer(data-speed='0.08')
             //- .parallax__layer(data-speed='0.08')
             //- .parallax__layer(data-speed='0.1')
@@ -120,55 +120,8 @@ html(lang="en").gr__localhost
           +image('content/leaf4.png', 'feedback__pic_four', 'Падающие листья', 'presentation')
           section.reviews
             .container.reviews__container
-              .reviews__top
-                h2.reviews__title.title Что обо мне говорят
-                .reviews__btn
-                  button(type="button").arrow__left_round
-                    +icon('arrow-down', 'arrow__left-icon')
-                  button(type="button").arrow__right_round
-                    +icon('arrow-down', 'arrow__right-icon')
-              .reviews__inner
-                ul.reviews__list(id="items")
-                  li.reviews__item
-                    blockquote.reviews__text 
-                      +icon('quote', 'reviews__text-icon')
-                      p.reviews__desc Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .autor
-                      .autor__photo
-                        +image('content/dima.png', 'autor-pic', 'Аватар автора комментария')
-                      .autor__desc
-                        .autor__name Ковальчук Дмитрий
-                        .autor__position Основатель Loftschool
-                  li.reviews__item
-                    blockquote.reviews__text 
-                      +icon('quote', 'reviews__text-icon')
-                      p.reviews__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .autor
-                      .autor__photo
-                        +image('content/vova.png', 'autor-pic', 'Аватар автора комментария')
-                      .autor__desc
-                        .autor__name Владимир Сабанцев
-                        .autor__position Преподаватель
-                  li.reviews__item
-                    blockquote.reviews__text 
-                      +icon('quote', 'reviews__text-icon')
-                      p.reviews__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .autor
-                      .autor__photo
-                        //- +image('content/vova.png', 'autor-pic', 'Аватар автора комментария')
-                      .autor__desc
-                        .autor__name Алексей Зайцев
-                        .autor__position Преподаватель
-                  li.reviews__item
-                    blockquote.reviews__text 
-                      +icon('quote', 'reviews__text-icon')
-                      p.reviews__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .autor
-                      .autor__photo
-                        //- +image('content/vova.png', 'autor-pic', 'Аватар автора комментария')
-                      .autor__desc
-                        .autor__name Елена Иванова
-                        .autor__position Преподаватель
+              h2.reviews__title.title Что обо мне говорят
+              #reviews-component
                   
           section.contact
             .container.contact__container
@@ -234,6 +187,3 @@ html(lang="en").gr__localhost
                   .quote__autor Martin Golding
 
         include ./templates/entry.pug
-        //- +image('content/user.jpg', 'user-pic')
-        //- +icon('link', 'link-class')
-        //- .icon-bg

@@ -1,4 +1,7 @@
 .menu {
+  .social {
+    display: none;
+  }
   @include tablets {
     position: fixed;
     top: 0;
@@ -12,6 +15,7 @@
     z-index: 25;
     transition: left .2s;
     .social {
+      display: flex;
     width: 60%;
     margin: 50px auto;
   }
