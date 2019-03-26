@@ -7,7 +7,7 @@ mixin image(path, className, description, role)
   if !role
     img(src=require(`images/${path}`) class=className alt=description)
   else
-    img(src=require(`images/${path}`) class=className alt=description role=`${role}`)
+    img(src=require(`images/${path}`) class=className alt='' role=`${role}`)
 
 mixin social(mod)
   div(class="social social__" + mod)

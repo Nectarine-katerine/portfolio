@@ -12,7 +12,7 @@ script(type="text/x-template")#reviews-container
           .reviews__desc {{review.text}}
         .reviews__author
           .reviews__author-photo
-            img.reviews__author-pic(:src="review.photo")
+            img.reviews__author-pic(:src="review.photo" alt="Личное фото автора комментария")
           .reviews__author-desc
             .reviews__author-name {{review.author}}
             .reviews__author-position {{review.post}}

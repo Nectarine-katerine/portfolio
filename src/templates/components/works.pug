@@ -14,7 +14,7 @@ script(type="text/x-template")#slider-display
   .works-slider__pics(:data-slide="currentIndex + 1")
     .works-slider__pics-content
       .works-slider__fullpic-container
-        img(:src="currentWork.photo").works-slider__fullpic
+        img(:src="currentWork.photo" alt="Текущее фото выполненной работы - автор: Екатерина Исмиляева").works-slider__fullpic
         btns(
           @slide="direction => $emit('slide', direction)"
         )
@@ -35,7 +35,7 @@ script(type="text/x-template")#slider-thumbs
       :class="{active: currentWork.id === work.id }"
     )
       a.works-slider__thumb-link
-        img(:src="work.photo" alt="").works-slider__thumb
+        img(:src="work.photo" alt="Миниатуры выполненных работ - автор: Екатерина Исмиляева").works-slider__thumb
 
 script(type="text/x-template")#slider-info
   .works-slider__data
