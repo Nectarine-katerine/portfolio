@@ -13,147 +13,41 @@ html(lang="en").gr__localhost
     .wrapper
       .maincontent
         section.hero
-          .parallax
-            .parallax__layer(data-speed='0.01')
-              +image('content/1.png', 'parallax__image', 'photo', 'presentation')
-            .parallax__layer(data-speed='0.02')
-              +image('content/2.png', 'parallax__image', 'photo', 'presentation')
-            .parallax__layer(data-speed='0.03')
-              +image('content/3.png', 'parallax__image', 'photo', 'presentation')
-            .parallax__layer(data-speed='0.05')
-              +image('content/4.png', 'parallax__image', 'photo', 'presentation')
-            //- .parallax__layer(data-speed='0.08')
-            //- .parallax__layer(data-speed='0.08')
-            //- .parallax__layer(data-speed='0.1')
+          include ./sections/parallax
           .container.hero__container(id="hero")
             .hero__content
               header.header
-                .logo ЕИ
+                include ./sections/logo
                 .header__controls
-                  nav.header__menu(id="header-scroll")
-                    ul.menu__list
-                      li.menu__item 
-                        a(href="#" v-scroll-to="'#hero'").menu__link Главная
-                      li.menu__item 
-                        a(href="#" v-scroll-to="'#user'").menu__link Обо мне
-                      li.menu__item
-                        a(href="#" v-scroll-to="'#values'").menu__link Навыки
-                      li.menu__item
-                        a(href="#" v-scroll-to="'#works'").menu__link Работы
-                      li.menu__item
-                        a(href="#" v-scroll-to="'#reviews'").menu__link Отзывы
-                      li.menu__item 
-                        a(href="#" v-scroll-to="'#contact'").menu__link Связаться
-                  button(type="button").close
+                  +menu('header', 'header')
+                  button(type="button").header__close
                   +social('header')
-                .hamburger__menu
-                  button(type="button").hamburger__menu-btn
-              .hero__info
-                h1.hero__desc
-                  .hero__text Личный сайт веб разработчика
-                  .hero__title Екатерина Исмиляева
-              .scroll(id="arrow-scroll" v-scroll-to="'#user'")
-                .scroll__text Скролл
-                button(type="button").scroll__btn
-                  +icon('scroll', 'scroll__icon')
-        section.user(id="user")
-            //- .user__bg(style="url(../images/content/me_bg.png)")
-            .container.user__container
-                +image('content/me.jpeg', 'user__pic', 'Мой аватар')
-                table.table
-                  tr.table__row
-                    td.table___cell_left Проживаю:
-                    td.table___cell Балашиха
-                  tr.table__row
-                    td.table___cell_left Возраст:
-                    td.table___cell 25 лет
-                  tr.table__row
-                    td.table___cell_left Родилась:
-                    td.table___cell 20 октября 1993
-                .user__content
-                  .user__text Привет, меня зовут 
-                  h2.user__title.title Екатерина Исмиляева
-                  p.user__text-desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .user__site Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        section.values(id="values")
-          .values__photo
-            +image('content/hands.png', 'values__pic', 'Клавиатура', 'presentation')
-          .container.values__container
-            .values__wrapper
-              .values__title
-                .values__title-container
-                  .values__title-text Чем я могу быть полезен вам
-                  .values__content
-                    p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-              .values__widget
-                #skills-component
+                include ./sections/hamburger-menu
+              include ./sections/hero
+              include ./sections/scroll
+
+        include ./sections/user
+
+        include ./sections/values
           
-        section.works(id="works")
-            .container.works__container
-              .title.works__title Мои работы
-              .works__content
-                #slider-component
+        include ./sections/works
+        
         .feedback
-          +image('content/leaf1.png', 'feedback__pic_one', 'Падающие листья', 'presentation')
-          +image('content/leaf2.png', 'feedback__pic_two', 'Падающие листья', 'presentation')
-          +image('content/leaf3.png', 'feedback__pic_three', 'Падающие листья', 'presentation')
-          +image('content/leaf4.png', 'feedback__pic_four', 'Падающие листья', 'presentation')
-          section.reviews(id="reviews")
-            .container.reviews__container
-              h2.reviews__title.title Что обо мне говорят
-              #reviews-component
+          include ./sections/feedback
+          include ./sections/reviews
                   
-          section.contact(id="contact")
-            .container.contact__container
-              h2.contact__title.title Связаться со мной
-              form.form(action="#")
-                .form__row.form__row_flex
-                  .username
-                    label(for="username").form__block-title Введите ваше имя
-                    .input
-                      +icon('avatar', 'form__block-icon')
-                      input(id="username" type="text" name="name" placeholder="Ковальчук Дмитрий").form__block-input
-                  .email
-                    label(for="email").form__block-title Введите ваш email
-                    .input
-                      +icon('envelope', 'form__block-icon')
-                      input(id="email" type="text" name="email" placeholder="loftschool@study.com").form__block-input
-                .form__row
-                  label(for="comment").form__block-title Сообщение к письму
-                  .input.input_textarea
-                    +icon('chat', 'form__block-icon')
-                    textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__block-input.form__block-input-textarea
-              button(type="submit").button Отправить
+          include ./sections/contact
 
         footer.footer
           .container.footer__container
-            .copyrights
-              .copyrights__col
-                .copyrights__year 2019
-              .copyrights__col
-                .copyrights__name Екатерина Исмиляева
-                .copyrights__text Личный сайт веб-разработчика
+            include ./sections/copyrights
             .footer__content
-              nav.footer__menu(id="footer-scroll")
-                ul.menu__list
-                  li.menu__item 
-                    a(href="#" v-scroll-to="'#hero'").menu__link Главная
-                  li.menu__item 
-                    a(href="#" v-scroll-to="'#user'").menu__link Обо мне
-                  li.menu__item
-                    a(href="#" v-scroll-to="'#values'").menu__link Навыки
-                  li.menu__item
-                    a(href="#" v-scroll-to="'#works'").menu__link Работы
-                  li.menu__item
-                    a(href="#" v-scroll-to="'#reviews'").menu__link Отзывы
-                  li.menu__item 
-                    a(href="#" v-scroll-to="'#contact'").menu__link Связаться
+              +menu('footer', 'footer')
               .footer__content-desc
                 .footer__col
                   .footer__content-text Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                   +social('footer')
                 .footer__col.footer__col_padding
-                  .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                  .quote__autor Martin Golding
+                  include ./sections/quote
 
         include ./templates/entry.pug

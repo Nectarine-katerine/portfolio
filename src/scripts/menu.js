@@ -2,7 +2,7 @@
   const headerControls=document.querySelector('.header__controls');
   const hamburgerMenu=document.querySelector('.hamburger__menu');
   // const menuLink=document.querySelectorAll('.menu__link');
-  const close=document.querySelector('.close');
+  const close=document.querySelector('.header__close');
   const logo=document.querySelector('.logo');
   
   // for(var i=0; i<menuLink.length; i++) {

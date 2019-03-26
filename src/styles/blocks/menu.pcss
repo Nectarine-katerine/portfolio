@@ -1,3 +1,12 @@
+.menu__header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+  @include tablets {
+    display: none;
+  }
+}
 .menu__list {
   display: flex;
   justify-content: space-between;
@@ -35,6 +44,28 @@
   }
   @include tablets {
     margin-right: 40px;
+  }
+}
+
+.menu__footer {
+  display: block;
+  width: 90%;
+  margin-bottom: 2.75rem;
+  .menu__list {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+  }
+  .menu__link {
+    padding-top: 0;
+    @include tablets {
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 }
 

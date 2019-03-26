@@ -1,4 +1,4 @@
-.social {
+.social__header {
   @include phones {
     display: none;
   }
@@ -25,4 +25,23 @@
     fill: $orange;
     transition: fill .3s;
   }
+}
+
+.social__footer{
+  display: flex;
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  transition: border-color .3s;
+
+  &:hover {
+    border-color: $orange;
+    transition: border-color .3s;
+  }
+}
 }

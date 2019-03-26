@@ -9,14 +9,9 @@
   justify-content: flex-end;
   flex: 1;
 }
-.header__menu {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  margin: 0 20px;
-  @include tablets {
-    display: none;
-  }
+
+.header__close {
+  display: none;
 }
 
 .header_active {
@@ -38,7 +33,7 @@
     }
   }
 
-  .header__menu {
+  .menu__header {
     flex: initial;
     width: 74%;
     display: block;
@@ -53,7 +48,7 @@
     fill: #414c63;
     transition: fill .3s;
   }
-  .close {
+  .header__close {
     display: block;
     outline: none;
     background-color: transparent;

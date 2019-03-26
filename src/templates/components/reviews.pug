@@ -10,12 +10,12 @@ script(type="text/x-template")#reviews-container
         blockquote.reviews__text
           +icon('quote', 'reviews__text-icon')  
           .reviews__desc {{review.text}}
-        .autor
-          .autor__photo
-            img.autor__pic(:src="review.photo")
-          .autor__desc
-            .autor__name {{review.author}}
-            .autor__position {{review.post}}
+        .reviews__author
+          .reviews__author-photo
+            img.reviews__author-pic(:src="review.photo")
+          .reviews__author-desc
+            .reviews__author-name {{review.author}}
+            .reviews__author-position {{review.post}}
 
 
 script(type="text/x-template")#reviews-controls

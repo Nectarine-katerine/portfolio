@@ -17,13 +17,13 @@ Vue.use(VueScrollTo, {
 });
 
 new Vue({
-  el: '#header-scroll',
+  el: '#scroll__header',
   methods: {
   }
 });
 
 new Vue({
-  el: '#footer-scroll',
+  el: '#scroll__footer',
   methods: {
   }
 });
