@@ -6,21 +6,32 @@
   padding-top: 100px;
 }
 .reviews__title {
-  display: inline-block;
   @include phones {
-  margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
+
+.reviews__cont {
+  position: relative;
+}
 .reviews__btn {
-  display: inline-flex;
-  margin-left: 60px;
+  display: flex;
+  position: absolute;
+  bottom: 100%;
+  right: 45%;
+  @include tablets {
+  right: 25%;
+  }
   @include phones {
-  width: 100%;
-  margin: 25px 0 0 0;
+    position: static;
   }
 }
 .reviews__inner {
   padding-top: 70px;
+  @include phones {
+    padding-top: 50px;
+  }
 }
 .reviews__item {
   width: 50%;
