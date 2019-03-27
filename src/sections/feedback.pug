@@ -1,4 +1,9 @@
-+image('content/leaf1.png', 'feedback__pic_one', 'Падающие листья', 'presentation')
-+image('content/leaf2.png', 'feedback__pic_two', 'Падающие листья', 'presentation')
-+image('content/leaf3.png', 'feedback__pic_three', 'Падающие листья', 'presentation')
-+image('content/leaf4.png', 'feedback__pic_four', 'Падающие листья', 'presentation')
+.feedback__parallax
+  .feedback__layer(data-speed='0.01')
+    +image('content/leaf1.png', 'feedback__pic', 'Падающие листья', 'presentation')
+  .feedback__layer(data-speed='0.02')
+    +image('content/leaf2.png', 'feedback__pic', 'Падающие листья', 'presentation')
+  .feedback__layer(data-speed='0.03')
+    +image('content/leaf3.png', 'feedback__pic', 'Падающие листья', 'presentation')
+  .feedback__layer(data-speed='0.05')
+    +image('content/leaf4.png', 'feedback__pic', 'Падающие листья', 'presentation')
