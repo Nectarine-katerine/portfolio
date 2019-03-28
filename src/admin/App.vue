@@ -3,34 +3,34 @@
     .login
       .login__overlay
         .login__container
-          form.form
-            .close__form
-            h1.title.form__title Авторизация
-            .form__row
-              .log-in.form__block
-                label(for="log-in").form__block-title Логин
-                .input
-                  svg.form__block-icon
+          form.login__form
+            .login__close
+            h1.login__title Авторизация
+            .login__form-row
+              .log-in.login__form-block
+                label(for="log-in").login__form-block-title Логин
+                .login__input
+                  svg.login__input-icon
                     use(xlink:href="sprite.svg#avatar")
-                  input(id="log-in" type="text" name="log-in" placeholder="Terminator_2000").form__block-input
-            .form__row
-              .password.form__block
-                label(for="password").form__block-title Пароль
-                .input
-                  svg.form__block-icon
+                  input(id="log-in" type="text" name="log-in" placeholder="Terminator_2000").login__input-area
+            .login__form-row
+              .password.login__form-block
+                label(for="password").login__form-block-title Пароль
+                .login__input
+                  svg.login__input-icon
                     use(xlink:href="sprite.svg#key")
-                  input(id="password" type="password" name="password" placeholder="***********").form__block-input
-            button(type="submit").button Отправить
-    .page.page__about
+                  input(id="password" type="password" name="password" placeholder="***********").login__input-area
+            button(type="submit").login__button Отправить
+    .page.page__skills
       header.header
         .container.header__container
           .header__col.header__col_grid
-            .user__photo
-              img(src="../images/content/me.jpeg" alt="Личное фото Екатерины Исмиляевой").user__pic
-            .user__name Екатерина Исмиляева
+            .header__photo
+              img(src="../images/content/me.jpeg" alt="Личное фото Екатерины Исмиляевой").header__pic
+            .header__name Екатерина Исмиляева
             h3.header__title Панель администрирования
           .header__col.header__col_end
-            button(type="button").exit__btn Выйти
+            button(type="button").header__exit-btn Выйти
 
       nav.menu
         .container.menu__container
@@ -43,28 +43,169 @@
               a.menu__link(href="#") Отзывы
       main.skills
         .container.skills__container
-          button(type="button").skills__add Добавить группу
+          .skills__top
+            .title.skills__title Блок "Обо мне"
+            button(type="button").skills__add Добавить группу
           ul.skills__list
             li.skills__item
               .skills__inner
                 form.skills__form.skills__group
                   .skills__form-row
                     .skills__form-col
-                      input(type="text" placeholder="Название новой группы").group__name
+                      input(type="text" placeholder="Название новой группы").skills__name
                     .skills__form-col.skills__form-col_end
                       svg.skills__form-icon
                         use(xlink:href="sprite.svg#tick")
                       svg.skills__form-icon.skills__form-icon_cross
                         use(xlink:href="sprite.svg#cross")
                   .skills__form-row.skills__form-row_three-col
-                    input(type="text" placeholder="Новый навык").skill__new
-                    input(type="text" placeholder="100%").skill__percent
-                    button(type="button").skill__add +
+                    input(type="text" placeholder="Новый навык").skills__name
+                    input(type="text" placeholder="100%").skills__name
+                    button(type="button").skill__add.skill__add_no-padding +
 
             li.skills__item
               .skills__inner
+                form.skills__form.skills__group
+                  .skills__form-row
+                    .skills__form-col
+                      input(type="text" placeholder="Workflow").skills__name
+                    .skills__form-col.skills__form-col_end
+                      svg.skills__form-icon
+                        use(xlink:href="sprite.svg#tick")
+                      svg.skills__form-icon.skills__form-icon_cross
+                        use(xlink:href="sprite.svg#cross")
+                  ul.skill__list
+                    li.skill__item
+                      .skill__name Git
+                      .skill__amount 100
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                    li.skill__item
+                      .skill__name Terminal
+                      .skill__amount 90
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                    li.skill__item
+                      .skill__name Gulp
+                      .skill__amount 80
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                    li.skill__item
+                      .skill__name Webpack
+                      .skill__amount 85
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                  .skills__form-row.skills__form-row_three-col
+                    input(type="text" placeholder="Новый навык").skills__name.skill__new
+                    input(type="text" placeholder="100%").skills__name.skill__percent
+                    button(type="button").skill__add.skill__add_no-padding +
             li.skills__item
               .skills__inner
+                form.skills__form.skills__group
+                  .skills__form-row
+                    .skills__form-col
+                      input(type="text" placeholder="Frontend").skills__name
+                    .skills__form-col.skills__form-col_end
+                      svg.skills__form-icon
+                        use(xlink:href="sprite.svg#tick")
+                      svg.skills__form-icon.skills__form-icon_cross
+                        use(xlink:href="sprite.svg#cross")
+                  ul.skill__list
+                    li.skill__item
+                      .skill__name Html5
+                      .skill__amount 100
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                    li.skill__item
+                      .skill__name CSS3
+                      .skill__amount 90
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                    li.skill__item
+                      .skill__name JavaScript
+                      .skill__amount 80
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                    li.skill__item
+                      .skill__name Jquery и Vue.js
+                      .skill__amount 85
+                      .skill__percentage %
+                      .skill__pencil
+                        svg.skill__icon.skill_pencil-icon
+                          use(xlink:href="sprite.svg#pencil")
+                      .skill__delete
+                        svg.skill__icon.skill_delete-icon
+                          use(xlink:href="sprite.svg#trash")
+                  .skills__form-row.skills__form-row_three-col
+                    input(type="text" placeholder="Новый навык").skills__name.skill__new
+                    input(type="text" placeholder="100%").skills__name.skill__percent
+                    button(type="button").skill__add.skill__add_no-padding +
+    .page.page__works
+      header.header
+        .container.header__container
+          .header__col.header__col_grid
+            .header__photo
+              img(src="../images/content/me.jpeg" alt="Личное фото Екатерины Исмиляевой").header__pic
+            .header__name Екатерина Исмиляева
+            h3.header__title Панель администрирования
+          .header__col.header__col_end
+            button(type="button").header__exit-btn Выйти
+      nav.menu
+        .container.menu__container
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#") Обо мне
+            li.menu__item.menu__item_active
+              a.menu__link(href="#") Работы
+            li.menu__item
+              a.menu__link(href="#") Отзывы
+      main.works
+        .container.works__container
+          .works__top
+            .title.works__title Блок "Обо мне"
+          .works__inner
+            .works__edit
+              .works__edit-col
+                .works__edit-text Перетащите или загрузите для загрузки изображения
+                .works__edit-exit__btn
+                  button(type="button").button.works__edit-button Загрузить
+              .works__edit-col
+                
 </template>
 
 <style lang=postcss>
@@ -100,16 +241,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .form {
+  .login__form {
     width: 80%;
     margin: 60px auto;
   }
-  .close__form {
+  .login__close {
     display: block;
     outline: none;
     background-color: transparent;
     position: absolute;
-    top: 1%;
+    top: 6%;
     right: 10%;
     width: 25px;
     height: 25px;
@@ -130,21 +271,21 @@
       transform: rotate(-45deg);
     }
   }
-  .form__row {
+  .login__form-row {
     margin-bottom: 40px;
   }
-  .form__title {
+  .login__title {
     text-align: center;
     margin-bottom: 34px;
     color: #414c63;
     font-size: 36px;
     font-weight: 600;
   }
-  .form__block {
+  .login__form-block {
     width: 100%;
     border-bottom: 2px solid #414c63;
   }
-  .form__block-title {
+  .login__form-block-title {
     opacity: 0.3;
     color: #414c63;
     font-size: 16px;
@@ -153,7 +294,7 @@
     margin-left: 46px;
   }
 
-  .form__block-input {
+  .login__input-area {
     background: transparent;
     border: none;
     color: #414c63;
@@ -166,17 +307,17 @@
       font-weight: 700;
     }
   }
-  .input {
+  .login__input {
     display: flex;
     align-items: center;
   }
-  .form__block-icon {
+  .login__input-icon {
     width: 28px;
-    height: 28px;
+    height: 30px;
     fill: rgba(#414c63, .3);
-    padding-right: 18px;
+    margin-right: 18px;
   }
-  .button {
+  .login__button {
     display: block;
     padding: 25px 99.2px;
     outline: none;
@@ -199,6 +340,21 @@
     margin: 0 auto;
 
   }
+  .page {
+    background: url(../images/content/admin_bg.png) center center / cover no-repeat;
+    position: relative;
+    z-index: -2;
+    &::before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(#fff, .8);
+      z-index: -1;
+    }
+}
   .header {
     background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
   }
@@ -216,12 +372,12 @@
     align-items: center;
   }
 
-  .user__photo {
+  .header__photo {
   width: 45px;
   height: 45px;
 }
 
-.user__pic {
+.header__pic {
   border-radius: 50%;
   object-fit: cover;
    object-position: center;
@@ -230,7 +386,7 @@
    display: block;
 }
 
-.user__name {
+.header__name {
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
@@ -251,7 +407,7 @@
 
 }
 
-.exit__btn {
+.header__exit-btn {
   display: block;
   outline: none;
   background: transparent;
@@ -292,20 +448,21 @@
   font-weight: 400;
   padding: 30px 0;
 }
-.page__about {
-    background: url(../images/content/admin_bg.png) center center / cover no-repeat;
-    position: relative;
-    z-index: -2;
-    &::before {
-      content:'';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(#fff, .8);
-      z-index: -1;
-    }
+
+.skills__top {
+  display: flex;
+  padding: 60px 0;
+}
+.title {
+  color: #414c63;
+  font-size: 21px;
+  font-weight: 700;
+  padding: 60px 0;
+}
+
+.skills__title {
+  padding: 0;
+  margin-right: 60px;
 }
 .skills__list {
   display: grid;
@@ -326,7 +483,6 @@
   outline: none;
   border: none;
   background: transparent;
-  padding: 60px 200px;
   &:before {
     margin-right: 13px;
     content: '+';
@@ -339,6 +495,7 @@
 }
 .skills__inner {
   width: 95%;
+  padding: 30px 0;
   margin: 0 auto;
   height: 100%;
 }
@@ -361,7 +518,7 @@
 .skills__form-col_end {
   justify-self: end;
 }
-.group__name {
+.skills__name {
   border: none;
   background: transparent;
   display: block;
@@ -377,5 +534,31 @@
 .skills__form-icon_cross {
   margin-right: 0;
   fill: #bf2929;
+}
+.skill__add {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  padding: 5px 14px;
+  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+}
+.skill__item {
+  display: grid;
+  grid-template-columns: 2fr .5fr .5fr .5fr .5fr .5fr;
+  grid-template-rows: 1fr;
+}
+.skill__icon {
+  width: 16px;
+  height: 15px;
+  fill: #414c63;
+}
+
+.works__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 </style>
