@@ -1,0 +1,113 @@
+.login {
+    background: url(../images/content/admin_bg.png) center center / cover no-repeat;
+    height: 100vh;
+  }
+
+  .login__overlay {
+    height: 100vh;
+    background-color: rgba(#2d3c4e, .9);
+    position: relative;
+  }
+  .login__container {
+    width: 563px;
+    height: 517px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .login__form {
+    width: 80%;
+    margin: 60px auto;
+  }
+  .login__close {
+    display: block;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    top: 6%;
+    right: 10%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    &:before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      content: '';
+      height: 25px;
+      width: 5px;
+      background-color: $text-color;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .login__form-row {
+    margin-bottom: 40px;
+  }
+  .login__title {
+    text-align: center;
+    margin-bottom: 34px;
+    color: #414c63;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .login__form-block {
+    width: 100%;
+    border-bottom: 2px solid #414c63;
+  }
+  .login__form-block-title {
+    opacity: 0.3;
+    color: #414c63;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    margin-left: 46px;
+  }
+
+  .login__input-area {
+    background: transparent;
+    border: none;
+    color: #414c63;
+    outline: none;
+    padding: 20px 0;
+    width: 100%;
+    &::-webkit-input-placeholder {
+      color: #414c63;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  .login__input {
+    display: flex;
+    align-items: center;
+  }
+  .login__input-icon {
+    width: 28px;
+    height: 30px;
+    fill: rgba(#414c63, .3);
+    margin-right: 18px;
+  }
+  .login__button {
+    display: block;
+    padding: 25px 99.2px;
+    outline: none;
+    background-image: linear-gradient(to right, #ad00ed 0%, #5500f2 100%);  
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 20px;
+    border: none;
+    border-radius: 40px 5px;
+    margin: 0 auto;
+    cursor: pointer;
+    &:hover {
+      background-image: linear-gradient(to right, #ad00ed 50%, #5500f2 100%);
+    }
+  }
