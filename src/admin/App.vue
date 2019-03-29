@@ -626,5 +626,14 @@
   margin-bottom: 30px;
 }
 
-.button
+.button {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 19px 45px;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+}
 </style>
