@@ -239,10 +239,70 @@
             .add
               button.add__work(type="button") +
               .add__text Добавить работу
+           li.works__item.works__item_added
+            .works__photo
+              img(src="../images/content/slider-1.jpg").works__pic
+            .works__wrapper
+              .works__data
+                .works__data-title Сайт школы образования
+                .works__desc
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="http://loftschool.ru").works__link http://loftschool.ru
+              .work__btns
+                button(type="button").pencil__btn.work__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+                    use(xlink:href="sprite.svg#pencil")
+                button(type="button").cross__btn.work__btn Удалить 
+                  svg.cross__btn-icon.work__icon
+                    use(xlink:href="sprite.svg#cross")
            li.works__item
+            .works__photo
+                img(src="../images/content/slider-2.jpg").works__pic
+            .works__wrapper
+              .works__data
+                .works__data-title Сайт школы образования
+                .works__desc
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="http://loftschool.ru").works__link http://loftschool.ru
+              .work__btns
+                button(type="button").pencil__btn.work__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+                    use(xlink:href="sprite.svg#pencil")
+                button(type="button").cross__btn.work__btn Удалить 
+                  svg.cross__btn-icon.work__icon
+                    use(xlink:href="sprite.svg#cross")
            li.works__item
+            .works__photo
+              img(src="../images/content/slider-3.jpg").works__pic
+            .works__wrapper
+              .works__data
+                .works__data-title Сайт школы образования
+                .works__desc
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="http://loftschool.ru").works__link http://loftschool.ru
+              .work__btns
+                button(type="button").pencil__btn.work__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+                    use(xlink:href="sprite.svg#pencil")
+                button(type="button").cross__btn.work__btn Удалить 
+                  svg.cross__btn-icon.work__icon
+                    use(xlink:href="sprite.svg#cross")
            li.works__item
-           li.works__item
+            .works__photo
+              img(src="../images/content/slider-4.jpg").works__pic
+            .works__wrapper
+              .works__data
+                .works__data-title Сайт школы образования
+                .works__desc
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="http://loftschool.ru").works__link http://loftschool.ru
+              .work__btns
+                button(type="button").pencil__btn.work__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+                    use(xlink:href="sprite.svg#pencil")
+                button(type="button").cross__btn.work__btn Удалить 
+                  svg.cross__btn-icon.work__icon
+                    use(xlink:href="sprite.svg#cross")
 </template>
 
 <style lang=postcss>
