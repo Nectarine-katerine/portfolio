@@ -198,14 +198,42 @@
         .container.works__container
           .works__top
             .title.works__title Блок "Обо мне"
-          .works__inner
-            .works__edit
-              .works__edit-col
-                .works__edit-text Перетащите или загрузите для загрузки изображения
-                .works__edit-exit__btn
-                  button(type="button").button.works__edit-button Загрузить
-              .works__edit-col
-                
+          .works__edit
+            .container.edit__container
+              h2.works__edit-title Редактирование работы
+              .works__content
+                .load
+                  .load__text Перетащите или загрузите для загрузки изображения
+                  .load__btn
+                    button(type="button").button.load__button Загрузить
+                .safe
+                  form.safe__form
+                    .safe__form-row
+                      .safe__form-row-title
+                      label(for="calling")
+                      input(type="text").safe__form-row-input
+                    .safe__form-row
+                      .safe__form-row-title
+                      label(for="calling")
+                      input(type="text").safe__form-row-input
+                    .safe__form-row
+                      .safe__form-row-title
+                      label(for="calling")
+                      input(type="text").safe__form-row-input
+                    .safe__form-row
+                      .safe__form-row-title
+                      label(for="calling")
+                      input(type="text").safe__form-row-input
+                    .safe__form-row
+                      .safe__form-row-title
+                      label(for="calling")
+                      input(type="text").safe__form-row-input
+                    .safe__form-row
+                      .safe__form-row-title
+                      label(for="calling")
+                      input(type="text").safe__form-row-input
+
+
 </template>
 
 <style lang=postcss>
@@ -218,6 +246,11 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
   }
   .main {
     font-family: 'Open Sans';
@@ -561,4 +594,37 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
 }
+.works__edit {
+  box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+}
+.works__edit-title {
+  color: #414c63;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(#1f232d, .15);
+  margin-bottom: 45px;
+}
+.works__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 30px;
+}
+.load {
+  border: 1px solid #a1a1a1;
+  background-color: #dee4ed;
+  padding: 90px 130px;
+  text-align: center;
+}
+.load__text {
+  color: rgba(#414c63, .5);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 50px;
+  margin-bottom: 30px;
+}
+
+.button
 </style>
