@@ -9,3 +9,4 @@ import "./scripts/works";
 import "./scripts/menu";
 import "./scripts/reviews";
 import "./scripts/scroll";
+import "./scripts/feedback";
