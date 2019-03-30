@@ -183,14 +183,14 @@
                     input(type="text" placeholder="100 %").skills__name.skills__name_padding
                     button(type="button").skill__add.skill__add_no-padding +
     .page.page__works
-      main.works
-        .container.works__container
-          .works__top
-            .title.works__title Блок "Обо мне"
-          .works__edit
+      main.works.section
+        .container.works__container.section__container
+          .works__top.section__top
+            .title.works__title.section__title Блок "Обо мне"
+          .works__edit.section__edit
             .container.edit__container
-              h2.works__edit-title Редактирование работы
-              .works__content
+              h2.works__edit-title.section__edit-title Редактирование работы
+              .works__content.section__content
                 .load
                   .load__text Перетащите или загрузите для загрузки изображения
                   .load__btn
@@ -234,75 +234,186 @@
                       button(type="button").safe__btns-reset Отмена
                       button(type="button").button.safe__btns-safe Сохранить
 
-          ul.works__list
-           li.works__item.works__item_position
+          ul.works__list.section__list
+           li.works__item.works__item_flex.section__item.section__item_flex
             .add
               button.add__work(type="button") +
               .add__text Добавить работу
-           li.works__item.works__item_added
+           li.works__item.works__item_added.section__item
             .works__photo
               img(src="../images/content/slider-1.jpg").works__pic
-            .works__wrapper
-              .works__data
+            .works__wrapper.section__wrapper
+              .works__data.section__data
                 .works__data-title Сайт школы образования
-                .works__desc
+                .works__desc.section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .work__btns
-                button(type="button").pencil__btn.work__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+              .works__btns.section__btns
+                button(type="button").pencil__btn.work__btn.section__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
                     use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn Удалить 
-                  svg.cross__btn-icon.work__icon
+                button(type="button").cross__btn.work__btn.section__btn Удалить 
+                  svg.cross__btn-icon.work__icon.section__icon
                     use(xlink:href="sprite.svg#cross")
-           li.works__item
+           li.works__item.section__item
             .works__photo
-                img(src="../images/content/slider-2.jpg").works__pic
-            .works__wrapper
-              .works__data
+              img(src="../images/content/slider-1.jpg").works__pic
+            .works__wrapper.section__wrapper
+              .works__data.section__data
                 .works__data-title Сайт школы образования
-                .works__desc
+                .works__desc.section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .work__btns
-                button(type="button").pencil__btn.work__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+              .works__btns.section__btns
+                button(type="button").pencil__btn.work__btn.section__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
                     use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn Удалить 
-                  svg.cross__btn-icon.work__icon
+                button(type="button").cross__btn.work__btn.section__btn Удалить 
+                  svg.cross__btn-icon.work__icon.section__icon
                     use(xlink:href="sprite.svg#cross")
-           li.works__item
+           li.works__item.section__item
             .works__photo
-              img(src="../images/content/slider-3.jpg").works__pic
-            .works__wrapper
-              .works__data
+              img(src="../images/content/slider-1.jpg").works__pic
+            .works__wrapper.section__wrapper
+              .works__data.section__data
                 .works__data-title Сайт школы образования
-                .works__desc
+                .works__desc.section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .work__btns
-                button(type="button").pencil__btn.work__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+              .works__btns.section__btns
+                button(type="button").pencil__btn.work__btn.section__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
                     use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn Удалить 
-                  svg.cross__btn-icon.work__icon
+                button(type="button").cross__btn.work__btn.section__btn Удалить 
+                  svg.cross__btn-icon.work__icon.section__icon
                     use(xlink:href="sprite.svg#cross")
-           li.works__item
+           li.works__item.section__item
             .works__photo
-              img(src="../images/content/slider-4.jpg").works__pic
-            .works__wrapper
-              .works__data
+              img(src="../images/content/slider-1.jpg").works__pic
+            .works__wrapper.section__wrapper
+              .works__data.section__data
                 .works__data-title Сайт школы образования
-                .works__desc
+                .works__desc.section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .work__btns
-                button(type="button").pencil__btn.work__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue
+              .works__btns.section__btns
+                button(type="button").pencil__btn.work__btn.section__btn Править
+                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
                     use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn Удалить 
-                  svg.cross__btn-icon.work__icon
+                button(type="button").cross__btn.work__btn.section__btn Удалить 
+                  svg.cross__btn-icon.work__icon.section__icon
                     use(xlink:href="sprite.svg#cross")
+    .page.page__works
+      main.works.section
+        .container.works__container.section__container
+          .works__top.section__top
+            .title.works__title.section__title Блок "Отзывы"
+          .works__edit.section__edit
+            .container.edit__container
+              h2.works__edit-title.section__edit-title Новый отзыв
+              .works__content.section__content
+                .load
+                  .load__photo
+                    svg.login__input-icon
+                      use(xlink:href="sprite.svg#avatar")
+                  .load__btn
+                    button(type="button").button.load__button Добавить фото
+                .safe
+                  form.safe__form
+                    .safe__form-row
+                      .safe__form-row-title Имя автора
+                      label(for="calling")
+                      input(type="text" id="calling" value="Ковальчук Дмитрий").safe__form-row-input.skills__name
+                    .safe__form-row
+                      .safe__form-row-title Титул автора
+                      label(for="link")
+                      input(type="text" id="link" value="Основатель Loftschool").safe__form-row-input.skills__name
+                    .safe__form-row
+                      .safe__form-row-title Отзыв
+                      label(for="description")
+                      textarea(type="textarea" id="description").textarea.safe__form-row-input.skills__name Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .safe__form-row.safe__btns
+                      button(type="button").safe__btns-reset Отмена
+                      button(type="button").button.safe__btns-safe Сохранить
+
+          ul.works__list.section__list
+            li.works__item.works__item_flex.section__item.section__item_flex
+              .add
+                button.add__work(type="button") +
+                .add__text Добавить отзыв
+            li.works__item.section__item
+              .works__wrapper.section__wrapper
+                .author
+                  .works__photo.author__photo
+                    img(src="../images/content/dima.png").works__pic.author__pic
+                  .author__data
+                    .author__name Владимир Сабанцев
+                    .autor__position Преподаватель
+                .works__data.section__data
+                  .works__desc.section__desc
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .works__btns.section__btns
+                    button(type="button").pencil__btn.work__btn.section__btn Править
+                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").cross__btn.work__btn.section__btn Удалить 
+                      svg.cross__btn-icon.work__icon.section__icon
+                        use(xlink:href="sprite.svg#cross")
+            li.works__item.section__item
+              .works__wrapper.section__wrapper
+                .author
+                  .works__photo.author__photo
+                    img(src="../images/content/dima.png").works__pic.author__pic
+                  .author__data
+                    .author__name Владимир Сабанцев
+                    .autor__position Преподаватель
+                .works__data.section__data
+                  .works__desc.section__desc
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .works__btns.section__btns
+                    button(type="button").pencil__btn.work__btn.section__btn Править
+                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").cross__btn.work__btn.section__btn Удалить 
+                      svg.cross__btn-icon.work__icon.section__icon
+                        use(xlink:href="sprite.svg#cross")
+            li.works__item.section__item
+              .works__wrapper.section__wrapper
+                .author
+                  .works__photo.author__photo
+                    img(src="../images/content/dima.png").works__pic.author__pic
+                  .author__data
+                    .author__name Владимир Сабанцев
+                    .autor__position Преподаватель
+                .works__data.section__data
+                  .works__desc.section__desc
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .works__btns.section__btns
+                    button(type="button").pencil__btn.work__btn.section__btn Править
+                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").cross__btn.work__btn.section__btn Удалить 
+                      svg.cross__btn-icon.work__icon.section__icon
+                        use(xlink:href="sprite.svg#cross")
+            li.works__item.section__item
+              .works__wrapper.section__wrapper
+                .author
+                  .works__photo.author__photo
+                    img(src="../images/content/dima.png").works__pic.author__pic
+                  .author__data
+                    .author__name Владимир Сабанцев
+                    .autor__position Преподаватель
+                .works__data.section__data
+                  .works__desc.section__desc
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .works__btns.section__btns
+                    button(type="button").pencil__btn.work__btn.section__btn Править
+                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").cross__btn.work__btn.section__btn Удалить 
+                      svg.cross__btn-icon.work__icon.section__icon
+                        use(xlink:href="sprite.svg#cross")
+
 </template>
 
 <style lang=postcss>
