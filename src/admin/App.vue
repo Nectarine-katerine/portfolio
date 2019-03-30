@@ -257,7 +257,7 @@
                     use(xlink:href="sprite.svg#cross")
            li.works__item.section__item
             .works__photo
-              img(src="../images/content/slider-1.jpg").works__pic
+              img(src="../images/content/slider-2.jpg").works__pic
             .works__wrapper.section__wrapper
               .works__data.section__data
                 .works__data-title Сайт школы образования
@@ -273,7 +273,7 @@
                     use(xlink:href="sprite.svg#cross")
            li.works__item.section__item
             .works__photo
-              img(src="../images/content/slider-1.jpg").works__pic
+              img(src="../images/content/slider-3.jpg").works__pic
             .works__wrapper.section__wrapper
               .works__data.section__data
                 .works__data-title Сайт школы образования
@@ -289,7 +289,7 @@
                     use(xlink:href="sprite.svg#cross")
            li.works__item.section__item
             .works__photo
-              img(src="../images/content/slider-1.jpg").works__pic
+              img(src="../images/content/slider-4.jpg").works__pic
             .works__wrapper.section__wrapper
               .works__data.section__data
                 .works__data-title Сайт школы образования
@@ -311,13 +311,13 @@
           .works__edit.section__edit
             .container.edit__container
               h2.works__edit-title.section__edit-title Новый отзыв
-              .works__content.section__content
-                .load
+              .works__content.section__content.reviews__content
+                .load.load__reviews
                   .load__photo
                     svg.login__input-icon
                       use(xlink:href="sprite.svg#avatar")
                   .load__btn
-                    button(type="button").button.load__button Добавить фото
+                    button(type="button").button.load__button.load__button-reviews Добавить фото
                 .safe
                   form.safe__form
                     .safe__form-row
@@ -345,7 +345,7 @@
               .works__wrapper.section__wrapper
                 .author
                   .works__photo.author__photo
-                    img(src="../images/content/dima.png").works__pic.author__pic
+                    img(src="../images/content/vova.png").works__pic.author__pic
                   .author__data
                     .author__name Владимир Сабанцев
                     .autor__position Преподаватель
@@ -365,11 +365,11 @@
                   .works__photo.author__photo
                     img(src="../images/content/dima.png").works__pic.author__pic
                   .author__data
-                    .author__name Владимир Сабанцев
-                    .autor__position Преподаватель
+                    .author__name Ковальчук Дмитрий
+                    .autor__position Основатель Loftschool
                 .works__data.section__data
                   .works__desc.section__desc
-                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .works__btns.section__btns
                     button(type="button").pencil__btn.work__btn.section__btn Править
                       svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
@@ -381,7 +381,7 @@
               .works__wrapper.section__wrapper
                 .author
                   .works__photo.author__photo
-                    img(src="../images/content/dima.png").works__pic.author__pic
+                    img(src="../images/content/vova.png").works__pic.author__pic
                   .author__data
                     .author__name Владимир Сабанцев
                     .autor__position Преподаватель
@@ -401,11 +401,11 @@
                   .works__photo.author__photo
                     img(src="../images/content/dima.png").works__pic.author__pic
                   .author__data
-                    .author__name Владимир Сабанцев
-                    .autor__position Преподаватель
+                    .author__name Ковальчук Дмитрий
+                    .autor__position Основатель Loftschool
                 .works__data.section__data
                   .works__desc.section__desc
-                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .works__btns.section__btns
                     button(type="button").pencil__btn.work__btn.section__btn Править
                       svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
