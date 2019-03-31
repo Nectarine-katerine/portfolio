@@ -30,6 +30,7 @@
     transition: left .2s;
     @include phones {
       width: 100%;
+      align-items: center;
     }
   }
 
@@ -42,6 +43,7 @@
   }
   .social {
     display: flex;
+    width: 43%;
   }
   .social__icon {
     width: 25px;
@@ -72,6 +74,9 @@
     }
     &::after {
       transform: rotate(-45deg);
+    }
+    @include phones {
+      right: 6%;
     }
   }
 }

@@ -1,0 +1,15 @@
+mixin menu(mod, idMod)
+  nav(class="menu menu__" + mod, id="scroll__" + idMod)
+    ul.menu__list
+      li.menu__item 
+        a(href="#" v-scroll-to="'#hero'").menu__link Главная
+      li.menu__item 
+        a(href="#" v-scroll-to="'#user'").menu__link Обо мне
+      li.menu__item
+        a(href="#" v-scroll-to="'#values'").menu__link Навыки
+      li.menu__item
+        a(href="#" v-scroll-to="'#works'").menu__link Работы
+      li.menu__item
+        a(href="#" v-scroll-to="'#reviews'").menu__link Отзывы
+      li.menu__item 
+        a(href="#" v-scroll-to="'#contact'").menu__link Связаться

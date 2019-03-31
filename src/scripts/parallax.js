@@ -1,4 +1,4 @@
-const parallax = document.querySelector('.parallax')
+const parallax = document.querySelector('.parallax');
 const layers = parallax.children;
 
 function moveLayersDependsOnScroll(wScroll) {
@@ -11,10 +11,10 @@ function moveLayersDependsOnScroll(wScroll) {
 });
 }
 
-  // window.addEventListener('scroll', e => {
-  //   const wScroll = window.pageYOffset;
-  //   moveLayersDependsOnScroll(wScroll);
-  // });
+  window.addEventListener('scroll', e => {
+    const wScroll = window.pageYOffset;
+    moveLayersDependsOnScroll(wScroll);
+  });
 
   // const feedbackParallax=document.querySelector('.feedback__parallax');
   // const pictures = feedbackParallax.children;
