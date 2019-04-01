@@ -1,6 +1,7 @@
 .values {
   display: flex;
   background: url('../images/content/skills_bg.png') center center / cover no-repeat;
+  position: relative;
   @include tablets {
     flex-direction: column;
     position: relative;
@@ -10,7 +11,7 @@
     padding-bottom: 250px;
   }
 }
-.values__photo {
+.values__pic {
   align-self: flex-end;
   margin-bottom: -6%;
   margin-right: -6%;
@@ -20,9 +21,8 @@
     position: absolute;
     bottom: -93px;
     margin-bottom: 0;
-    .values__pic {
-      transform: rotate(-90deg);
-    }
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
   }
   @include phones {
     width: 40%;

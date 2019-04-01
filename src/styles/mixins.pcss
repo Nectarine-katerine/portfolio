@@ -1,3 +1,8 @@
+@mixin desktopHD() {
+  @media screen and (max-width: $desktopHD) {
+    @content;
+  }
+}
 @mixin desktop() {
   @media screen and (max-width: $desktop) {
     @content;

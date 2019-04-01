@@ -17,13 +17,41 @@
 
 .username, .email {
   width: 50%;
+  transition: border-color .3s;
+  transition: fill .3s;
     @include phones {
    width: 100%;
+  }
+   &:hover {
+  .input {
+    border-color: $orange;
+    transition: border-color .3s;
+  }
+  .form__block-icon {
+    fill: $orange;
+    transition: fill .3s;
+   }
   }
 }
 .username {
    @include phones {
    margin-bottom: 40px;
+  }
+
+}
+
+.form__row_colored {
+  transition: border-color .3s;
+  transition: fill .3s;
+  &:hover {
+  .input {
+    border-color: $orange;
+    transition: border-color .3s;
+  }
+  .form__block-icon {
+    fill: $orange;
+  transition: fill .3s;
+   }
   }
 }
 
@@ -39,6 +67,7 @@ margin-left: 50px;
   align-items: center;
   margin-right: 45px;
   border-bottom: 2px solid #fff;
+
   @include phones {
   justify-content: center;
   margin-right: 0;
@@ -60,6 +89,16 @@ margin-left: 50px;
   outline: none;
   padding: 20px 0;
   width: 100%;
+  &:focus {
+    .input {
+    border-color: $orange;
+    transition: border-color .3s;
+  }
+  .form__block-icon {
+    fill: $orange;
+  transition: fill .3s;
+   }
+  }
   &::-webkit-input-placeholder {
   color: #fff;
   font-size: 18px;
