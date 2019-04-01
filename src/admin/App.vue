@@ -19,7 +19,7 @@
                 .login__input
                   svg.login__input-icon
                     use(xlink:href="sprite.svg#key")
-                  input(id="password" type="password" name="password" placeholder="***********").login__input-area
+                  input(id="password" type="password" name="password" placeholder="•••••••••••••••••••••").login__input-area
             button(type="submit").login__button Отправить
     header.header
       .container.header__container
@@ -48,7 +48,7 @@
             .title.skills__title Блок "Обо мне"
             button(type="button").skills__add Добавить группу
           ul.skills__list
-            li.skills__item
+            li.skills__item.skills__item_new-group
               .skills__inner
                 form.form.skills__group
                   .form__row
@@ -73,12 +73,15 @@
                     .form__col
                       input(type="text" value="Workflow").skills__name
                     .form__col.form__col_end
-                      button(type="button").tick__btn
+                      button(type="button").tick__btn.tick__btn_top
                         svg.tick__btn-icon.form__icon
                           use(xlink:href="sprite.svg#tick")
-                      button(type="button").cross__btn    
+                      button(type="button").cross__btn.cross__btn_top   
                         svg.cross__btn-icon.form__icon
                           use(xlink:href="sprite.svg#cross")
+                      button(type="button").pencil__btn.pencil__btn_skills   
+                        svg.pencil__btn-icon.form__icon
+                          use(xlink:href="sprite.svg#pencil")
                   ul.skill__list
                     li.skill__item
                       .skill__name Git
@@ -100,6 +103,7 @@
                       button(type="button").skill__delete.trash__btn
                         svg.skill__icon.trash__btn-icon
                           use(xlink:href="sprite.svg#trash")
+                      
                     li.skill__item
                       .skill__name Gulp
                       .skill__amount 80
@@ -131,12 +135,15 @@
                     .form__col
                       input(type="text" value="Frontend").skills__name
                     .form__col.form__col_end
-                      button(type="button").tick__btn
+                      button(type="button").tick__btn.tick__btn_top
                         svg.tick__btn-icon.form__icon
                           use(xlink:href="sprite.svg#tick")
-                      button(type="button").cross__btn    
+                      button(type="button").cross__btn.cross__btn_top
                         svg.cross__btn-icon.form__icon
                           use(xlink:href="sprite.svg#cross")
+                      button(type="button").pencil__btn.pencil__btn_skills   
+                        svg.pencil__btn-icon.form__icon
+                          use(xlink:href="sprite.svg#pencil")
                   ul.skill__list
                     li.skill__item
                       .skill__name HTML
@@ -312,9 +319,9 @@
             .container.edit__container
               h2.works__edit-title.section__edit-title Новый отзыв
               .works__content.section__content.reviews__content
-                .load.load__reviews
+                .load__reviews
                   .load__photo
-                    svg.login__input-icon
+                    svg.load__icon_reviews
                       use(xlink:href="sprite.svg#avatar")
                   .load__btn
                     button(type="button").button.load__button.load__button-reviews Добавить фото

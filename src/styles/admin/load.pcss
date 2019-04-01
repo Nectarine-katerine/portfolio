@@ -5,13 +5,27 @@
   text-align: center;
   height: 50%;
 }
+
 .load__reviews {
-  border: none;
-  padding: 44px 45px;
-  text-align: center;
-  /* height: 50%; */
-  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.load__photo {
+  border: none;
+  padding: 44px 65px;
+  text-align: center;
+  height: 50%;
+  border-radius: 100%;
+  background-color: #dee4ed;
+  margin-bottom: 27px;
+}
+.load__icon_reviews {
+  width: 85px;
+  height: 113px;
+  fill: #fff;
+}
+
 .load__text {
   color: rgba(#414c63, .5);
   font-size: 16px;
@@ -37,7 +51,8 @@ margin-right: 60px;
   grid-template-columns: .2fr 1fr;
 }
 .load__button-reviews {
-  color: #383bcf;
+  text-align: center;
+color: #383bcf;
 font-size: 16px;
 font-weight: 600;
 background: none;

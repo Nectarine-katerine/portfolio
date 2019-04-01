@@ -1,6 +1,9 @@
 .skills__top {
   display: flex;
   padding: 60px 0;
+  @include tablets {
+    padding: 50px 0;
+  }
 }
 .skills__title {
   padding: 0;
@@ -33,6 +36,9 @@
     padding: 4px 8px;
     border-radius: 100%;
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+  }
+  @include tablets {
+    font-size: 14px;
   }
 }
 .skills__inner {
@@ -106,6 +112,11 @@
   grid-template-columns: 2fr .5fr .5fr .3fr .2fr;
   grid-template-rows: 1.5fr;
 }
+.skills__item_new-group {
+  @include tablets {
+    display: none;
+  }
+}
 .skill__icon {
   width: 16px;
   height: 15px;
@@ -113,6 +124,24 @@
 }
 .trash__btn-icon {
   justify-self: end;
+}
+.pencil__btn_skills {
+  display: none;
+  @include tablets {
+    display: block;
+    fill: rgba(#414c63, .5);
+  }
+}
+.pencil__btn-icon {
+  @include tablets {
+    fill: rgba(#414c63, .5);
+    margin-right: 0;
+  }
+}
+.cross__btn_top, .tick__btn_top {
+  @include tablets {
+    display: none;
+  }
 }
 
 .skill__item_active {
