@@ -41,385 +41,376 @@
           li.menu__item
             a.menu__link(href="#") Отзывы
 
-    .page.page__content
-      main.skills
-        .container.skills__container
-          .skills__top
-            .title.skills__title Блок "Обо мне"
-            button(type="button").skills__add Добавить группу
-          ul.skills__list
-            li.skills__item.skills__item_new-group
-              .skills__inner
-                form.form.skills__group
-                  .form__row
-                    .form__col
-                      input(type="text" placeholder="Название новой группы").skills__name
-                    .form__col.form__col_end
-                      button(type="button").tick__btn
-                        svg.tick__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#tick")
-                      button(type="button").cross__btn    
-                        svg.cross__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#cross")
-                  .form__row.form__row_three-col
-                    input(type="text" placeholder="Новый навык").skills__name.skills__name_padding.skills__name_new
-                    input(type="text" placeholder="100 %").skills__name.skills__name_padding
-                    button(type="button").skill__add.skill__add_no-padding +
+    section.section.skills
+      .container
+        .section__top.skills__top
+          .title Блок "Обо мне"
+          button(type="button").skills__add Добавить группу
+        ul.skills__list
+          li.skills__item.skills__item_new-group
+            .skills__inner
+              form.group
+                .group__row.group__row_border-bottom
+                  .group__col
+                    input(type="text" placeholder="Название новой группы").group__name.section__input
+                  .group__col.group__col_end
+                    button(type="button").button-iconed
+                      svg.tick__icon.group__icon
+                        use(xlink:href="sprite.svg#tick")
+                    button(type="button").button-iconed    
+                      svg.cross__icon.group__icon
+                        use(xlink:href="sprite.svg#cross")
+                .group__row.group__row_three-col
+                  input(type="text" placeholder="Новый навык").group__name.group__name_padding.group__name_new.section__input
+                  input(type="text" placeholder="100 %").group__name.group__name_padding.section__input
+                  button(type="button").group__add.group__add_no-padding +
 
-            li.skills__item
-              .skills__inner
-                form.form.skills__group
-                  .form__row
-                    .form__col
-                      input(type="text" value="Workflow").skills__name
-                    .form__col.form__col_end
-                      button(type="button").tick__btn.tick__btn_top
-                        svg.tick__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#tick")
-                      button(type="button").cross__btn.cross__btn_top   
-                        svg.cross__btn-icon.form__icon
+          li.skills__item.skills__item_workflow
+            .skills__inner
+              form.group
+                .group__row.group__row_border-bottom
+                  .group__col
+                    input(type="text" value="Workflow").group__name.section__input
+                  .group__col.group__col_end
+                    button(type="button").button-iconed
+                      svg.tick__icon.group__icon
+                        use(xlink:href="sprite.svg#tick")
+                    button(type="button").button-iconed    
+                      svg.cross__icon.group__icon
+                        use(xlink:href="sprite.svg#cross")
+                ul.skill__list
+                  li.skill__item
+                    .skill__name Git
+                    .skill__amount 100
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                  li.skill__item
+                    .skill__name Terminal
+                    .skill__amount 90
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                    
+                  li.skill__item
+                    .skill__name Gulp
+                    .skill__amount 80
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                  li.skill__item
+                    .skill__name Webpack
+                    .skill__amount 85
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                .group__row.group__row_three-col
+                  input(type="text" placeholder="Новый навык").group__name.group__name_padding.group__name_new.section__input
+                  input(type="text" placeholder="100 %").group__name.group__name_padding.section__input
+                  button(type="button").group__add.group__add_no-padding +
+          li.skills__item.skills__item_frontend
+            .skills__inner
+              form.group
+                .group__row.group__row_border-bottom
+                  .group__col
+                    input(type="text" value="Frontend").group__name.section__input
+                  .group__col.group__col_end
+                    button(type="button").button-iconed
+                      svg.tick__icon.group__icon
+                        use(xlink:href="sprite.svg#tick")
+                    button(type="button").button-iconed    
+                      svg.cross__icon.group__icon
+                        use(xlink:href="sprite.svg#cross")
+                ul.skill__list
+                  li.skill__item
+                    .skill__name Html5
+                    .skill__amount 100
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                      svg.tick__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                  li.skill__item.skill__item_active
+                    .skill__name CSS3
+                    .skill__amount 90
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                      svg.tick__icon.group__icon
+                        use(xlink:href="sprite.svg#tick")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                      svg.cross__icon.group__icon
+                        use(xlink:href="sprite.svg#cross")
+                    
+                  li.skill__item
+                    .skill__name JavaScript
+                    .skill__amount 80
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                  li.skill__item
+                    .skill__name Jquery и Vue.js
+                    .skill__amount 85
+                    .skill__percentage %
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
+                    button(type="button").iconed-button
+                      svg.trash__icon.skill__icon
+                        use(xlink:href="sprite.svg#trash")
+                .group__row.group__row_three-col
+                  input(type="text" placeholder="Новый навык").group__name.group__name_padding.group__name_new.section__input
+                  input(type="text" placeholder="100 %").group__name.group__name_padding.section__input
+                  button(type="button").group__add.group__add_no-padding +
+    section.section.works
+      .container
+        .section__top
+          .title Блок "Работы"
+        .edit
+          .container
+            h2.edit__title Редактирование работы
+            .edit__content
+              .load
+                .load__text Перетащите или загрузите для загрузки изображения
+                .load__btn
+                  button(type="button").button.load__button Загрузить
+              form.safe
+                .safe__row
+                  label(for="calling").safe__row-title Название
+                  input(type="text" id="calling" value="Дизайн сайта для авто салона Porsche").safe__row-input.section__input
+                .safe__row
+                  label(for="link").safe__row-title Ссылка
+                  input(type="text" id="link" value="https://www.porsche-pulkovo.ru").safe__row-input.section__input
+                .safe__row
+                  label(for="description").safe__row-title Описание
+                  textarea(type="textarea" id="description").safe__textarea.safe__row-input.section__input Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей
+                .safe__row
+                  label(for="tags").safe__row-title Добавлегие тега
+                  input(type="text" id="tags" value="Jquery, Vue.js, HTML5").safe__row-input.section__input
+                .safe__row
+                  ul.tags
+                    li.tags__item
+                      .tags__name HTML
+                      button(type="button").button-iconed    
+                        svg.cross__icon.cross__icon_gray.group__icon
                           use(xlink:href="sprite.svg#cross")
-                      button(type="button").pencil__btn.pencil__btn_skills   
-                        svg.pencil__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#pencil")
-                  ul.skill__list
-                    li.skill__item
-                      .skill__name Git
-                      .skill__amount 100
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                    li.skill__item
-                      .skill__name Terminal
-                      .skill__amount 90
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                      
-                    li.skill__item
-                      .skill__name Gulp
-                      .skill__amount 80
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                    li.skill__item
-                      .skill__name Webpack
-                      .skill__amount 85
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                  .form__row.form__row_three-col
-                    input(type="text" placeholder="Новый навык").skills__name.skills__name_padding.skills__name_new
-                    input(type="text" placeholder="100 %").skills__name.skills__name_padding
-                    button(type="button").skill__add.skill__add_no-padding +
-            li.skills__item
-              .skills__inner
-                form.form.skills__group
-                  .form__row
-                    .form__col
-                      input(type="text" value="Frontend").skills__name
-                    .form__col.form__col_end
-                      button(type="button").tick__btn.tick__btn_top
-                        svg.tick__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#tick")
-                      button(type="button").cross__btn.cross__btn_top
-                        svg.cross__btn-icon.form__icon
+                    li.tags__item
+                      .tags__name CSS
+                      button(type="button").button-iconed    
+                        svg.cross__icon.cross__icon_gray.group__icon
                           use(xlink:href="sprite.svg#cross")
-                      button(type="button").pencil__btn.pencil__btn_skills   
-                        svg.pencil__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#pencil")
-                  ul.skill__list
-                    li.skill__item
-                      .skill__name HTML
-                      .skill__amount 100
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                    li.skill__item.skill__item_active
-                      .skill__name CSS
-                      .skill__amount 90
-                      .skill__percentage %
-                      button(type="button").tick__btn
-                        svg.tick__btn-icon.form__icon
-                          use(xlink:href="sprite.svg#tick")
-                      button(type="button").cross__btn    
-                        svg.cross__btn-icon.form__icon
+                    li.tags__item
+                      .tags__name JavaScript
+                      button(type="button").button-iconed    
+                        svg.cross__icon.cross__icon_gray.group__icon
                           use(xlink:href="sprite.svg#cross")
-                    li.skill__item
-                      .skill__name Gulp
-                      .skill__amount 80
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                    li.skill__item
-                      .skill__name Webpack
-                      .skill__amount 85
-                      .skill__percentage %
-                      button(type="button").skill__pencil.pencil__btn
-                        svg.skill__icon.pencil__btn-icon
-                          use(xlink:href="sprite.svg#pencil")
-                      button(type="button").skill__delete.trash__btn
-                        svg.skill__icon.trash__btn-icon
-                          use(xlink:href="sprite.svg#trash")
-                  .form__row.form__row_three-col
-                    input(type="text" placeholder="Новый навык").skills__name.skills__name_padding.skills__name_new
-                    input(type="text" placeholder="100 %").skills__name.skills__name_padding
-                    button(type="button").skill__add.skill__add_no-padding +
-    .page.page__works
-      main.works.section
-        .container.works__container.section__container
-          .works__top.section__top
-            .title.works__title.section__title Блок "Обо мне"
-          .works__edit.section__edit
-            .container.edit__container
-              h2.works__edit-title.section__edit-title Редактирование работы
-              .works__content.section__content
-                .load
-                  .load__text Перетащите или загрузите для загрузки изображения
-                  .load__btn
-                    button(type="button").button.load__button Загрузить
-                .safe
-                  form.safe__form
-                    .safe__form-row
-                      .safe__form-row-title Название
-                      label(for="calling")
-                      input(type="text" id="calling" value="Дизайн сайта для авто салона Porsche").safe__form-row-input.skills__name
-                    .safe__form-row
-                      .safe__form-row-title Ссылка
-                      label(for="link")
-                      input(type="text" id="link" value="https://www.porsche-pulkovo.ru").safe__form-row-input.skills__name
-                    .safe__form-row
-                      .safe__form-row-title Описание
-                      label(for="description")
-                      textarea(type="textarea" id="description").textarea.safe__form-row-input.skills__name Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей
-                    .safe__form-row
-                      .safe__form-row-title Добавлегие тега
-                      label(for="tags")
-                      input(type="text" id="tags" value="Jquery, Vue.js, HTML5").safe__form-row-input.skills__name
-                    .safe__form-row
-                      ul.works-edit__tags
-                        li.works-edit__tags-item
-                          .tag__name HTML
-                          button(type="button").cross__btn  
-                           svg.cross__btn-icon.form__icon.cross__btn-icon_works
-                            use(xlink:href="sprite.svg#cross")
-                        li.works-edit__tags-item
-                          .tag__name CSS
-                          button(type="button").cross__btn  
-                           svg.cross__btn-icon.form__icon.cross__btn-icon_works
-                            use(xlink:href="sprite.svg#cross")
-                        li.works-edit__tags-item
-                          .tag__name JavaScript
-                          button(type="button").cross__btn  
-                           svg.cross__btn-icon.form__icon.cross__btn-icon_works
-                            use(xlink:href="sprite.svg#cross")
-                    .safe__form-row.safe__btns
-                      button(type="button").safe__btns-reset Отмена
-                      button(type="button").button.safe__btns-safe Сохранить
+                .safe__row.safe__btns
+                  button(type="button").safe__reset Отмена
+                  button(type="button").button Сохранить
 
-          ul.works__list.section__list
-           li.works__item.works__item_flex.section__item.section__item_flex
+        ul.section__list
+          li.section__item.section__item_add-new
             .add
-              button.add__work(type="button") +
-              .add__text Добавить работу
-           li.works__item.works__item_added.section__item
-            .works__photo
-              img(src="../images/content/slider-1.jpg").works__pic
-            .works__wrapper.section__wrapper
-              .works__data.section__data
-                .works__data-title Сайт школы образования
-                .works__desc.section__desc
+              button.add-new__btn(type="button") +
+              .add-new__text Добавить работу
+          li.section__item_added.section__item
+            .section__photo
+              img(src="../images/content/slider-1.jpg").section__pic
+            .section__wrapper
+              .section__data
+                .section__data-title Сайт школы образования
+                .section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .works__btns.section__btns
-                button(type="button").pencil__btn.work__btn.section__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                    use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn.section__btn Удалить 
-                  svg.cross__btn-icon.work__icon.section__icon
-                    use(xlink:href="sprite.svg#cross")
-           li.works__item.section__item
-            .works__photo
-              img(src="../images/content/slider-2.jpg").works__pic
-            .works__wrapper.section__wrapper
-              .works__data.section__data
-                .works__data-title Сайт школы образования
-                .works__desc.section__desc
+              .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
+          li.section__item
+            .section__photo
+              img(src="../images/content/slider-2.jpg").section__pic
+            .section__wrapper
+              .section__data
+                .section__data-title Сайт школы образования
+                .section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .works__btns.section__btns
-                button(type="button").pencil__btn.work__btn.section__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                    use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn.section__btn Удалить 
-                  svg.cross__btn-icon.work__icon.section__icon
-                    use(xlink:href="sprite.svg#cross")
-           li.works__item.section__item
-            .works__photo
-              img(src="../images/content/slider-3.jpg").works__pic
-            .works__wrapper.section__wrapper
-              .works__data.section__data
-                .works__data-title Сайт школы образования
-                .works__desc.section__desc
+              .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
+          li.section__item
+            .section__photo
+              img(src="../images/content/slider-3.jpg").section__pic
+            .section__wrapper
+              .section__data
+                .section__data-title Сайт школы образования
+                .section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .works__btns.section__btns
-                button(type="button").pencil__btn.work__btn.section__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                    use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn.section__btn Удалить 
-                  svg.cross__btn-icon.work__icon.section__icon
-                    use(xlink:href="sprite.svg#cross")
-           li.works__item.section__item
-            .works__photo
-              img(src="../images/content/slider-4.jpg").works__pic
-            .works__wrapper.section__wrapper
-              .works__data.section__data
-                .works__data-title Сайт школы образования
-                .works__desc.section__desc
+              .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
+          li.section__item
+            .section__photo
+              img(src="../images/content/slider-4.jpg").section__pic
+            .section__wrapper
+              .section__data
+                .section__data-title Сайт школы образования
+                .section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 a(href="http://loftschool.ru").works__link http://loftschool.ru
-              .works__btns.section__btns
-                button(type="button").pencil__btn.work__btn.section__btn Править
-                  svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                    use(xlink:href="sprite.svg#pencil")
-                button(type="button").cross__btn.work__btn.section__btn Удалить 
-                  svg.cross__btn-icon.work__icon.section__icon
+              .section__btns
+                button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                button(type="button").button-iconed.section__btn  Удалить  
+                  svg.cross__icon.section__icon
                     use(xlink:href="sprite.svg#cross")
-    .page.page__works
-      main.works.section
-        .container.works__container.section__container
-          .works__top.section__top
-            .title.works__title.section__title Блок "Отзывы"
-          .works__edit.section__edit
-            .container.edit__container
-              h2.works__edit-title.section__edit-title Новый отзыв
-              .works__content.section__content.reviews__content
-                .load__reviews
-                  .load__photo
-                    svg.load__icon_reviews
-                      use(xlink:href="sprite.svg#avatar")
-                  .load__btn
-                    button(type="button").button.load__button.load__button-reviews Добавить фото
-                .safe
-                  form.safe__form
-                    .safe__form-row
-                      .safe__form-row-title Имя автора
-                      label(for="calling")
-                      input(type="text" id="calling" value="Ковальчук Дмитрий").safe__form-row-input.skills__name
-                    .safe__form-row
-                      .safe__form-row-title Титул автора
-                      label(for="link")
-                      input(type="text" id="link" value="Основатель Loftschool").safe__form-row-input.skills__name
-                    .safe__form-row
-                      .safe__form-row-title Отзыв
-                      label(for="description")
-                      textarea(type="textarea" id="description").textarea.safe__form-row-input.skills__name Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .safe__form-row.safe__btns
-                      button(type="button").safe__btns-reset Отмена
-                      button(type="button").button.safe__btns-safe Сохранить
+    section.section.reviews
+      .container
+        .section__top
+          .title Блок "Отзывы"
+        .edit
+          .container
+            h2.edit__title Новый отзыв
+            .edit__content.reviews__content
+              .load.load__reviews
+                .load__photo
+                  svg.load__icon
+                    use(xlink:href="sprite.svg#avatar")
+                .load__btn
+                  button(type="button").load__button_reviews Добавить фото
+              form.safe
+                .safe__row.safe__row_reviews
+                  .safe__row_two-col
+                    label(for="author").safe__row-title Имя автора
+                    input(type="text" id="author" value="Ковальчук Дмитрий").safe__row-input.section__input
+                  .safe__row_two-col
+                    label(for="position").safe__row-title Титул автора
+                    input(type="text" id="position" value="Основатель LoftSchool").safe__row-input.section__input
+                .safe__row
+                  label(for="review").safe__row-title Отзыв
+                  textarea(type="textarea" id="review").safe__textarea.safe__row-input.section__input Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .safe__row.safe__btns
+                  button(type="button").safe__reset Отмена
+                  button(type="button").button Сохранить
 
-          ul.works__list.section__list
-            li.works__item.works__item_flex.section__item.section__item_flex
-              .add
-                button.add__work(type="button") +
-                .add__text Добавить отзыв
-            li.works__item.section__item
-              .works__wrapper.section__wrapper
-                .author
-                  .works__photo.author__photo
-                    img(src="../images/content/vova.png").works__pic.author__pic
-                  .author__data
-                    .author__name Владимир Сабанцев
-                    .autor__position Преподаватель
-                .works__data.section__data
-                  .works__desc.section__desc
-                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .works__btns.section__btns
-                    button(type="button").pencil__btn.work__btn.section__btn Править
-                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                        use(xlink:href="sprite.svg#pencil")
-                    button(type="button").cross__btn.work__btn.section__btn Удалить 
-                      svg.cross__btn-icon.work__icon.section__icon
-                        use(xlink:href="sprite.svg#cross")
-            li.works__item.section__item
-              .works__wrapper.section__wrapper
-                .author
-                  .works__photo.author__photo
-                    img(src="../images/content/dima.png").works__pic.author__pic
-                  .author__data
-                    .author__name Ковальчук Дмитрий
-                    .autor__position Основатель Loftschool
-                .works__data.section__data
-                  .works__desc.section__desc
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .works__btns.section__btns
-                    button(type="button").pencil__btn.work__btn.section__btn Править
-                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                        use(xlink:href="sprite.svg#pencil")
-                    button(type="button").cross__btn.work__btn.section__btn Удалить 
-                      svg.cross__btn-icon.work__icon.section__icon
-                        use(xlink:href="sprite.svg#cross")
-            li.works__item.section__item
-              .works__wrapper.section__wrapper
-                .author
-                  .works__photo.author__photo
-                    img(src="../images/content/vova.png").works__pic.author__pic
-                  .author__data
-                    .author__name Владимир Сабанцев
-                    .autor__position Преподаватель
-                .works__data.section__data
-                  .works__desc.section__desc
-                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .works__btns.section__btns
-                    button(type="button").pencil__btn.work__btn.section__btn Править
-                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                        use(xlink:href="sprite.svg#pencil")
-                    button(type="button").cross__btn.work__btn.section__btn Удалить 
-                      svg.cross__btn-icon.work__icon.section__icon
-                        use(xlink:href="sprite.svg#cross")
-            li.works__item.section__item
-              .works__wrapper.section__wrapper
-                .author
-                  .works__photo.author__photo
-                    img(src="../images/content/dima.png").works__pic.author__pic
-                  .author__data
-                    .author__name Ковальчук Дмитрий
-                    .autor__position Основатель Loftschool
-                .works__data.section__data
-                  .works__desc.section__desc
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .works__btns.section__btns
-                    button(type="button").pencil__btn.work__btn.section__btn Править
-                      svg.work__icon.pencil__btn-icon.pencil__btn-icon-blue.section__icon
-                        use(xlink:href="sprite.svg#pencil")
-                    button(type="button").cross__btn.work__btn.section__btn Удалить 
-                      svg.cross__btn-icon.work__icon.section__icon
-                        use(xlink:href="sprite.svg#cross")
+
+        ul.section__list
+          li.section__item.section__item_add-new
+            .add-new
+              button.add-new__btn(type="button") +
+              .add-new__text Добавить отзыв
+          li.section__item
+            .section__wrapper
+              .author
+                .section__photo.author__photo
+                  img(src="../images/content/vova.png").section__pic.author__pic
+                .author__data
+                  .author__name Владимир Сабанцев
+                  .autor__position Преподаватель
+              .section__data
+                .section__desc
+                  p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
+          li.section__item
+            .section__wrapper
+              .author
+                .section__photo.author__photo
+                  img(src="../images/content/dima.png").section__pic.author__pic
+                .author__data
+                  .author__name Ковальчук Дмитрий
+                  .autor__position Основатель Loftschool
+              .section__data
+                .section__desc
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
+          li.section__item
+            .section__wrapper
+              .author
+                .section__photo.author__photo
+                  img(src="../images/content/vova.png").section__pic.author__pic
+                .author__data
+                  .author__name Владимир Сабанцев
+                  .autor__position Преподаватель
+              .section__data
+                .section__desc
+                  p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
+          li.section__item
+            .section__wrapper
+              .author
+                .section__photo.author__photo
+                  img(src="../images/content/dima.png").section__pic.author__pic
+                .author__data
+                  .author__name Ковальчук Дмитрий
+                  .autor__position Основатель Loftschool
+              .section__data
+                .section__desc
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .section__btns
+                  button(type="button").button-iconed.section__btn Править
+                    svg.pencil__icon.pencil__icon_blue.section__icon
+                      use(xlink:href="sprite.svg#pencil")
+                  button(type="button").button-iconed.section__btn  Удалить  
+                    svg.cross__icon.section__icon
+                      use(xlink:href="sprite.svg#cross")
 
 </template>
 
@@ -432,14 +423,19 @@
   @import "../styles/admin/base-admin.pcss"; //Общие стили админ страниц
 
   @import "../styles/admin/login.pcss";
-  @import "../styles/admin/page.pcss";
+  @import "../styles/admin/section.pcss";
   @import "../styles/admin/header.pcss";
   @import "../styles/admin/menu.pcss";
   @import "../styles/admin/skills.pcss";
   @import "../styles/admin/works.pcss";
   @import "../styles/admin/load.pcss";
-  @import "../styles/admin/cross.pcss";
-  @import "../styles/admin/works-edit.pcss";
-  
+  @import "../styles/admin/edit.pcss";
+  @import "../styles/admin/safe.pcss";
+  @import "../styles/admin/add-new.pcss";
+  @import "../styles/admin/author.pcss";
+  @import "../styles/admin/group.pcss";
+  @import "../styles/admin/skill.pcss";
+  @import "../styles/admin/tags.pcss";
+  @import "../styles/admin/icons.pcss";
   
 </style>

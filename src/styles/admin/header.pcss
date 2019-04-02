@@ -23,8 +23,11 @@
       grid-template-columns: .3fr  1fr 1fr;
     }
     @include phones {
-      display: flex;
-      align-items: flex-start;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 1fr;
+     grid-template-areas: 
+     "h-photo h-name"
+     "h-photo ."
     }
   }
 
@@ -32,9 +35,7 @@
   width: 45px;
   height: 45px;
   @include phones {
-      display: flex;
-      align-items: flex-start;
-      margin-right: 10px;
+      grid-area: h-photo;
   }
 }
 
@@ -51,6 +52,9 @@
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
+  @include phones {
+      grid-area: h-name;
+  }
 }
 
 .header__title {

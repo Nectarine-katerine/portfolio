@@ -14,11 +14,32 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+  @include tablets {
+    grid-template-areas: "frontend workflow"
+  }
+  @include phones {
+    grid-template-columns: 1fr;
+
+    grid-template-areas: 
+    "frontend"
+    "workflow";
+  }
 }
 .skills__item {
   box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
   background-color: #ffffff; 
   height: 380px; 
+}
+.skills__item_workflow {
+   @include tablets {
+    grid-area: workflow;
+  }
+}
+
+.skills__item_frontend {
+   @include tablets {
+    grid-area: frontend;
+  }
 }
 
 .skills__add {
@@ -47,105 +68,9 @@
   margin: 0 auto;
   height: 100%;
 }
-.form {
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.form__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr;
-}
-.form__row_three-col {
-    display: flex;
-    justify-content: flex-end;
-}
-.form__col_end {
-  justify-self: end;
-}
-.skills__name {
-  border: none;
-  background: transparent;
-  display: block;
-  padding: 10px 0;
-  border-bottom: 1px solid #000;
-  width: 100%;
-}
 
-.skills__name_padding {
-  padding: 10px 20px;
-  border-bottom: 1px solid rgba(#1f232d, .5);
-  margin-right: 20px;
-  width: 20%;
-}
-
-.skills__name_new {
-  width: 45%;
-}
-.form__icon {
-  width: 15px;
-  height: 12px;
-  margin-right: 20px;
-  fill: #00d70a;
-}
-
-.skill__add {
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: 600;
-  outline: none;
-  border: none;
-  border-radius: 100%;
-  padding: 3px 12px;
-  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-}
-.skill__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-gap: 25px;
-}
-.skill__item {
-  display: grid;
-  grid-template-columns: 2fr .5fr .5fr .3fr .2fr;
-  grid-template-rows: 1.5fr;
-}
 .skills__item_new-group {
   @include tablets {
     display: none;
-  }
-}
-.skill__icon {
-  width: 16px;
-  height: 15px;
-  fill: #414c63;
-}
-.trash__btn-icon {
-  justify-self: end;
-}
-.pencil__btn_skills {
-  display: none;
-  @include tablets {
-    display: block;
-    fill: rgba(#414c63, .5);
-  }
-}
-.pencil__btn-icon {
-  @include tablets {
-    fill: rgba(#414c63, .5);
-    margin-right: 0;
-  }
-}
-.cross__btn_top, .tick__btn_top {
-  @include tablets {
-    display: none;
-  }
-}
-
-.skill__item_active {
-  .skill__name, .skill__amount, .skill__percentage {
-    border-bottom: 1px solid #000;
   }
 }

@@ -7,6 +7,10 @@
   grid-template-columns: .1fr .1fr .1fr;
   grid-template-rows: 1fr;
 
+  @include phones {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
 }
 .menu__item {
   border-bottom: 3px solid transparent;

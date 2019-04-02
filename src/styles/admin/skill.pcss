@@ -1,0 +1,28 @@
+.skill__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+.skill__item {
+  display: grid;
+  grid-template-columns: 2fr .5fr .5fr .2fr .2fr;
+  grid-template-rows: 1.5fr;
+  .cross__icon, .tick__icon {
+    display: none;
+  }
+}
+.skill__item_active {
+  .skill__name, .skill__amount, .skill__percentage {
+    border-bottom: 1px solid #000;
+  }
+  .pencil__icon, .trash__icon  {
+    display: none;
+  }
+  .cross__icon, .tick__icon {
+    display: inline;
+  }
+  .group__icon {
+    margin-right: 0;
+  }
+}
