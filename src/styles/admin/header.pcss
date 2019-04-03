@@ -2,41 +2,31 @@
     background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
   }
 
-  .header__container {
-    padding: 12px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    @include tablets {
-      grid-template-columns: 1.6fr 1fr;
-    }
-    @include phones {
-      display: block;
-    }
+.header__container {
+  display: grid;
+  grid-template-columns: .3fr 1fr 1fr 3fr;
+  grid-template-rows: 1 fr;
+  padding: 16px 0;
+  align-items: center;
+  grid-template-areas: 
+  "header__photo header__name header__title header__exit-btn";
+  @include tablets {
+    grid-template-columns: .4fr 1.5fr 1.5fr 2fr;
   }
-  .header__col_grid {
-    display: grid;
-    grid-template-columns: 0.4fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    @include tablets {
-      grid-template-columns: .3fr  1fr 1fr;
-    }
-    @include phones {
-     grid-template-columns: 1fr 1fr;
-     grid-template-rows: 1fr 1fr;
-     grid-template-areas: 
-     "h-photo h-name"
-     "h-photo ."
-    }
+  
+  @include phones {
+  grid-template-columns: 0.1fr 1fr;
+  grid-template-rows: 1 fr 1 fr;
+  grid-template-areas: 
+  "header__photo header__name"
+  "header__photo header__exit-btn";
   }
+}
 
 .header__photo {
   width: 45px;
   height: 45px;
-  @include phones {
-      grid-area: h-photo;
-  }
+  grid-area: header__photo;
 }
 
 .header__pic {
@@ -52,30 +42,21 @@
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
-  @include phones {
-      grid-area: h-name;
-  }
+  grid-area: header__name;
 }
 
 .header__title {
   color: rgba(#fff, .5);
   font-size: 14px;
+  grid-area: header__title;
   @include phones {
     display: none;
   }
 }
 
-.header__col {
-  align-self: center;
-}
-
-.header__col_end{
-  justify-self: end;
-  align-self: center;
-
-}
-
 .header__exit-btn {
+    justify-self: end;
+    padding: 0;
   display: block;
   outline: none;
   background: transparent;
@@ -85,7 +66,8 @@
   font-family: "Open Sans";
   font-size: 14px;
   cursor: pointer;
+  grid-area: header__exit-btn;
   @include phones {
-    margin-left: 50px;
+    justify-self: start;
   }
 }

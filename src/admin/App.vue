@@ -23,13 +23,11 @@
             button(type="submit").login__button Отправить
     header.header
       .container.header__container
-        .header__col.header__col_grid
-          .header__photo
-            img(src="../images/content/me.jpeg" alt="Личное фото Екатерины Исмиляевой").header__pic
-          .header__name Екатерина Исмиляева
-          h3.header__title Панель администрирования
-        .header__col.header__col_end
-          button(type="button").header__exit-btn Выйти
+        .header__photo
+          img(src="../images/content/me.jpeg" alt="Личное фото Екатерины Исмиляевой").header__pic
+        .header__name Екатерина Исмиляева
+        h3.header__title Панель администрирования
+        button(type="button").header__exit-btn Выйти
 
     nav.menu
       .container.menu__container
@@ -78,6 +76,9 @@
                     button(type="button").button-iconed    
                       svg.cross__icon.group__icon
                         use(xlink:href="sprite.svg#cross")
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
                 ul.skill__list
                   li.skill__item
                     .skill__name Git
@@ -89,6 +90,7 @@
                     button(type="button").iconed-button
                       svg.trash__icon.skill__icon
                         use(xlink:href="sprite.svg#trash")
+                    
                   li.skill__item
                     .skill__name Terminal
                     .skill__amount 90
@@ -137,6 +139,9 @@
                     button(type="button").button-iconed    
                       svg.cross__icon.group__icon
                         use(xlink:href="sprite.svg#cross")
+                    button(type="button").button-iconed
+                      svg.pencil__icon.skill__icon
+                        use(xlink:href="sprite.svg#pencil")
                 ul.skill__list
                   li.skill__item
                     .skill__name Html5
@@ -201,6 +206,10 @@
                 .load__text Перетащите или загрузите для загрузки изображения
                 .load__btn
                   button(type="button").button.load__button Загрузить
+              .load__tablets
+                .section__photo
+                  img(src="../images/content/slider-1.jpg").section__pic
+                button(type="button").load__btn_tablets.safe__reset Изменить превью
               form.safe
                 .safe__row
                   label(for="calling").safe__row-title Название
@@ -237,7 +246,7 @@
 
         ul.section__list
           li.section__item.section__item_add-new
-            .add
+            .add-new
               button.add-new__btn(type="button") +
               .add-new__text Добавить работу
           li.section__item_added.section__item
