@@ -11,10 +11,23 @@
   padding: 25px 0;
   border-bottom: 1px solid rgba(#1f232d, .15);
   margin-bottom: 45px;
+  @include phones {
+   padding-left: 5%;
+   padding-right: 5%; 
+  }
 }
 .edit__content {
   display: flex;
+
+  @include phones {
+   width: 95%;
+   margin: 0 auto;
+    flex-direction: column;
+  }
+}
+
+.edit__content_works {
   @include tablets {
-   flex-direction: column;
+    flex-direction: column;
   }
 }

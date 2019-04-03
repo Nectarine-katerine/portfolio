@@ -42,7 +42,7 @@
     section.section.skills
       .container
         .section__top.skills__top
-          .title Блок "Обо мне"
+          .title.skills__title Блок "Обо мне"
           button(type="button").skills__add Добавить группу
         ul.skills__list
           li.skills__item.skills__item_new-group
@@ -201,7 +201,7 @@
         .edit
           .container
             h2.edit__title Редактирование работы
-            .edit__content
+            .edit__content.edit__content_works
               .load
                 .load__text Перетащите или загрузите для загрузки изображения
                 .load__btn
@@ -210,7 +210,7 @@
                 .section__photo
                   img(src="../images/content/slider-1.jpg").section__pic
                 button(type="button").load__btn_tablets.safe__reset Изменить превью
-              form.safe
+              form.safe.safe_works
                 .safe__row
                   label(for="calling").safe__row-title Название
                   input(type="text" id="calling" value="Дизайн сайта для авто салона Porsche").safe__row-input.section__input
@@ -252,7 +252,7 @@
           li.section__item_added.section__item
             .section__photo
               img(src="../images/content/slider-1.jpg").section__pic
-            .section__wrapper
+            .section__wrapper.works__wrapper
               .section__data
                 .section__data-title Сайт школы образования
                 .section__desc
@@ -268,7 +268,7 @@
           li.section__item
             .section__photo
               img(src="../images/content/slider-2.jpg").section__pic
-            .section__wrapper
+            .section__wrapper.works__wrapper
               .section__data
                 .section__data-title Сайт школы образования
                 .section__desc
@@ -284,7 +284,7 @@
           li.section__item
             .section__photo
               img(src="../images/content/slider-3.jpg").section__pic
-            .section__wrapper
+            .section__wrapper.works__wrapper
               .section__data
                 .section__data-title Сайт школы образования
                 .section__desc
@@ -300,7 +300,7 @@
           li.section__item
             .section__photo
               img(src="../images/content/slider-4.jpg").section__pic
-            .section__wrapper
+            .section__wrapper.works__wrapper
               .section__data
                 .section__data-title Сайт школы образования
                 .section__desc
@@ -314,7 +314,7 @@
                   svg.cross__icon.section__icon
                     use(xlink:href="sprite.svg#cross")
     section.section.reviews
-      .container
+      .container.reviews__container
         .section__top
           .title Блок "Отзывы"
         .edit
@@ -327,7 +327,7 @@
                     use(xlink:href="sprite.svg#avatar")
                 .load__btn
                   button(type="button").load__button_reviews Добавить фото
-              form.safe
+              form.safe.safe_reviews
                 .safe__row.safe__row_reviews
                   .safe__row_two-col
                     label(for="author").safe__row-title Имя автора
@@ -349,14 +349,15 @@
               button.add-new__btn(type="button") +
               .add-new__text Добавить отзыв
           li.section__item
-            .section__wrapper
+            .section__wrapper.reviews__wrapper
               .author
-                .section__photo.author__photo
-                  img(src="../images/content/vova.png").section__pic.author__pic
-                .author__data
-                  .author__name Владимир Сабанцев
-                  .autor__position Преподаватель
-              .section__data
+                .author__top
+                  .section__photo.author__photo
+                    img(src="../images/content/vova.png").section__pic.author__pic
+                  .author__data
+                    .author__name Владимир Сабанцев
+                    .autor__position Преподаватель
+              .section__data.reviews__data
                 .section__desc
                   p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                 .section__btns
@@ -367,14 +368,15 @@
                     svg.cross__icon.section__icon
                       use(xlink:href="sprite.svg#cross")
           li.section__item
-            .section__wrapper
+            .section__wrapper.reviews__wrapper
               .author
-                .section__photo.author__photo
-                  img(src="../images/content/dima.png").section__pic.author__pic
-                .author__data
-                  .author__name Ковальчук Дмитрий
-                  .autor__position Основатель Loftschool
-              .section__data
+                .author__top
+                  .section__photo.author__photo
+                    img(src="../images/content/dima.png").section__pic.author__pic
+                  .author__data
+                    .author__name Ковальчук Дмитрий
+                    .autor__position Основатель Loftschool
+              .section__data.reviews__data
                 .section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 .section__btns
@@ -385,14 +387,15 @@
                     svg.cross__icon.section__icon
                       use(xlink:href="sprite.svg#cross")
           li.section__item
-            .section__wrapper
+            .section__wrapper.reviews__wrapper
               .author
-                .section__photo.author__photo
-                  img(src="../images/content/vova.png").section__pic.author__pic
-                .author__data
-                  .author__name Владимир Сабанцев
-                  .autor__position Преподаватель
-              .section__data
+                .author__top
+                  .section__photo.author__photo
+                    img(src="../images/content/vova.png").section__pic.author__pic
+                  .author__data
+                    .author__name Владимир Сабанцев
+                    .autor__position Преподаватель
+              .section__data.reviews__data
                 .section__desc
                   p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                 .section__btns
@@ -403,14 +406,15 @@
                     svg.cross__icon.section__icon
                       use(xlink:href="sprite.svg#cross")
           li.section__item
-            .section__wrapper
+            .section__wrapper.reviews__wrapper
               .author
-                .section__photo.author__photo
-                  img(src="../images/content/dima.png").section__pic.author__pic
-                .author__data
-                  .author__name Ковальчук Дмитрий
-                  .autor__position Основатель Loftschool
-              .section__data
+                .author__top
+                  .section__photo.author__photo
+                    img(src="../images/content/dima.png").section__pic.author__pic
+                  .author__data
+                    .author__name Ковальчук Дмитрий
+                    .autor__position Основатель Loftschool
+              .section__data.reviews__data
                 .section__desc
                   p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 .section__btns
@@ -445,6 +449,7 @@
   @import "../styles/admin/group.pcss";
   @import "../styles/admin/skill.pcss";
   @import "../styles/admin/tags.pcss";
+   @import "../styles/admin/reviews.pcss";
   @import "../styles/admin/icons.pcss";
   
 </style>

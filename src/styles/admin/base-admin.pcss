@@ -1,19 +1,28 @@
 .main {
-    font-family: 'Open Sans';
-    color:  #414c63;
-    height: 100%;
-  }
+  font-family: 'Open Sans';
+  color:  #414c63;
+  height: 100%;
+}
+
 .container {
     width: 95%;
     margin: 0 auto;
     display: block;
-
+    @include phones {
+    width: 100%;
   }
+}
+
 .title {
   color: #414c63;
   font-size: 21px;
   font-weight: 700;
   padding: 60px 0;
+  @include phones {
+    padding: 40px 0;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .button {

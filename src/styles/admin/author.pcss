@@ -1,8 +1,17 @@
 .author {
-  display: flex;
   border-bottom: 1px solid rgba(#1f232d, .15);
   margin: 30px 0;
   padding-bottom: 30px;
+
+  
+}
+.author__top {
+  display: flex;
+  @include phones {
+    width: 90%;
+    margin: 0 auto;
+  }
+
 }
 
 .author__photo {
