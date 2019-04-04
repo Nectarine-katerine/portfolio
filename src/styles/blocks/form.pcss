@@ -134,3 +134,24 @@ margin-left: 50px;
     align-self: center;
   }
 }
+
+.input_error {
+  border-bottom: 2px solid #fb0000;
+  transition: border-color .3s;
+  position: relative;
+  .form__block-icon {
+    fill: #fb0000;
+    transition: fill .3s;
+   }
+   &:after {
+     position: absolute;
+     top: 100%;
+     left: 20%;
+    content: "Заполните поле";
+    font-size: 14px;
+    background: #fb0000;
+    color: #fff;
+    padding: 5px 10px;
+    
+   }
+}
