@@ -84,6 +84,10 @@ new Vue({
         return item;
       });
     },
+    handleClickThumb(index) {
+      this.currentIndex = index;
+      console.log(this.currentIndex)
+    },
     handleSlide(direction) {
       switch (direction) {
         case "next":

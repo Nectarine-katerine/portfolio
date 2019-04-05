@@ -1,118 +1,234 @@
 .form__row {
+  display: flex;
   margin-bottom: 40px;
   width: 70%;
-
   @include tablets {
     width: 100%;
-    /* text-align: center; */
   }
-}
-.form__row_flex {
-  display: flex;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-last-child(2) {
+    margin-bottom: 60px;
+
+    @include tablets {
+      margin-bottom: 25px;
+    }
+
+    @include phones {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablets {
+    margin-bottom: 35px;
+  }
+
   @include phones {
     flex-direction: column;
-    align-items: center;
   }
 }
 
-.username, .email {
-  width: 50%;
-  transition: border-color .3s;
-  transition: fill .3s;
-    @include phones {
-   width: 100%;
-  }
-   &:hover {
-  .input {
-    border-color: $orange;
-    transition: border-color .3s;
-  }
-  .form__block-icon {
-    fill: $orange;
-    transition: fill .3s;
-   }
-  }
-}
-.username {
-   @include phones {
-   margin-bottom: 40px;
-  }
-
-}
-
-.form__row_colored {
-  transition: border-color .3s;
-  transition: fill .3s;
-  &:hover {
-  .input {
-    border-color: $orange;
-    transition: border-color .3s;
-  }
-  .form__block-icon {
-    fill: $orange;
-  transition: fill .3s;
-   }
+.form__row_center-768 {
+  @include tablets {
+    justify-content: center;
   }
 }
 
-.form__block-title {
-color: rgba(#fff, .3);
-font-size: 16px;
-font-weight: 600;
-margin-left: 50px;
-}
+.form__col {
+  flex: 1;
+  margin-right: 50px;
 
-.input {
-  display: flex;
-  align-items: center;
-  margin-right: 45px;
-  border-bottom: 2px solid #fff;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablets {
+    margin-right: 20px;
+  }
 
   @include phones {
-  justify-content: center;
-  margin-right: 0;
-  }
-}
-.input_textarea {
-  align-items: baseline;
-}
-.form__block-icon {
-  width: 30px;
-  height: 30px;
-  fill: rgba(#fff, .3);
-  margin-right: 20px;
-}
-.form__block-input {
-  background: transparent;
-  border: none;
-  color: #fff;
-  outline: none;
-  padding: 20px 0;
-  width: 100%;
-  &:focus {
-    .input {
-    border-color: $orange;
-    transition: border-color .3s;
-  }
-  .form__block-icon {
-    fill: $orange;
-  transition: fill .3s;
-   }
-  }
-  &::-webkit-input-placeholder {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 
-.form__block-input-textarea {
-  resize: vertical;
-  width: 50%;
-  line-height: 1.72em;
+.form__label {
+  display: block;
+  color: rgba(#fff, 0.3);
+  font-weight: 600;
+  margin-bottom: 18px;
+  padding-left: 45px;
+
   @include tablets {
-    width: 100%;
-    min-height: 120px;
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+}
+
+.form__input {
+  color: #fff;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 36px;
+  padding-bottom: 10px;
+  padding-left: 42px;
+  border-bottom: 2px solid #fff;
+
+  &:focus {
+    border-bottom: 2px solid $orange;
+
+    &+.form__input-icon {
+      fill: $orange;
+    }
+  }
+  &_pl0{
+    padding-left: 0;
+  }
+
+  @include tablets {
+    font-size: 14px;
+    line-height: 24px;
+    padding-bottom: 15px;
+  }
+
+  @include placeholder {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    @include tablets {
+      font-size: 14px;
+    }
+  }
+}
+
+.form__input-container {
+  position: relative;
+}
+
+.form__input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  fill: rgba(#fff, 0.3);
+  transition: opacity .3s;
+  margin-right: 15px;
+}
+
+.form__input_text {
+  resize: none;
+}
+
+.form__file-input-container{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 276px;
+  border: 1px dashed #a1a1a1;
+  background-color: #dee4ed;  
+  cursor: pointer;
+  @include tablets{
+    height: 261px;
+  }
+  @include phones{
+    height: 157px;
+  }
+}
+
+.form__file-input{
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;  
+}
+
+.form__file-input-controls{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__file-input-text{
+  opacity: 0.5;
+  color: #414c63;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 33.89px;
+  text-align: justify;
+  margin-bottom: 18px;
+  @include tablets{
+    display: none;
+  }
+}
+
+.form__error{
+  position: absolute;
+  left: 11%;
+  bottom: -47%;
+  padding: 13px 20px;
+  background-color: #cd1515;
+  z-index: 100;
+  font-size: 14px;
+  color: #ffffff;
+  animation: slide-up 0.4s ease;
+  animation-direction: reverse;
+  &::before{
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-bottom: 8px solid #cd1515;    
+  }
+}
+
+.form__group{
+  position: relative;
+  &_error{
+    .form__input{
+      border-bottom: 1px solid #fb0000;
+    }
+    .form__input-icon{
+      fill: #fb0000;
+    }
+    .form__error{
+      animation-direction: normal;
+    }
+  }
+  &_text{
+    .form__error{
+      bottom: -28%;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
   }
 }
 
@@ -133,25 +249,4 @@ margin-left: 50px;
   @include tablets {
     align-self: center;
   }
-}
-
-.input_error {
-  border-bottom: 2px solid #fb0000;
-  transition: border-color .3s;
-  position: relative;
-  .form__block-icon {
-    fill: #fb0000;
-    transition: fill .3s;
-   }
-   &:after {
-     position: absolute;
-     top: 100%;
-     left: 20%;
-    content: "Заполните поле";
-    font-size: 14px;
-    background: #fb0000;
-    color: #fff;
-    padding: 5px 10px;
-    
-   }
 }

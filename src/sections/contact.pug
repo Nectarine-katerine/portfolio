@@ -1,24 +1,27 @@
 section.contact(id="contact")
   .container.contact__container
     h2.contact__title.title Связаться со мной
-    form.form(action="#" id="myForm")
-      .form__row.form__row_flex
-        .username
-          label(for="username").form__block-title Введите ваше имя
-          .input
-            +icon('avatar', 'form__block-icon')
-            input(id="username" type="text" name="name" placeholder="Ковальчук Дмитрий" required).form__block-input
-            .error
-        .email
-          label(for="email").form__block-title Введите ваш email
-          .input
-            +icon('envelope', 'form__block-icon')
-            input(id="email" type="email" name="email" placeholder="loftschool@study.com" required).form__block-input
-            .error
-      .form__row.form__row_colored
-        label(for="comment").form__block-title Сообщение к письму
-        .input.input_textarea
-          +icon('chat', 'form__block-icon')
-          textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" required).form__block-input.form__block-input-textarea
-          .error
-    button(type="submit" id="formButton").button Отправить
+    form(action="" novalidate)#contact-form
+      .form__row
+        .form__col
+          .form__group
+            label.form__label Введите ваше имя
+            .form__input-container
+              input(type="text" name="name" placeholder="Ковальчук Дмитрий" novalidate).form__input
+              +icon('user', 'form__input-icon')  
+
+        .form__col
+          .form__group
+            label.form__label Введите ваш email
+            .form__input-container
+              input(type="email" name="email" placeholder="loftschool@study.com" novalidate).form__input
+              +icon('envelope', 'form__input-icon')  
+      .form__row
+        .form__col
+          .form__group.form__group_text
+            label.form__label Сообщение к письму
+            .form__input-container
+              textarea(name="message" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" novalidate).form__input.form__input_text
+              +icon('message', 'form__input-icon')  
+      .form__row.form__row_center-768
+        button(type="submit").button Отправить

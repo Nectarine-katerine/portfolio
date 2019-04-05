@@ -94,18 +94,6 @@
   &.active {
     border: 2px solid #f29400;
   }
-  &:hover {
-  &::before {
-    content: "";
-    background-color: $orange;
-    opacity: .3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  }
 }
 
 .works-slider__thumb {
@@ -192,6 +180,18 @@
 .works-slider__thumb-link {
   display: block;
   height: 100%;
+    &:hover {
+    &::after {
+    content: "";
+    background-color: $orange;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  }
 }
 
 .works-slider__tags {
