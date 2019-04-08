@@ -2,10 +2,13 @@
   z-index: 5;
   position: relative;
 }
+
 .reviews__container {
   padding-top: 100px;
 }
+
 .reviews__title {
+
   @include phones {
     text-align: center;
     margin-bottom: 30px;
@@ -15,28 +18,35 @@
 .reviews__cont {
   position: relative;
 }
+
 .reviews__btn {
   display: flex;
   position: absolute;
   bottom: 100%;
   right: 45%;
+
   @include tablets {
-  right: 25%;
+    right: 25%;
   }
+
   @include phones {
     position: static;
   }
 }
+
 .reviews__inner {
   padding-top: 70px;
+
   @include phones {
     padding-top: 50px;
   }
 }
+
 .reviews__item {
   width: 50%;
-   @include phones {
-  width: 100%;
+
+  @include phones {
+    width: 100%;
   }
 }
 
@@ -59,19 +69,21 @@
   fill: rgba(#fff, .05);
   margin-right: 30px;
 }
+
 .reviews__desc {
   width: 52%;
-   @include phones {
-  width: 100%;
+
+  @include phones {
+    width: 100%;
   }
 }
 
 .reviews__author{ 
   display: flex;
   padding: 0 100px;
-  @include tablets {
-      padding: 0;
 
+  @include tablets {
+    padding: 0;
   }
 }
 
@@ -88,13 +100,13 @@
 }
 
 .reviews__author-name {
-font-size: 18px;
-font-weight: 700;
-margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .reviews__author-position{
-color: rgba(#ffffff, .3);
-font-weight: 600;
+  color: rgba(#ffffff, .3);
+  font-weight: 600;
 }
 

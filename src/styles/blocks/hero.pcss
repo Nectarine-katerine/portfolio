@@ -1,12 +1,14 @@
 .hero {
   position: relative;
+
   @include tablets {
     min-height: 950px;
-   background: url(../images/content/train.png) center center / cover no-repeat;
+    background: url(../images/content/train.png) center center / cover no-repeat;
   }
+
   @include phones {
     min-height: 650px;
-   background: url(../images/content/train.png) center center / cover no-repeat;
+    background: url(../images/content/train.png) center center / cover no-repeat;
   }
 }
 
@@ -21,6 +23,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .hero__content {
   width: 95%;
   margin: 0 auto;
@@ -31,22 +34,24 @@
   min-height: 630px;
 }
 
-
 .hero__desc {
   display: flex;
   justify-content: center;
+
   @include tablets {
     flex-direction: column;
     align-items: center;
     margin-bottom: 5%;
   }
 }
+
 .hero__text {
   font-size: 18px;
   font-weight: 600;
   color: rgba(#fff, .4);
   text-align: right;
   padding-left: 21%;
+
   @include tablets {
     padding: 0 280px 30px;
     text-align: center;
@@ -54,22 +59,26 @@
     padding: 0 38%;
     padding-bottom: 30px; 
   }
+
   @include phones {
-      font-size: 14px;
-      padding: 0 32%;
-      padding-bottom: 30px;
+    font-size: 14px;
+    padding: 0 32%;
+    padding-bottom: 30px;
   }
 }
+
 .hero__title {
   font-size: 72px;
   font-weight: 800;
   line-height: 0.91em;
   padding: 0 6%;
+
   @include tablets {
     padding: 0;
     text-align: center;
     padding: 0 50%;
   }
+  
   @include phones {
       font-size: 36px;
       line-height: 1.42em;

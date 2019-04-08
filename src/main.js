@@ -10,4 +10,11 @@ import "./scripts/menu";
 import "./scripts/reviews";
 import "./scripts/scroll";
 import "./scripts/feedback";
-import "./scripts/form";
+
+import Validate from "./scripts/validate";
+
+const validate = new Validate({
+    element: '.contactForm'
+});
+
+validate.init();

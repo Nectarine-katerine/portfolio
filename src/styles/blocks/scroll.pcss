@@ -2,18 +2,22 @@
   align-self: center;
   align-items: center;
   display: flex;
+
   &:hover {
     color: $orange;
     transition: color .3;
+
     .scroll__icon {
       fill: $orange;
       transition: fill .3;
     }
   }
+
   @include tablets {
     opacity: 0;
   }
 }
+
 .scroll__text {
   font-size: 18px;
   font-weight: 600;
@@ -26,6 +30,7 @@
   width: 20px;
   height: 20px;
 }
+
 .scroll__icon {
   width: 20px;
   height: 20px;

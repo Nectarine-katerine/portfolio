@@ -1,6 +1,7 @@
 {
   "text-color": "#414c63",
   "orange": "#ff9a00",
+  "errors-color": "#cd1515",
   "links-color": "#4b6fd7",
   "desktopHD": "2500px",
   "desktop": "1800px",

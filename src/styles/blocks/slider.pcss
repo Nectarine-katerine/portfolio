@@ -3,7 +3,8 @@
   grid-template-columns: 1fr 0.3fr;
   grid-template-rows: 1fr;
   grid-template-areas: 
-   "slider w-info";
+  "slider w-info";
+
   @include tablets {
     grid-template-columns: 1fr;
     grid-template-rows: 0.7fr 1fr;
@@ -12,29 +13,31 @@
     "w-info";
   }
 }
+
 .slider__col_left {
   grid-area: slider;
-  /* @include phones {
-    width: 100%;
-    margin-bottom: 60px;
-    } */
 }
+
 .slider__col_right {
-grid-area: w-info;
+  grid-area: w-info;
+
   @include phones {
     width: 90%;
     margin: 0 auto;
-    }
-
+  }
 }
+
 .slider__images {
   padding-right: 160px;
+
   @include phones {
     padding: 0;
   } 
 }
+
 .slider__img {
   position: relative;
+
   &::after {
     content: "2";
     color: #f0f0f0;
@@ -44,6 +47,7 @@ grid-area: w-info;
     left: 93%;
     bottom: 3.5%;
     z-index: -5;
+
     @include phones {
       display: none;
     }
@@ -59,27 +63,27 @@ grid-area: w-info;
   position: absolute;
   left: 166px;
   top: 323px;
-  @include phones {
-      display: none;
-    }
-}
 
+  @include phones {
+    display: none;
+  }
+}
 
 .slider__pic_small {
   height: 100%;
   cursor: pointer;
 }
 
-
-
 .slider__text-list {
   display: flex;
   justify-content: space-between;
   margin-bottom: 45px;
+
   @include phones {
     margin-bottom: 27px;
   }
 }
+
 .slider__text-item {
   color: rgba(#283340, .7);
   font-weight: 600;
@@ -94,7 +98,8 @@ grid-area: w-info;
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 40px;
-   @include phones {
+
+  @include phones {
     margin-bottom: 21px;
   }
 }
@@ -107,15 +112,16 @@ grid-area: w-info;
 }
 
 .slider__school-link {
-color: #4b6fd7;
-font-size: 18px;
-font-weight: 700;
-text-decoration: none;
-transition: text-decoration .3s;
-&:hover {
-  text-decoration: underline;
+  color: #4b6fd7;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
   transition: text-decoration .3s;
-}
+
+  &:hover {
+    text-decoration: underline;
+    transition: text-decoration .3s;
+  }
 }
 
 .slider__text-desc {
@@ -123,7 +129,8 @@ transition: text-decoration .3s;
   font-weight: 600;
   line-height: 1.72em;
   margin-bottom: 45px;
-   @include phones {
+  
+  @include phones {
     margin-bottom: 38px;
   }
 }
@@ -135,16 +142,17 @@ transition: text-decoration .3s;
 .slider__item {
   position: relative;
   cursor: pointer;
+
   &:hover {
-  &::before {
-    content: "";
-    background-color: $orange;
-    opacity: .3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    &::before {
+      content: "";
+      background-color: $orange;
+      opacity: .3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
-  }
- }
+}

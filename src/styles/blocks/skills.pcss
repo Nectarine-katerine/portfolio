@@ -1,4 +1,5 @@
 .skills {
+
   @include phones {
     text-align: center;
   }
@@ -9,9 +10,10 @@
 }
 
 .skills-row__title {
-   margin: 40px 0;
+  margin: 40px 0;
   font-size: 24px;
   font-weight: 700;
+
   @include phones {
     text-align: center;
   }
@@ -21,6 +23,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
+
   @include tablets {
     grid-template-columns: repeat(2, .5fr);
     grid-row-gap: 10px;
@@ -45,11 +48,13 @@
 
 .skill__circle {
   fill: transparent;
+
   &_under {
     stroke: #eaeaea;
     opacity: 0.1;
     stroke-width: 3px;
   }
+  
   &_above {
     stroke-width: 9px;
     stroke-dasharray: 251;

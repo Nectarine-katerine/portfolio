@@ -19,7 +19,7 @@ new Vue({
         prevNextButtons: false,
         pageDots: false,
         wrapAround: true,
-        groupCells: window.screen.width > 768 ? 2 : 1,
+        groupCells: true,
         resize: true
       },
       reviews: []

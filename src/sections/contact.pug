@@ -1,7 +1,7 @@
 section.contact(id="contact")
   .container.contact__container
     h2.contact__title.title Связаться со мной
-    form(action="" novalidate)#contact-form
+    form(action="" novalidate).contactForm
       .form__row
         .form__col
           .form__group
@@ -24,4 +24,4 @@ section.contact(id="contact")
               textarea(name="message" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" novalidate).form__input.form__input_text
               +icon('message', 'form__input-icon')  
       .form__row.form__row_center-768
-        button(type="submit").button Отправить
+        button(type="submit" id="formButton").button Отправить
