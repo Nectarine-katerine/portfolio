@@ -102,24 +102,6 @@ export default {
       padding-bottom: 17px;
     }
   }
-  &_icon {
-    @each $icon in (user, key) {
-      &-$(icon) {
-        .input__elem {
-          background-image: svg-load("$(icon).svg", fill=#cfd2d7);
-        }
-      }
-    }
-  }
-  &.error {
-    @each $icon in (user, key) {
-      &.input_icon-$(icon) {
-        .input__elem {
-          background-image: svg-load("$(icon).svg", fill=$errors-color);
-        }
-      }
-    }
-  }
 }
 .error {
   .field__elem {

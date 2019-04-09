@@ -191,7 +191,6 @@ export default {
     content: "";
     height: 115px;
     width: 85px;
-    background: svg-load("filled-user.svg", fill=#fff) center center no-repeat;
     display: block;
     position: absolute;
     top: 50%;

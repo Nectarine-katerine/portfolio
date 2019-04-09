@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
-    "build": "rm -rf docs && webpack --mode=production --progress",
-    "count": "cloc src/",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "rm -rf dist && webpack --mode=production --progress",
+    "reg": "node reg-util.js"
   },
   "keywords": [],
   "author": "",

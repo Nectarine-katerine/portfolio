@@ -1,13 +1,13 @@
 <template lang="pug">
-  .tabs-container
+  .menu__container
     .container
-      ul.tabs
-        li.tabs__item(v-for="tab in tabs")
+      ul.menu__list
+        li.menu__item(v-for="tab in tabs")
           router-link(
             :data-text="tab.title" 
             :to="tab.href"
             exact-active-class="active"
-          ).tabs__link
+          ).menu__link
 
 </template>
 
@@ -28,35 +28,33 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../styles/mixins.pcss";
-.tabs-container {
+.menu__container {
   background: #fff;
 }
-.tabs {
-  display: flex;
-  height: 77px;
+.menu__list {
+  display: grid;
+  grid-template-columns: .1fr .1fr .1fr;
+  grid-template-rows: 1fr;
+
   @include phones {
-    height: 87px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    margin: 0 auto;
   }
 }
-.tabs__item {
-  height: 100%;
-  margin-right: 30px;
-  @include phones {
-    margin-right: 3px;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+.menu__item {
+  text-align: center;
 }
-.tabs__link {
-  vertical-align: middle;
-  white-space: nowrap;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  cursor: pointer;
+.menu__link {
+  display: inline-block;
+  text-decoration: none;
+  color: #414c63;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  padding: 30px 0;
+  transition: color .3s;
   width: 125px;
-  justify-content: center;
   border-bottom: 3px solid transparent;
   text-decoration: none;
   @include phones {

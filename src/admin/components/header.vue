@@ -1,16 +1,11 @@
 <template lang="pug">
   .header
-    .container
-      .header__info
-        .user
-          .user__pic
-            img(src="../../images/content/user.jpg").user__pic-avatar
-          .user__name 
-            span Владимир Астаханов
-            a.exit-btn(@click="logout") Выйти
-            
-        .header__title Панель администрирования
-      a.exit-btn(@click="logout") Выйти
+    .container.header__container
+      .header__photo
+        img(src="../../images/content/me.jpeg").header__pic
+      .header__name Екатерина Исмиляева
+      .header__title Панель администрирования
+      button.header__exit-btn(@click="logout") Выйти
 </template>
 
 <script>
@@ -26,55 +21,79 @@ export default {
 <style lang="postcss" scoped>
 @import url("../../styles/mixins.pcss");
 .header {
-  color: #fff;
-}
-.header__info {
-  display: flex;
+    background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
+  }
+
+.header__container {
+  display: grid;
+  grid-template-columns: .3fr 1fr 1fr 3fr;
+  grid-template-rows: 1 fr;
+  padding: 16px 0;
   align-items: center;
-}
-.header__title {
-  color: rgba(#fff, 0.5);
+  grid-template-areas: 
+  "header__photo header__name header__title header__exit-btn";
+  @include tablets {
+    grid-template-columns: .4fr 1.5fr 1.5fr 2fr;
+  }
+  
   @include phones {
-    display: none;
+  grid-template-columns: 0.1fr 1fr;
+  grid-template-rows: 1 fr 1 fr;
+  grid-column-gap: 10px;
+  grid-template-areas: 
+  "header__photo header__name"
+  "header__photo header__exit-btn";
+  width: 90%;
+  margin: 0 auto;
   }
 }
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.user {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-.user__name {
-  font-size: 18px;
-  font-weight: 600;
-  .exit-btn {
-    display: none;
-    @include phones {
-      display: block;
-    }
-  }
-}
-.user__pic {
-  margin-right: 20px;
+
+.header__photo {
   width: 45px;
   height: 45px;
-  overflow: hidden;
-  flex-shrink: 0;
-  border-radius: 50%;
+  grid-area: header__photo;
 }
-.exit-btn {
-  opacity: 0.7;
-  text-decoration: underline;
+
+.header__pic {
+  border-radius: 50%;
+  object-fit: cover;
+   object-position: center;
+   max-width: 100%;
+   max-height: 100%;
+   display: block;
+}
+
+.header__name {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  grid-area: header__name;
+}
+
+.header__title {
+  color: rgba(#fff, .5);
   font-size: 14px;
-  &:hover {
-    text-decoration: none;
-  }
+  grid-area: header__title;
   @include phones {
     display: none;
+  }
+}
+
+.header__exit-btn {
+  justify-self: end;
+  padding: 0;
+  display: block;
+  outline: none;
+  background: transparent;
+  text-decoration: underline;
+  border: none;
+  color:rgba(#fff, .7);
+  font-family: "Open Sans";
+  font-size: 14px;
+  cursor: pointer;
+  grid-area: header__exit-btn;
+  @include phones {
+    justify-self: start;
   }
 }
 </style>
