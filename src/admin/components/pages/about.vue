@@ -1,28 +1,24 @@
 <template lang="pug">
-  .about-page-container
+  section.section.skills
     .container
-      .about-page__title
-        h1.page-title Обо мне
-        button.about-page__add-new(
-          @click="showAddingForm = true"
+      .section__top.skills__top
+        .title.skills__title Блок "Обо мне"
+        button.skills__add(
+          type="button" 
+          @click="showAddingForm = true" 
           v-if="showAddingForm === false"
         ) Добавить группу
-
-    .about-page__content
-      .container.container--mobile-wide
-        ul.skill-list
-          li.skill-list__item(v-if="showAddingForm")
-            skills-add(
-            )
-          li.skill-list__item(
-            v-for="category in categories"
-            :key="category.id"
-          )
-            skills-group(
-              :category="category"
-              :skills="filterSkillsByCategoryId(category.id)"
-            )
-
+    ul.skills__list
+      li.skills__item.skills__item_new-group(v-if="showAddingForm")
+        skills-add()
+      li.skills__item(
+        v-for="category in categories"
+        :key="category.id"
+      )
+        skills-group(
+          :category="category"
+          :skills="filterSkillsByCategoryId(category.id)"
+        )
 </template>
 
 <script>
@@ -69,7 +65,121 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../../styles/mixins.pcss";
- .skill-container {
+
+.skills__top {
+  display: flex;
+  @include phones {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0 40px 0;
+  }
+}
+.skills__add {
+  color: #383bcf;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  &:before {
+    margin-right: 13px;
+    content: '+';
+    font-size: 15px;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 100%;
+    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+  }
+  @include tablets {
+    font-size: 14px;
+  }
+  @include phones {
+    margin-left: 0;
+    text-align: left;
+    padding: 0;
+  }
+}
+.skills__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  @include tablets {
+    grid-template-areas: "frontend workflow"
+  }
+  @include phones {
+    grid-template-columns: 1fr;
+
+    grid-template-areas: 
+    "frontend"
+    "workflow";
+  }
+}
+.skills__item {
+  box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff; 
+  height: 380px; 
+}
+.skills__item_workflow {
+   @include tablets {
+    grid-area: workflow;
+  }
+}
+
+.skills__item_frontend {
+   @include tablets {
+    grid-area: frontend;
+  }
+}
+
+.skills__add {
+  color: #383bcf;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  &:before {
+    margin-right: 13px;
+    content: '+';
+    font-size: 15px;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 100%;
+    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+  }
+  @include tablets {
+    font-size: 14px;
+  }
+  @include phones {
+    margin-left: 0;
+    text-align: left;
+    padding: 0;
+  }
+}
+.skills__inner {
+  width: 95%;
+  padding: 30px 0;
+  margin: 0 auto;
+  height: 100%;
+  @include phones {
+    width: 90%;
+  }
+}
+
+.skills__item_new-group {
+  @include tablets {
+    display: none;
+  }
+}
+ /* .skill-container {
   border: 1px solid black;
   padding: 10px;
 }
@@ -132,5 +242,5 @@ export default {
     margin-left: 0;
     margin-bottom: 12px;
   }
-}
+} */
 </style>

@@ -26,11 +26,49 @@ export default {
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-button {
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  border-style: solid;
-  border-width: 1px;
-  background-color: #000;
+.main {
+  font-family: 'Open Sans';
+  color:  #414c63;
+  height: 100%;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    @include phones {
+    width: 100%;
+  }
+}
+
+.title {
+  color: #414c63;
+  font-size: 21px;
+  font-weight: 700;
+  padding: 60px 0;
+  @include phones {
+    padding: 40px 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.button {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 19px 45px;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+}
+
+
+button[type="button"] {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
 }
 .root-wrapper-container {
   height: 100%;

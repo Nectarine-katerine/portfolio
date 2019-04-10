@@ -6,6 +6,7 @@ Vue.use(Vuex);
 import categories from './modules/categories'
 import skills from './modules/skills'
 import user from './modules/user'
+import reviews from './modules/reviews'
 
 
 export default new Vuex.Store({

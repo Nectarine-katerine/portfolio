@@ -9,7 +9,7 @@ export default {
     }
   },
   actions: {
-    async addNewSkillGroup({ commit }, groupTitle) {
+    async addNewSkillGroup(store, groupTitle) {
       try {
         const response = await this.$axios.post("/categories", {
           title: groupTitle
