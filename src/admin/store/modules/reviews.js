@@ -1,14 +1,14 @@
 export default {
   namespaced: true,
   state: {
-      rewievs: []
+    reviews: []
   },
   mutations: {
-    SET_REWIEVS: (state, rewievs) => {
-      state.rewievs = rewievs;
+    SET_REVIEWS: (state, reviews) => {
+      state.reviews = reviews;
     },
-    LOAD_REWIEVS: (state, rewievs) => {
-      state.rewievs = rewievs;
+    LOAD_REVIEWS: (state, reviews) => {
+      state.reviews = reviews;
     }
   },
   actions: {
@@ -21,16 +21,16 @@ export default {
         formData.append('text', review.text);
 
         const response = await this.$axios.post('/reviews', formData);
-        commit("SET_REWIEVS", response.data);
+        commit("SET_REVIEWS", response.data);
         return response;
       } catch (error) {
         alert('Ошибка при создании отзыва');
       }
     },
-      async fetchRewievs({commit}, review) {
+      async fetchReviews({commit}, review) {
         try {
           const response = await this.$axios.get('/reviews/118', review);
-          commit('LOAD_REWIEVS', response.data);
+          commit('LOAD_REVIEWS', response.data);
           return response;  
         } catch (error) {
           alert('Ошибка при загрузки отзывов');

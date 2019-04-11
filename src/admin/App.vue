@@ -26,87 +26,20 @@ export default {
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-.main {
-  font-family: 'Open Sans';
-  color:  #414c63;
-  height: 100%;
-}
+@import "../styles/admin/base-admin.pcss";
+@import "../styles/admin/add-new.pcss";
+@import "../styles/admin/edit.pcss";
+@import "../styles/admin/group.pcss";
+@import "../styles/admin/load.pcss";
+@import "../styles/admin/login.pcss";
+@import "../styles/admin/safe.pcss";
+@import "../styles/admin/section.pcss";
+@import "../styles/admin/skill.pcss";
+@import "../styles/admin/skills.pcss";
+@import "../styles/admin/reviews.pcss";
+@import "../styles/admin/tags.pcss";
+@import "../styles/admin/works.pcss";
+@import "../styles/admin/author.pcss";
+@import "../styles/admin/icons.pcss";
 
-.container {
-    width: 95%;
-    margin: 0 auto;
-    display: block;
-    @include phones {
-    width: 100%;
-  }
-}
-
-.title {
-  color: #414c63;
-  font-size: 21px;
-  font-weight: 700;
-  padding: 60px 0;
-  @include phones {
-    padding: 40px 0;
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
-.button {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  padding: 19px 45px;
-  border-radius: 25px;
-  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-}
-
-
-button[type="button"] {
-  cursor: pointer;
-  background-color: transparent;
-  outline: none;
-}
-.root-wrapper-container {
-  height: 100%;
-}
-.header-container {
-  background: linear-gradient(to right, #3e3e59, #454573);
-  padding: 15px 0;
-
-  @include phones {
-    padding: 20px 0;
-  }
-}
-.root-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.admin-wrapper {
-  display: flex;
-  
-  .maincontent {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-}
-.content-container {
-  background: url("../images/content/admin_bg.png") center center no-repeat / cover;
-  flex: 1;
-  padding-top: 60px;
-  @include phones {
-    padding-top: 30px;
-  }
-}
-.page-title {
-  margin-bottom: 60px;
-  font-size: 21px;
-  font-weight: bold;
-}
 </style>
