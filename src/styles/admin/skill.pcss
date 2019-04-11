@@ -1,12 +1,11 @@
 .skill__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-gap: 25px;
+    display: flex;
+    flex-direction: column;
+    color: $text-color;
 }
 .skill__item {
   display: grid;
-  grid-template-columns: 2fr .5fr .5fr .2fr .2fr;
+  grid-template-columns: 1fr .5fr .2fr .2fr;
   grid-template-rows: 1.5fr;
   .cross__icon, .tick__icon {
     display: none;

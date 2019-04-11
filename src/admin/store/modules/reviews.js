@@ -29,7 +29,7 @@ export default {
     },
       async fetchReviews({commit}, review) {
         try {
-          const response = await this.$axios.get('/reviews/118', review);
+          const response = await this.$axios.get('/reviews/114', review);
           commit('LOAD_REVIEWS', response.data);
           return response;  
         } catch (error) {

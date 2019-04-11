@@ -14,16 +14,12 @@
           button(type="button").button-iconed
             svg.pencil__icon.skill__icon
               use(xlink:href="sprite.svg#pencil")
-      .skill__list
-        skills__item(
-          v-for="skill in skills"
-          :key="skill.id"
-          :skill="skill"
-        )
+      ul.skill__list
+        skills-item
       .group__row.group__row_three-col.blocked
-        input(type="text" placeholder="Новый навык").group__name.group__name_padding.group__name_new.section__input
-        input(type="text" placeholder="100 %").group__name.group__name_padding.section__input
-        button(type="button").group__add.group__add_no-padding +
+        input(type="text" v-model="skill.title" placeholder="Новый навык").group__name.group__name_padding.group__name_new.section__input
+        input(type="text" v-model="skill.percent" placeholder="100 %").group__name.group__name_padding.section__input
+        button(type="button" @click="addNewSkill").group__add.group__add_no-padding +
   
 </template>
 
@@ -34,6 +30,9 @@ export default {
     category: Object,
     skills: Array,
   },
+  components: {
+    skillsItem: () => import("./skills-item.vue")
+  },
   data() {
     return {
       skill: {
@@ -42,9 +41,6 @@ export default {
         percent: ""
       }
     }
-  },
-  components: {
-    skillsItem: () => import("components/skill-item.vue")
   },
   methods: {
     ...mapActions('skills', ['addSkill']),

@@ -1,12 +1,11 @@
 <template lang="pug">
-  .skill__item
-    .skill__name Навык
-    .skill__amount Процент
-    .skill__percentage %
-    button(type="button").button-iconed
+  li.skill__item
+    .skill__name GIT
+    .skill__percentage 100%
+    button(type="button" @click="editmode = true").button-iconed
       svg.pencil__icon.skill__icon
         use(xlink:href="sprite.svg#pencil")
-    button(type="button").iconed-button
+    button(type="button" @click="removeExistedSkill").iconed-button
       svg.trash__icon.skill__icon
         use(xlink:href="sprite.svg#trash")
 </template>

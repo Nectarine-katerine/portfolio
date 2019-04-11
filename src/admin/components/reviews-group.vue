@@ -15,7 +15,7 @@
           button(type="button" @click.prevent="openEditMode = false").button-iconed.section__btn Править
             svg.pencil__icon.pencil__icon_blue.section__icon
               use(xlink:href="sprite.svg#pencil")
-          button(type="button" @click.prevent="deletedReviews").button-iconed.section__btn  Удалить  
+          button(type="button" @click.prevent="removeReviews").button-iconed.section__btn  Удалить  
             svg.cross__icon.section__icon
               use(xlink:href="sprite.svg#cross")
 

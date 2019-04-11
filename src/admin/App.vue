@@ -34,8 +34,8 @@ export default {
 @import "../styles/admin/login.pcss";
 @import "../styles/admin/safe.pcss";
 @import "../styles/admin/section.pcss";
-@import "../styles/admin/skill.pcss";
 @import "../styles/admin/skills.pcss";
+@import "../styles/admin/skill.pcss";
 @import "../styles/admin/reviews.pcss";
 @import "../styles/admin/tags.pcss";
 @import "../styles/admin/works.pcss";
