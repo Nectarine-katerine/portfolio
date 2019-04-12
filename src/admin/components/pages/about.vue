@@ -5,59 +5,62 @@
         .title.skills__title Блок "Обо мне"
         button.skills__add(
           type="button" 
-          @click="showAddingForm = true" 
-          v-if="showAddingForm === false"
+          @click="showAddForm = true" 
+          v-if="showAddForm === false"
         ) Добавить группу
       ul.skills__list
-        li.skills__item.skills__item_new-group(v-if="showAddingForm")
-          skills-add()
-        li.skills__item(
-          v-for="category in categories"
-          :key="category.id"
-        )
-          skills-group(
-            :category="category"
-            :skills="filterSkillsByCategoryId(category.id)"
+        skillAdd(
+          v-if="showAddForm"
+          @handleAddForm="showAddForm = !showAddForm"
           )
+        skillsGroupList(
+          v-for="group in groups"
+          :key="group.id"
+          :group="group"
+          :skills="filterSkillsByGroup(group.id)"
+        )
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState } from "vuex"
+
+import skillAdd from "../skills/skill-add";
+import skillsGroupList from "../skills/skills-group-list";
 export default {
-  components: {
-    skillsAdd: () => import('components/skills-add.vue'),
-    skillsGroup: () => import('components/skills-group.vue')
+  components:{
+    skillAdd,
+    skillsGroupList
   },
   data() {
     return {
-      showAddingForm: false 
+      showAddForm: false
     }
   },
   computed: {
-    ...mapState('categories', {
-      categories: state => state.categories
+    ...mapState('skillsGroup', {
+      groups: state => state.groups
     }),
     ...mapState('skills', {
       skills: state => state.skills
     })
   },
   methods: {
-    ...mapActions('categories', ['fetchCategories']),
+    ...mapActions('skillsGroup', ['fetchGroups']),
     ...mapActions('skills', ['fetchSkills']),
-    filterSkillsByCategoryId(categoryId) {
-      return this.skills.filter(skill => skill.category === categoryId);
+    filterSkillsByGroup(groupId) {
+      return this.skills.filter(skill => skill.category === groupId);
     }
   },
   async created() {
     try {
-      await this.fetchCategories(); 
+      await this.fetchGroups();
     } catch (error) {
-      alert('Произошла ошибка при загрузке категорий') 
+      alert(error);
     }
     try {
-      await this.fetchSkills(); 
+      await this.fetchSkills();
     } catch (error) {
-      alert('Произошла ошибка при загрузке скиллов') 
+      alert(error);
     }
   }
 };

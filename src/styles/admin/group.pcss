@@ -12,6 +12,8 @@
 .group__row_border-bottom {
   border-bottom: 1px solid rgba(#1f232d, .15);
   padding: 15px 15px 15px 0;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .group__row_three-col {
     display: flex;
@@ -19,25 +21,11 @@
 }
 .group__col_end {
   justify-self: end;
-  .pencil__icon {
-    display: none;
-  }
-  .tick__icon, .cross__icon {
-      display: inline-block;
-    }
-  @include tablets {
-    .pencil__icon {
-      display: inline-block;
-    }
-    .tick__icon, .cross__icon {
-      display: none;
-    }
-  }
 }
 
 .group__icon {
-  width: 15px;
-  height: 12px;
+  width: 16px;
+  height: 15px;
   margin-right: 20px;
   fill: #00d70a;
 }
@@ -66,6 +54,6 @@
   outline: none;
   border: none;
   border-radius: 100%;
-  padding: 3px 12px;
+  padding: 0 16px;
   background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
 }

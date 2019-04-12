@@ -5,23 +5,17 @@
 }
 .skill__item {
   display: grid;
-  grid-template-columns: 1fr .5fr .2fr .2fr;
+  grid-template-columns: 1.1fr 1fr .3fr;
   grid-template-rows: 1.5fr;
-  .cross__icon, .tick__icon {
-    display: none;
-  }
+  margin-bottom: 20px;
 }
-.skill__item_active {
-  .skill__name, .skill__amount, .skill__percentage {
-    border-bottom: 1px solid #000;
-  }
-  .pencil__icon, .trash__icon  {
-    display: none;
-  }
-  .cross__icon, .tick__icon {
-    display: inline;
-  }
-  .group__icon {
-    margin-right: 0;
-  }
+
+.skill__btn {
+  justify-self: center;
+}
+
+.skill__input {
+  border: 1px solid transparent;
+  border-bottom: 1px solid $text-color; 
+  outline: none;
 }
