@@ -12,9 +12,9 @@
             .add-new__text Добавить отзыв
         
         reviews-group(
-          v-for="rev in reviews" 
-          :key="rev.id" 
-          :rev="rev"
+          v-for="review in reviews" 
+          :key="review.id" 
+          :rev="review"
         )
 </template>
 
@@ -23,8 +23,8 @@
 import { mapActions, mapState } from 'vuex';
 export default {
     components: {
-        reviewsAdd: () => import('components/reviews-add.vue'),
-        reviewsGroup: () => import('components/reviews-group.vue')
+        reviewsAdd: () => import('../reviews/reviews-add.vue'),
+        reviewsGroup: () => import('../reviews/reviews-group.vue')
     },
     data() {
       return {

@@ -1,37 +1,44 @@
 .popup {
   position: fixed;
   top: 0;
+  right: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
+  bottom: 0;
+  z-index: 5;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 100px;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+  }
+  &__content {
+    font-size: 18px;
+    line-height: 30px;
+    color: $text-color;
+    text-align: center;
+    font-weight: 600;
+    overflow: hidden;
+    margin-bottom: 35px;
+  }
 }
 
-.opened {
-  opacity: 1;
-  transition: opacity .3s;
+.popup.active {
+  display: flex;
 }
 
 .overlay {
-  background: rgba(gray, .92);
+  background: rgba(0, 0, 0, 0.603);
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
-}
-
-.popup__container {
-  padding: 10px;
-  border-radius: 5px;
-  background: #fff;
-  color: gray;
-  position: relative;
-  text-align: center;
-}
-
-.popup__content {
-  font-family: 'ubuntu';
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin-bottom: 1.05rem;
 }

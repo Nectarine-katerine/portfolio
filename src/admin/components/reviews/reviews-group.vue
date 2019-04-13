@@ -4,10 +4,10 @@
       .author
         .author__top
           .section__photo.author__photo
-            img(:src="`https://webdev-api.loftschool.com/${rev.photo}`" alt="").section__pic.author__pic
+            img(:src="`https://webdev-api.loftschool.com/${review.photo}`" alt="").section__pic.author__pic
           .author__data
-            .author__name {{rev.author}}
-            .autor__position {{rev.occ}}Преподаватель
+            .author__name {{review.title}}
+            .autor__position {{review.occ}}Преподаватель
       .section__data.reviews__data
         .section__desc
           p {{rev.text}}
@@ -23,12 +23,12 @@
       .author
         .author__top
           .section__photo.author__photo
-            img(:src="`https://webdev-api.loftschool.com/${rev.photo}`" alt="").section__pic.author__pic
+            img(:src="`https://webdev-api.loftschool.com/${review.photo}`" alt="").section__pic.author__pic
           .author__data
-            input(type="text" v-model="rev.author").author__name
-            input(type="text" v-model="rev.occ").autor__position
+            input(type="text" v-model="review.title").author__name
+            input(type="text" v-model="review.occ").autor__position
       .section__data.reviews__data
-        textarea(v-model="rev.text").section__desc
+        textarea(v-model="review.text").section__desc
         .section__btns
           button(type="button" @click.prevent="saveReviews").button-iconed.section__btn Отмена
           button(type="button" @click.prevent="openEditMode = true").button-iconed.section__btn  Сохранить  
@@ -43,24 +43,24 @@ export default {
     return {
       rendedPhotoUrl: "",
       openEditMode: true,
-      groupReviews: {...this.rev}
+      groupReviews: {...this.review}
     }
   },
   props: {
-    rev: Object
+    review: Object
   },
   methods: {
     ...mapActions('reviews', ['removeReviews', 'editReviews']),
     async deletedReviews(){
       try {
-        await this.removeReviews(this.rev.id)
+        await this.removeReviews(this.review.id)
       } catch (error) {
         alert('Проблема с удалением отзыва');
       }
     },
     async saveReviews() {
       try {
-        await this.editReviews(this.rev);
+        await this.editReviews(this.review);
         this.openEditMode = true;
       } catch (error) {
         alert(error);

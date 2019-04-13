@@ -82,8 +82,10 @@
   padding-left: 42px;
   border-bottom: 2px solid #fff;
 
-  &:focus {
+  &:focus,
+  &:hover {
     border-bottom: 2px solid $orange;
+    background: transparent;
 
     &+.form__input-icon {
       fill: $orange;
@@ -108,6 +110,14 @@
       font-size: 14px;
     }
   }
+}
+
+.form__input:-webkit-autofill,
+.form__input:-webkit-autofill:hover, 
+.form__input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+background-color: transparent;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .form__input-container {

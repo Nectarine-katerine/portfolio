@@ -4,17 +4,11 @@ if (process.env.NODE_ENV === "development") {
 }
 
 import "./scripts/skills";
-import "./scripts/parallax";
 import "./scripts/works";
-import "./scripts/menu";
-import "./scripts/reviews";
 import "./scripts/scroll";
 import "./scripts/feedback";
-
-import Validate from "./scripts/validate";
-
-const validate = new Validate({
-    element: '.contactForm'
-});
-
-validate.init();
+import "./scripts/parallax";
+import "./scripts/feedback";
+import "./scripts/menu";
+import "./scripts/form";
+import "./scripts/reviews";

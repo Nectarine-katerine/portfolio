@@ -49,5 +49,10 @@ html(lang="ru").gr__localhost
                   +social('footer')
                 .footer__col.footer__col_padding
                   include ./sections/quote
+        script(type="template" id="modal-template")
+          .overlay
+            .popup__container
+              .popup__content
+              button.button.popup__btn
 
-        include ./templates/entry.pug
+      include ./templates/entry.pug

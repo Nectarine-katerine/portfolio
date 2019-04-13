@@ -15,7 +15,7 @@
 import { mapActions } from "vuex";
 export default {
   props:{
-    group: Object
+    я: Object
   },
   data() {
     return {
