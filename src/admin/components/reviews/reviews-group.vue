@@ -46,7 +46,6 @@ export default {
       groupReviews: {...this.review}
     }
   },
-
   methods: {
     ...mapActions('reviews', ['removeReviews', 'editReviews']),
     async deletedReviews(){

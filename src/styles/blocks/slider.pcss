@@ -85,10 +85,10 @@
 }
 
 .slider__text-item {
-  color: rgba(#283340, .7);
+  color: rgba(#283340, 0.7);
   font-weight: 600;
   font-size: 15px;
-  background-color: rgba(#7aa0c5, .1);
+  background-color: rgba(#7aa0c5, 0.1);
   border-radius: 23px;
   padding: 5px 20px;
 }
@@ -116,16 +116,16 @@
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
-  transition: text-decoration .3s;
+  transition: text-decoration 0.3s;
 
   &:hover {
     text-decoration: underline;
-    transition: text-decoration .3s;
+    transition: text-decoration 0.3s;
   }
 }
 
 .slider__text-desc {
-  color: rgba(#2b3948, .7);
+  color: rgba(#2b3948, 0.7);
   font-weight: 600;
   line-height: 1.72em;
   margin-bottom: 45px;
@@ -144,10 +144,11 @@
   cursor: pointer;
 
   &:hover {
+    
     &::before {
       content: "";
       background-color: $orange;
-      opacity: .3;
+      opacity: 0.3;
       position: absolute;
       top: 0;
       left: 0;

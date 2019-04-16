@@ -5,20 +5,24 @@
   text-align: center;
   height: 50%;
   display: block;
+
   @include tablets {
     display: none;
   }
 }
 .load__tablets {
   display: none;
+
   @include tablets {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
+    
     .section__photo {
       width: 80%;
       margin: 0 auto;
+      
       @include phones {
         width: 95%;
       }
@@ -36,7 +40,9 @@
   background-color: #dee4ed;
   margin-bottom: 27px;
 }
+
 .filled {
+
   .load__icon {
     display: none;
   }
@@ -48,7 +54,7 @@
 }
 
 .load__text {
-  color: rgba(#414c63, .5);
+  color: rgba(#414c63, 0.5);
   font-size: 16px;
   font-weight: 600;
   padding: 0 50px;
@@ -60,6 +66,7 @@
   height: 113px;
   fill: #fff;
 }
+
 .load__button_reviews {
   text-align: center;
   color: #383bcf;
@@ -81,6 +88,7 @@
   padding: 0;
   text-align: center;
   height: 50%;
+  
   @include tablets {
     margin-bottom: 30px;
   }

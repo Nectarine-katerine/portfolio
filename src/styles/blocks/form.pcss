@@ -33,6 +33,7 @@
 }
 
 .form__row_center-768 {
+
   @include tablets {
     justify-content: center;
   }
@@ -106,6 +107,7 @@
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
+
     @include tablets {
       font-size: 14px;
     }
@@ -116,7 +118,7 @@
 .form__input:-webkit-autofill:hover, 
 .form__input:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff;
-background-color: transparent;
+  background-color: transparent;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -131,7 +133,7 @@ background-color: transparent;
   width: 30px;
   height: 30px;
   fill: rgba(#fff, 0.3);
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   margin-right: 15px;
 }
 
@@ -147,9 +149,11 @@ background-color: transparent;
   border: 1px dashed #a1a1a1;
   background-color: #dee4ed;  
   cursor: pointer;
+
   @include tablets{
     height: 261px;
   }
+
   @include phones{
     height: 157px;
   }
@@ -183,6 +187,7 @@ background-color: transparent;
   line-height: 33.89px;
   text-align: justify;
   margin-bottom: 18px;
+
   @include tablets{
     display: none;
   }
@@ -199,6 +204,7 @@ background-color: transparent;
   color: #ffffff;
   animation: slide-up 0.4s ease;
   animation-direction: reverse;
+
   &::before{
     content: "";
     position: absolute;
@@ -216,17 +222,21 @@ background-color: transparent;
 
 .form__group{
   position: relative;
+
   &_error{
     .form__input{
       border-bottom: 1px solid #fb0000;
     }
+
     .form__input-icon{
       fill: #fb0000;
     }
+
     .form__error{
       animation-direction: normal;
     }
   }
+
   &_text{
     .form__error{
       bottom: -28%;
@@ -254,9 +264,11 @@ background-color: transparent;
   color: #fff;
   margin-top: 20px;
   cursor: pointer;
+
   &:hover {
     background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
   }
+  
   @include tablets {
     align-self: center;
   }

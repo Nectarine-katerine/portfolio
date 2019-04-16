@@ -1,7 +1,7 @@
 .arrow__left-icon, .arrow__right-icon {
   width: 15px;
   height: 15px;
-  fill: rgba(#fff, .3);
+  fill: rgba(#fff, 0.3);
 }
 
 .arrow__right-icon {
@@ -18,16 +18,16 @@
   justify-content: center;
   left: 100%;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: $orange;
-    transition: background-color .3s;
+    transition: background-color 0.3s;
   }
 
   @include phones {
-  right: 0;
-  left: unset;
+    right: 0;
+    left: unset;
   }
 }
 
@@ -48,6 +48,7 @@
 
 .arrow__right {
   bottom: 19.9%;
+
   @include phones {
     bottom: 24.9%;
   } 
@@ -65,7 +66,7 @@
   left: 40%;
   border: 1px solid #fff;
   background-color: transparent;
-  transition: border-color .3s;
+  transition: border-color 0.3s;
 }
 
 .arrow__left_round {
@@ -73,11 +74,11 @@
 
   &:hover {
     border-color: $orange;
-    transition: border-color .3s;
+    transition: border-color 0.3s;
 
     .arrow__left-icon {
       fill: $orange;
-      transition: fill .3s;
+      transition: fill 0.3s;
     }
   }
 }
@@ -86,11 +87,11 @@
 
   &:hover {
     border-color: $orange;
-    transition: border-color .3s;
+    transition: border-color 0.3s;
     
     .arrow__right-icon {
       fill: $orange;
-      transition: fill .3s;
+      transition: fill 0.3s;
     }
   }
 }

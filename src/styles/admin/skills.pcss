@@ -1,5 +1,6 @@
 .skills__top {
   display: flex;
+
   @include phones {
     flex-direction: column;
     width: 90%;
@@ -8,6 +9,7 @@
   }
 }
 .skills__title {
+
   @include phones {
     padding: 20px 0;
     width: 100%;
@@ -18,9 +20,11 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+
   @include tablets {
-    grid-template-areas: "frontend workflow"
+    grid-template-areas: "frontend workflow";
   }
+
   @include phones {
     grid-template-columns: 1fr;
 
@@ -29,18 +33,22 @@
     "workflow";
   }
 }
+
 .skills__item {
   box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
   background-color: #ffffff; 
 }
+
 .skills__item_workflow {
-   @include tablets {
+
+  @include tablets {
     grid-area: workflow;
   }
 }
 
 .skills__item_frontend {
-   @include tablets {
+
+  @include tablets {
     grid-area: frontend;
   }
 }
@@ -55,6 +63,7 @@
   margin-left: 60px;
   display: flex;
   align-items: center;
+  
   &:before {
     margin-right: 13px;
     content: '+';
@@ -64,26 +73,31 @@
     border-radius: 100%;
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
   }
+
   @include tablets {
     font-size: 14px;
   }
+
   @include phones {
     margin-left: 0;
     text-align: left;
     padding: 0;
   }
 }
+
 .skills__inner {
   width: 95%;
   padding: 30px 0;
   margin: 0 auto;
   height: 100%;
+
   @include phones {
     width: 90%;
   }
 }
 
 .skills__item_new-group {
+
   @include tablets {
     display: none;
   }

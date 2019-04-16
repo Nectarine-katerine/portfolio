@@ -4,29 +4,33 @@
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
+
 .edit__title {
   color: #414c63;
   font-size: 18px;
   font-weight: 700;
   padding: 25px 0;
-  border-bottom: 1px solid rgba(#1f232d, .15);
+  border-bottom: 1px solid rgba(#1f232d, 0.15);
   margin-bottom: 45px;
+
   @include phones {
-   padding-left: 5%;
-   padding-right: 5%; 
+    padding-left: 5%;
+    padding-right: 5%; 
   }
 }
+
 .edit__content {
   display: flex;
 
   @include phones {
-   width: 95%;
-   margin: 0 auto;
+    width: 95%;
+    margin: 0 auto;
     flex-direction: column;
   }
 }
 
 .edit__content_works {
+  
   @include tablets {
     flex-direction: column;
   }

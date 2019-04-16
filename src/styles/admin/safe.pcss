@@ -4,17 +4,19 @@
 }
 
 .safe_works {
-@include tablets {
+
+  @include tablets {
     width: 80%;
     margin: 0 auto; 
   }
+
   @include phones {
     width: 95%;
   }
 }
 
 .safe__row-title {
-  color: rgba(#414c63, .5);
+  color: rgba(#414c63, 0.5);
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -33,6 +35,7 @@
 
 .safe__row {
   margin-bottom: 30px;
+
   &:last-child {
     margin-bottom: 0;
   } 
@@ -41,7 +44,8 @@
 .safe__row_reviews {
   width: 100%;
   display: flex;
-   @include tablets {
+
+  @include tablets {
     flex-direction: column;
     margin: 0;
   }
@@ -50,23 +54,28 @@
 .safe__row_two-col {
   flex: 1;
   margin-right: 30px;
+
   &:last-child {
     margin-right: 0;
   }
-   @include tablets {
+
+  @include tablets {
     margin: 0;
     margin-bottom: 20px;
+
     &:last-child {
       margin-bottom: 20px;
     }
   }
 }
+
 .safe__textarea {
   min-height: 145px;
-  border: 1px solid rgba(#414c63, .2);
+  border: 1px solid rgba(#414c63, 0.2);
   padding: 18px 110px 18px 20px;
   line-height: 1.62em;
   resize: vertical;
+
   @include phones {
     padding: 18px;
     min-height: 190px;
@@ -76,25 +85,28 @@
 .safe__btns {
   display: flex;
   justify-content: flex-end;
-   @include tablets {
+
+  @include tablets {
     justify-content: center;
   }
 }
 
 .safe__reset {
-color: #383bcf;
-font-size: 16px;
-font-weight: 600;
-background: none;
-border: none;
-outline: none;
-margin-right: 60px;
+  color: #383bcf;
+  font-size: 16px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  outline: none;
+  margin-right: 60px;
 }
 
 .safe_reviews {
+
   @include tablets {
     width: 75%;
   }
+  
   @include phones {
     width: 90%;
     margin: 0 auto;

@@ -4,21 +4,25 @@
   flex-direction: column;
   height: 100%;
 }
+
 .group__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr;
 }
+
 .group__row_border-bottom {
-  border-bottom: 1px solid rgba(#1f232d, .15);
+  border-bottom: 1px solid rgba(#1f232d, 0.15);
   padding: 15px 15px 15px 0;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .group__row_three-col {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
+
 .group__col_end {
   justify-self: end;
 }
@@ -32,9 +36,10 @@
 
 .group__name_padding {
   padding: 10px 20px;
-  border-bottom: 1px solid rgba(#1f232d, .5);
+  border-bottom: 1px solid rgba(#1f232d, 0.5);
   margin-right: 20px;
   width: 20%;
+
   @include phones {
     width: 28%;
   }
@@ -42,6 +47,7 @@
 
 .group__name_new {
   width: 45%;
+  
   @include phones {
     width: 49%;
   }
