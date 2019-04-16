@@ -3,48 +3,58 @@
     .container.reviews__container
       .section__top
         .title Блок "Отзывы"
-      reviews-add(v-if="showReviewsAdding" 
-      :showReviewsAdding="showReviewsAdding")
+      reviews-add(v-if="showFormReview"
+      @hideFormReview="cancelEditReview"
+    )
       ul.section__list
-        li.section__item.section__item_add-new(@click="showReviewsAdding = true")
+        li.section__item.section__item_add-new(v-if="!showFormReview")
           .add-new
-            button.add-new__btn(type="button") +
+            button.add-new__btn(type="button" @click.prevent="showFormReview = !showFormReview") +
             .add-new__text Добавить отзыв
         
         reviews-group(
-          v-for="review in reviews" 
-          :key="review.id" 
-          :rev="review"
+          v-for="review in reviews"
+          :key="review.id"
+          :review="review"
+          @editReview="editReview"
         )
 </template>
 
 <script>
-
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapMutations } from "vuex";
 export default {
-    components: {
-        reviewsAdd: () => import('../reviews/reviews-add.vue'),
-        reviewsGroup: () => import('../reviews/reviews-group.vue')
+  data() {
+    return {
+      showFormReview: false,
+    };
+  },
+  computed: {
+    ...mapState("reviews", {
+      reviews: state => state.reviews
+    })
+  },
+  components: {
+    reviewsAdd: () => import("../reviews/reviews-add.vue"),
+    reviewsGroup: () => import("../reviews/reviews-group.vue")
+  },
+  methods: {
+    ...mapActions("reviews", ["fetchReviews"]),
+    ...mapMutations('reviews', ['SET_EDITED_REVIEW']),
+    editReview(review){
+      this.SET_EDITED_REVIEW(review);
+      this.showFormReview = true;
     },
-    data() {
-      return {
-        showReviewsAdding: false
-      }
-    },
-    computed: {
-      ...mapState('reviews', {
-        reviews: state => state.reviews
-      })
-    },
-    methods: {
-      ...mapActions('reviews', ['fetchReviews'])   
-    },
-    async created() {
-      try {
-        await this.fetchReviews();
-      } catch (error) {
-        alert('Ошибка при загрузки Отзывов');
-      };
+    cancelEditReview(){
+      this.showFormReview = false;
+      this.SET_EDITED_REVIEW({});
     }
+  },
+  async created() {
+    try {
+      await this.fetchReviews();
+    } catch (error) {
+      alert(error);
+    }
+  }
 }
 </script>

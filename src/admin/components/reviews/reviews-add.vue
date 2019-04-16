@@ -4,7 +4,7 @@
       h2.edit__title Новый отзыв
       .edit__content.reviews__content
         label.load.load__reviews
-          .load__photo(v-model="review.photo"
+          .load__photo(
             :class="{'filled' : this.rendedPhotoUrl.length}"
             :style="{'backgroundImage' : `url(${this.rendedPhotoUrl})`}"
           )  

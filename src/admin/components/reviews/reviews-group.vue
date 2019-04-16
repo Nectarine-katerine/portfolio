@@ -10,7 +10,7 @@
             .autor__position {{review.occ}}Преподаватель
       .section__data.reviews__data
         .section__desc
-          p {{rev.text}}
+          p {{review.text}}
         .section__btns
           button(type="button" @click.prevent="openEditMode = false").button-iconed.section__btn Править
             svg.pencil__icon.pencil__icon_blue.section__icon
@@ -46,9 +46,7 @@ export default {
       groupReviews: {...this.review}
     }
   },
-  props: {
-    review: Object
-  },
+
   methods: {
     ...mapActions('reviews', ['removeReviews', 'editReviews']),
     async deletedReviews(){
