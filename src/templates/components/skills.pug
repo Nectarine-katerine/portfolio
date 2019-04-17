@@ -1,27 +1,28 @@
-script(type="text/x-template")#skills-list
-  .values__widget-container
-    ul.skills
-      li.skills__item(v-for="cat in categories" :key="cat.id")
-        skills-row(
-          :cat="cat"
-          :skills="filterSkillsCategoryId(cat.id)"
+script(type="text/x-template")#graphs-list
+  .graphs__content
+    ul.graphs__row-list
+      li.graphs__row-item(v-for="group in skillsGroups" :key="group.id")
+        graphs-row(
+          :group="group"
+          :skills="filterSkillsByGroup(group.id)"
         )
 
-script(type="text/x-template")#skills-row
-  .skills-row
-    .skills-row__title {{cat.category}}
-    ul.skills-row__list
-      li.skills-row__item(v-for="skill in skills") 
-        skill(
-          :skill="skill"
+script(type="text/x-template")#graphs-row
+  .graphs__row-content
+    h3.graphs__title {{group.category}}
+    ul.graphs__list
+      li.graphs__item(v-for="skill in skills" :key="skill.id")
+        graph(
+          :skillName="skill.title"
+          :skillPercent="skill.percent" 
         )
 
-script(type="text/x-template")#skills
-  .skill
-    svg(viewBox="0 0 100 100").skill__circle-shape
-      circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-      circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(-180 50 50)').skill__circle.skill__circle_above
+script(type="text/x-template")#graph
+  .graph__item-content
+    svg(viewBox="0 0 100 100").graphs__svg
+      circle(cx="50" cy="50" r="40").graphs__circle.graphs__circle_under
+      circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform="rotate(-180 50 50)" ).graphs__circle.graphs__circle_above
       linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-        stop(offset="0%" stop-color="#ea7400")
-        stop(offset="100%" stop-color="#f29400")
-    .skill__circle-text {{skill.title}}
+        stop(offset='0%', stop-color='#5500f2')
+        stop(offset='100%', stop-color='#8f00ef')
+    h4.graphs__name {{skillName}}

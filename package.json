@@ -61,6 +61,7 @@
     "pug": "^2.0.3",
     "simple-vue-validator": "^0.16.0",
     "stylelint": "^10.0.0",
+    "vee-validate": "^2.2.3",
     "vue": "^2.6.7",
     "vue-flickity": "^1.1.2",
     "vue-router": "^3.0.3",

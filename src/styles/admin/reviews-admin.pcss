@@ -1,0 +1,153 @@
+.reviews {
+  position: relative;
+}
+
+.reviews__title {
+  margin-bottom: 90px;
+
+  @include tablets {
+    margin-bottom: 67px;
+  }
+
+  @include w_650 {
+    margin-bottom: 100px;
+    text-align: center;
+  }
+}
+
+.reviews__list {
+  display: flex;
+  align-items: flex-start;
+}
+
+.reviews__item {
+  width: 50%;
+  margin-right: 84px;
+  display: flex;
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  @include w_500 {
+    width: 100%;
+  }
+}
+
+.reviews__text {
+  opacity: 0.5;
+  line-height: 30px;
+  margin-bottom: 25px;
+  min-height: 120px;
+
+  @include tablets {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.reviews__icon {
+  width: 75px;
+  height: 63px;
+  opacity: 0.05;
+  fill: $text-color;
+  margin-right: 30px;
+
+  @include desktop {
+    margin-right: 20px;
+  }
+}
+
+.reviews__author {
+  display: flex;
+  align-items: center;
+}
+
+.reviews__avatar {
+  margin-right: 31px;
+}
+
+.reviews__name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+
+  @include tablets {
+    font-size: 16px;
+  }
+}
+
+.reviews__post {
+  opacity: 0.3;
+  font-weight: 600;
+
+  @include tablets {
+    font-size: 14px;
+  }
+}
+
+.reviews__controls {
+  display: flex;
+  position: absolute;
+  top: 2px;
+  left: 51%;
+  margin-left: 10%;
+
+  @include desktop {
+    left: 43%;
+    top: 5px;
+  }
+
+  @include w_980 {
+    left: 50%;
+  }
+
+  @include w_850 {
+    left: 60%;
+  }
+
+  @include tablets {
+    left: 48%;
+    top: 0;
+  }
+
+  @include w_650 {
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+  }
+}
+
+.reviews__controls-icon {
+  width: 8px;
+  height: 10px;
+}
+
+.reviews__controls-link {
+  width: 50px;
+  height: 50px;
+  border: 1px #000 solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.reviews__controls-link_left {
+  .reviews__controls-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.reviews__quote {
+  padding-top: 12px;
+
+  @include tablets {
+    display: none;
+  }
+}

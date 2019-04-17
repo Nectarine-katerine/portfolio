@@ -1,0 +1,227 @@
+.form__row {
+  display: flex;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-last-child(2) {
+    margin-bottom: 60px;
+
+    @include tablets {
+      margin-bottom: 25px;
+    }
+
+    @include phones {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablets {
+    margin-bottom: 35px;
+  }
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.form__row_center-768 {
+  @include tablets {
+    justify-content: center;
+  }
+}
+
+.form__col {
+  flex: 1;
+  margin-right: 50px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablets {
+    margin-right: 20px;
+  }
+
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.form__label {
+  display: block;
+  opacity: 0.3;
+  font-weight: 600;
+  margin-bottom: 18px;
+  padding-left: 45px;
+
+  @include tablets {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+}
+
+.form__input {
+  color: $title-color;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 36px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+
+  &:focus {
+    border-bottom: 2px solid #5500f2;
+
+    &+.form__input-icon {
+      fill: #5500f2;
+      opacity: 1;
+    }
+  }
+  &_pl0 {
+    padding-left: 0;
+  }
+
+  @include tablets {
+    font-size: 14px;
+    line-height: 24px;
+    padding-bottom: 15px;
+  }
+
+  @include placeholder {
+    opacity: 0.51;
+    font-weight: 600;
+  }
+}
+
+.form__input-container {
+  position: relative;
+}
+
+.form__input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  fill: $title-color;
+  transition: opacity 0.3s;
+  opacity: 0.3;
+  margin-right: 15px;
+}
+
+.form__input_text {
+  resize: none;
+}
+
+.form__file-input-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 276px;
+  border: 1px dashed #a1a1a1;
+  background-color: #dee4ed;
+  cursor: pointer;
+
+  @include w_850 {
+    height: 261px;
+  }
+
+  @include w_650 {
+    height: 157px;
+  }
+}
+
+.form__file-input {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.form__file-input-controls {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__file-input-text {
+  opacity: 0.5;
+  color: $title-color;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 33.89px;
+  text-align: justify;
+  margin-bottom: 18px;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.form__error {
+  position: absolute;
+  left: 11%;
+  top: 95%;
+  padding: 13px 20px;
+  background-color: #cd1515;
+  z-index: 100;
+  font-size: 14px;
+  color: #ffffff;
+  animation: slide-up 0.4s ease;
+  animation-direction: reverse;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid #cd1515;
+  }
+}
+
+.form__group {
+  position: relative;
+  &_error {
+    .form__input {
+      border-bottom: 1px solid $errors-color;
+    }
+    .form__input-icon {
+      fill: $errors-color;
+    }
+    .form__error {
+      animation-direction: normal;
+    }
+  }
+  &_text {
+    .form__error {
+      bottom: -28%;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

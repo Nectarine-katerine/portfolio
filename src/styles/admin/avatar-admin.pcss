@@ -1,0 +1,54 @@
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include tablets {
+    width: 172px;
+    height: 172px;
+  }
+
+  &_empty {
+    position: relative;
+    background-color: #dee4ed;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 85px;
+      height: 113px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: svg-load("user-empty.svg", fill=#fff) center center no-repeat;
+    }
+  }
+}
+
+.avatar__small {
+  width: 75px;
+  height: 75px;
+  min-width: 75px;
+  min-height: 75px;
+
+  @include w_650 {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+}
+
+.avatar__w45 {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  min-height: 45px;
+}
+
+.avatar__w50 {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  min-height: 45px;
+}

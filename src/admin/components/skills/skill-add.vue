@@ -1,52 +1,57 @@
 <template lang="pug">
-  li.skills__item.skills__item_new-group
-    .skills__inner
-      form.group
-        .group__row.group__row_border-bottom
-          .group__col
+  li.admin-about__item.admin-block
+    .admin-block__header
+      .admin-about__name
+        .form__input-container.admin-about__form
+          .form__group(v-bind:class="{ form__group_error: errors.has('groupName') }")
             input(
-              type="text"
+              type="text" 
               name="groupName"
-              placeholder="Название новой группы"
+              placeholder="Название новой группы" 
               v-model="groupTitle"
+              v-validate="'required|max:25'"
               v-on:keyup.enter="abbGroupValidate"
-            ).group__name.section__input
-          .group__col.group__col_end
-            button.button-iconed(type="button"
-              @click.prevent="addSkillGroup"
-            )
-              svg.tick__icon.group__icon
-                use(xlink:href="sprite.svg#tick")
-            button.button-iconed(type="button"
-              @click.prevent="$emit('handleAddForm')"
-            )
-              svg.cross__icon.group__icon
-                use(xlink:href="sprite.svg#cross")
-        skillItemAdd
+            ).form__input
+          .form__error(v-show="errors.has('groupName')") {{ errors.first('groupName') }}
+      ul.controls__list
+        li.controls__item
+          button.controls__btn(
+            @click.prevent="abbGroupValidate"
+          )
+            div(class=`controls__icon controls__icon_tick`)          
+        li.controls__item
+          button.controls__btn(
+            @click.prevent="$emit('handleAddForm')"
+          )
+            div(class=`controls__icon controls__icon_cross`)          
+    .admin-block__content
+    .admin-block__footer.disabled
+      skillItemAdd
 </template>
 
 <script>
+
 import { mapActions } from "vuex";
-import skillItemAdd from "../skills/skill-item-add";
+
 export default {
-  data(){
+  data() {
     return{
       groupTitle: ""
     }
   },
-  components:{
-    skillItemAdd
+  components: {
+    skillItemAdd: () => import('../skills/skill-item-add.vue')
   },
-  methods:{
+  methods: {
     ...mapActions('skillsGroup', ['addNewSkillGroup']),
-    abbGroupValidate(){
-      this.$validator.validate().then(valid=>{
-        if(valid){
+    abbGroupValidate() {
+      this.$validator.validate().then(valid => {
+        if(valid) {
           this.addSkillGroup();
         }
       });
     },
-    async addSkillGroup(){
+    async addSkillGroup() {
       try {
         await this.addNewSkillGroup(this.groupTitle);
         this.groupTitle = '';
@@ -61,20 +66,23 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../../styles/mixins.pcss";
+
 .admin-block__footer {
   position: relative;
   
-  &.disabled{
-    opacity: .5;
+  &.disabled {
+    opacity: 0.5;
     pointer-events: none;
     user-select: none;
   }
 }
+
 .admin-about__form {
   .form__input {
     padding: 0;
     border-bottom: 1px solid #000;
     font-weight: 600;
+
     @include placeholder{
       font-size: 18px;
       opacity: 0.51;

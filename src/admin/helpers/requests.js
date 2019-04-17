@@ -1,9 +1,10 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token");
+const token = localStorage.getItem('loftToken');
 
 axios.defaults.baseURL = "https://webdev-api.loftschool.com/";
-axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+
 
 axios.interceptors.response.use(
   function(response) {
@@ -15,7 +16,11 @@ axios.interceptors.response.use(
     if (error.response.status === 401) {
       return axios.post("/refreshToken").then(response => {
         const token = response.data.token;
-        localStorage.setItem("token", token);
+        localStorage.setItem("loftToken", token);
+
+        let seconds = Math.round(new Date()/1000) + response.data.ttl;
+        localStorage.setItem('loftExpiredToken', seconds);
+
         axios.defaults.headers["Authorization"] = `Bearer ${token}`;
         originalRequest.headers["Authorization"] = `Bearer ${token}`;
         return axios(originalRequest);
@@ -25,4 +30,4 @@ axios.interceptors.response.use(
   }
 );
 
-export default axios;
+export default axios

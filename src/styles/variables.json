@@ -6,5 +6,12 @@
   "desktopHD": "2500px",
   "desktop": "1800px",
   "tablets": "1200px",
-  "phones": "768px"
+  "phones": "768px",
+  "title-color": "#414c63",
+  "white": "#ffffff",
+  "blue": "#f1f5f9",
+  "purple": "#5500f2",
+  "grey": "#63656c",
+  "grey-light": "#eaeaea",
+  "bp-phones": "480px"
 }

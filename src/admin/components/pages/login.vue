@@ -1,35 +1,46 @@
 <template lang="pug">
   .login
-    .login__content
-      form.login__form(@submit.prevent="login")
-        .login__form-title Авторизация
-        .login__row
-          app-input(
-            title="Логин"
-            icon="user"
-            v-model="user.name"
-          )
-        .login__row
-          app-input(
-            title="Пароль"
-            icon="key"
-            type="password"
-            v-model="user.password"
-          )
-        .login__btn
-          button(
-            type="submit"
-          ).login__send-data Отправить
+    form(@submit.prevent="validationLogin").login__form
+      .login__title Авторизация
+      .form__row
+        .form__col
+          .form__group(v-bind:class="{ form__group_error: errors.has('login') }")
+            label.form__label Логин
+            .form__input-container
+              input(type="text" 
+              name="login"
+              v-validate="'required'"
+              v-model="user.name"
+              ).form__input
+              //+icon('user', 'form__input-icon')  
+            .form__error(v-show="errors.has('login')") {{ errors.first('login') }}
+      .form__row
+        .form__col
+          .form__group(v-bind:class="{ form__group_error: errors.has('password') }")
+            label.form__label Пароль
+            .form__input-container
+              input(type="password" 
+              name="password"
+              v-validate="'required'"
+              v-model="user.password").form__input
+              //+icon('envelope', 'form__input-icon')  
+            .form__error(v-show="errors.has('password')") {{ errors.first('password') }}
+      .form__row
+        button(
+          type="submit"
+          :class="{btn_load: load}"
+          :disabled="load"
+          ).btn Отправить
+      a(href="/").login__close
+
 </template>
 
 <script>
-import $axios from "@/requests";
+import { mapActions, mapMutations } from "vuex";
 export default {
-  components: {
-    appInput: () => import("components/input.vue")
-  },
   data() {
     return {
+      load: false,
       user: {
         name: "Nectarine",
         password: "Haveanice"
@@ -37,94 +48,72 @@ export default {
     };
   },
   methods: {
-    async login() {
+    ...mapActions('auth', ['login']),
+    ...mapActions('errors', ['setError']),
+    ...mapMutations('errors', ['SET_ERROR', 'CLOSE_ERROR']),
+    async auth() {
+      this.load = true;
       try {
-        const {
-          data: { token }
-        } = await $axios.post("/login", this.user);
-        
-        localStorage.setItem("token", token);
-        $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-        this.$router.replace("/");
+        await this.login(this.user); 
+        this.user.name = '';
+        this.user.password = '';
+        this.$validator.reset();  
+        this.load = false;
+        this.$router.push('/');
       } catch (error) {
-        //error handling
+        this.load = false;
+        this.setError({
+          message: error,
+          type: 'error'
+        });
       }
+    },
+    validationLogin() {
+      this.CLOSE_ERROR();
+      this.$validator.validate().then(valid => {
+        if (valid) {
+          this.auth();
+        }
+      });
     }
   }
 };
 </script>
 
-<style lang="postcss">
-@import "../../../styles/mixins.pcss";
+<style lang="postcss" scoped>
+
 .login {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2d3c4e;
+  opacity: 0.9;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("../../../images/content/admin_bg.png") center center / cover no-repeat;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.5;
-    background: $text-color;
-  }
 }
-.login__form-title {
-  font-size: 36px;
-  text-align: center;
-  font-weight: 600;
-}
-.login__content {
-  position: relative;
-  @include phones {
-    height: 100%;
-    width: 100%;
-  }
-}
-.login__row {
-  margin-bottom: 35px;
-}
-.login__btn {
-  display: flex;
-  width: 100%;
-  padding: 0 8%;
-  justify-content: center;
-}
-.login__send-data {
-  width: 100%;
-  padding: 30px;
-  background-image: linear-gradient(to right, #ad00ed, #5500f2);
-  border-radius: 40px 0 40px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 18px;
-  &[disabled] {
-    opacity: 0.5;
-    filter: grayscale(100%);
-  }
-}
+
 .login__form {
-  width: 563px;
-  padding: 50px 77px 60px;
-  background: #fff;
-  @include phones {
-    width: 100%;
-    padding-right: 7%;
-    padding-left: 7%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  position: relative;
+  padding: 60px 75px;
+  background-color: #ffffff;
+}
+
+.login__title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.login__close {
+  width: 20px;
+  height: 20px;
+  background: svg-load('remove.svg', fill=#414c63, width=100%, height=100%);
+  position: absolute;
+  right: 5%;
+  top: 5%;
 }
 </style>
-

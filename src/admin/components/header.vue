@@ -1,99 +1,96 @@
 <template lang="pug">
-  .header
-    .container.header__container
-      .header__photo
-        img(src="../../images/content/me.jpeg").header__pic
-      .header__name Екатерина Исмиляева
-      .header__title Панель администрирования
-      button.header__exit-btn(@click="logout") Выйти
+  header.header
+    .container.container_admin.admin-header__container
+      .avatar.avatar__w45.admin-avatar
+        img(src="../../images/content/me.jpeg")
+      .admin-header__name Исмиляева Екатерина
+      .admin-header__title Панель администрирования
+      .admin-header__controls
+        a(@click.prevent="exit").admin-header__link Выйти
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapMutations } from "vuex";
+
 export default {
   methods: {
-    ...mapActions("user", ["logout"])
-  }
+      ...mapActions('auth', ['logout']),
+      ...mapMutations('errors', ['SET_ERROR']),
+      async exit() {
+        try {
+          await this.logout(); 
+          window.location = '/';
+        } catch (error) {
+          this.setError({
+            message: error,
+            type: 'error'
+          });        
+        }
+      }
+    }
 };
 </script>
 
-
 <style lang="postcss" scoped>
-@import url("../../styles/mixins.pcss");
+
+@import "../../styles/mixins.pcss";
+@import "../../styles/admin/avatar-admin.pcss";
+
 .header {
-    background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
-  }
-
-.header__container {
-  display: grid;
-  grid-template-columns: .3fr 1fr 1fr 3fr;
-  grid-template-rows: 1 fr;
+  grid-area: header;
+  background-color: #3e3e59;
+  background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
   padding: 16px 0;
+  color: #fff;
+}
+
+.admin-header__container {
+  display: grid;
+  grid-template: "avatar name title controls" 1fr / 65px 1fr 1fr 1fr;
   align-items: center;
-  grid-template-areas: 
-  "header__photo header__name header__title header__exit-btn";
-  @include tablets {
-    grid-template-columns: .4fr 1.5fr 1.5fr 2fr;
+
+  @include phones{
+    grid-template-columns: 45px 1fr;
+    grid-template-rows: 22.5px 22.5px;
+    grid-column-gap: 11px;
   }
-  
+}
+
+.admin-header__controls {
+  text-align: right;
+
   @include phones {
-  grid-template-columns: 0.1fr 1fr;
-  grid-template-rows: 1 fr 1 fr;
-  grid-column-gap: 10px;
-  grid-template-areas: 
-  "header__photo header__name"
-  "header__photo header__exit-btn";
-  width: 90%;
-  margin: 0 auto;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: left;
   }
 }
 
-.header__photo {
-  width: 45px;
-  height: 45px;
-  grid-area: header__photo;
-}
-
-.header__pic {
-  border-radius: 50%;
-  object-fit: cover;
-   object-position: center;
-   max-width: 100%;
-   max-height: 100%;
-   display: block;
-}
-
-.header__name {
-  color: #ffffff;
-  font-weight: 600;
+.admin-header__name {
   font-size: 18px;
-  grid-area: header__name;
+  font-weight: 600;
+
+  @include phones {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
 }
 
-.header__title {
-  color: rgba(#fff, .5);
+.admin-header__title {
+  opacity: 0.5;
   font-size: 14px;
-  grid-area: header__title;
+
   @include phones {
     display: none;
   }
 }
 
-.header__exit-btn {
-  justify-self: end;
-  padding: 0;
-  display: block;
-  outline: none;
-  background: transparent;
+.admin-header__link {
+  font-size: 16px;
+  opacity: 0.7;
   text-decoration: underline;
-  border: none;
-  color:rgba(#fff, .7);
-  font-family: "Open Sans";
-  font-size: 14px;
-  cursor: pointer;
-  grid-area: header__exit-btn;
-  @include phones {
-    justify-self: start;
+  &:hover {
+    opacity: 1;
   }
 }
 </style>

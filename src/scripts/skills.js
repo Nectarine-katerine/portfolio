@@ -1,69 +1,67 @@
-import Vue from  'vue';
+import Vue from 'vue';
 import axios from "axios";
-import requests from "../admin/requests";
 
-const skill = {
-    template: '#skills',
-    props: {
-        skill: Object
-    },
-    methods: {
-        drawColoredCircle() {
-          const circle = this.$refs["color-circle"];
-          const dashArray = parseInt(
-            getComputedStyle(circle).getPropertyValue("stroke-dasharray")
-          );
-          const percent = (dashArray / 100) * (100 - this.skill.percent);
-    
-          circle.style.strokeDashoffset = percent;
-        }
-      },
-      
-      mounted() {
-        this.drawColoredCircle();
-      }
-    };
+const graph = {
+  template: "#graph",
+  props: {
+    skillNsme: String,
+    skillPercent: Number
+  },
+  methods: {
+    drawGradient(){
+      const circle = this.$refs['color-circle'];
+      const dashArray = parseInt(getComputedStyle(circle).getPropertyValue('stroke-dasharray'));
+      const dashOffset = (dashArray/100) * (100-this.skillPercent);
 
-const skillsRow = {
-    template: '#skills-row',
-    components: {
-        skill
-    },
-    props: {
-        skills: Array,
-        cat: Object
+      circle.style.strokeDashoffset = dashOffset;
     }
+  },
+  mounted(){
+    this.drawGradient()
+  }
 }
 
+const graphsRow = {
+  template: "#graphs-row",
+  components: {
+    graph
+  },
+  props: {
+    group: Object,
+    skills: Array
+  }
+}
 
-
-new Vue ({
-    el: "#skills-component",
-    template: "#skills-list",
-    components: {
-        skillsRow
-    },
-    data(){
-        return {
-            skills: {},
-            categories: {}
-        }
-    },
-    // props: {
-    //   skills: Object
-    // },
-    methods: {
-      filterSkillsCategoryId(categoryId) {
-        return this.skills.filter(skill=> skill.category == categoryId)
-    } 
-    },
-    created(){
-      axios.get('/skills/114').then(response => {
-        this.skills = response.data
-    }),
-    axios.get('/categories/114').then(response => {
-      this.categories = response.data
-  })
-     
+new Vue({
+  el: "#graphs-component",
+  template: "#graphs-list",
+  components: {
+    graphsRow
+  },
+  data(){
+    return{
+      skillsGroups: [],
+      skills: []
     }
-})
+  },
+  methods:{
+    filterSkillsByGroup(groupId){
+      return this.skills.filter(skill => skill.category === groupId);
+    }
+  },
+  async created(){
+    try {
+      const response = await axios.get('https://webdev-api.loftschool.com/categories/114');
+      this.skillsGroups = response.data;
+    } catch (error) {
+
+    }
+
+    try {
+      const response = await axios.get('https://webdev-api.loftschool.com/skills/114');
+      this.skills = response.data;
+    } catch (error) {
+
+    }
+  }
+});
