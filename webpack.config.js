@@ -8,14 +8,15 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
+
   const isProductionBuild = argv.mode === "production";
-  const publicPath = "/";
+  const publicPath = '';
 
   const pcss = {
     test: /\.(p|post|)css$/,
     use: [
       isProductionBuild ? MiniCssExtractPlugin.loader : "vue-style-loader",
-      "css-loader",
+      { loader: "css-loader", options: { sourceMap: true } },
       "postcss-loader"
     ]
   };
@@ -30,7 +31,7 @@ module.exports = (env, argv) => {
     loader: "babel-loader",
     exclude: /node_modules/,
     options: {
-      presets: ["@babel/preset-env"],
+      presets: ['@babel/preset-env'],
       plugins: ["@babel/plugin-syntax-dynamic-import"]
     }
   };
@@ -100,9 +101,7 @@ module.exports = (env, argv) => {
     resolve: {
       alias: {
         vue$: "vue/dist/vue.esm.js",
-        images: path.resolve(__dirname, "src/images"),
-        components: path.resolve(__dirname, "src/admin/components"),
-        "@": path.resolve(__dirname, "src/admin")
+        images: path.resolve(__dirname, "src/images")
       },
       extensions: ["*", ".js", ".vue", ".json"]
     },
@@ -125,7 +124,13 @@ module.exports = (env, argv) => {
         chunks: ["admin"]
       }),
       new SpriteLoaderPlugin({ plainSprite: true }),
-      new VueLoaderPlugin()
+      new VueLoaderPlugin(),
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery'",
+        "window.$": "jquery"
+    })
     ],
     devtool: "#eval-source-map"
   };
