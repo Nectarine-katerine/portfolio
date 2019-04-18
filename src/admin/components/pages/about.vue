@@ -93,7 +93,6 @@ export default {
       width: 100%;
       height: 100%;
       user-select: none;
-      background: rgba(#ccc, .5) svg-load('loader.svg', fill=#414c63, width=80px, height=80px) center center no-repeat;
     }
   }
 }
@@ -104,7 +103,7 @@ export default {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   
-  @include w_650 {
+  @include phones {
     grid-template-columns: repeat(1, 100%);
     grid-row-gap: 10px;
     grid-column-gap: 0;
@@ -124,7 +123,7 @@ export default {
     width: 29%;
   }
   
-  @include w_650{
+  @include phones{
     width: 32%;
   }
 }
@@ -182,7 +181,7 @@ export default {
     }
   }
   
-  @include w_650 {
+  @include phones {
     justify-content: flex-start;
   }
 }
@@ -195,7 +194,7 @@ export default {
      width: 48%;
    }
    
-   @include w_650 {
+   @include phones {
      width: 55%;
    }
 }
@@ -212,7 +211,7 @@ export default {
 .admin-about__new-add {
   margin-right: 10px;
   
-  @include w_650 {
+  @include phones {
     margin-right: 0;
   }
 }

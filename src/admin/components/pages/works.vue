@@ -15,7 +15,7 @@
         section.admin-works
           ul.admin-works__list
             li.admin-works__item.admin-block(v-if="!showFormWork")
-              button(@click.prevent="showFormWork = !showFormWork").admin-add.admin-add_bigest
+              button(type="button" @click.prevent="showFormWork = !showFormWork").admin-add.admin-add_bigest
                 .admin-add__icon
                 | Добавить работу
             
@@ -92,14 +92,14 @@ export default {
   .admin-block__content {
     padding: 30px 30px 40px 30px;
     margin-bottom: 0;
-    @include w_650 {
+    @include phones {
       padding: 24px 0 28px 20px;
     }
   }
-  @include w_850 {
+  @include tablets {
     grid-template-columns: repeat(2, 1fr);
   }
-  @include w_500 {
+  @include phones {
     grid-template-columns: 1fr;
     grid-column-gap: 0;
     grid-row-gap: 10px;
@@ -133,7 +133,6 @@ export default {
     height: 100%;
     user-select: none;
     background: rgba(#ccc, 0.5)
-      svg-load("loader.svg", fill=#414c63, width=80px, height=80px) center
       center no-repeat;
   }
 }

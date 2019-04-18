@@ -18,13 +18,13 @@
       .controls
         ul.controls__list.admin-reviews__controls
           li.controls__item
-            button.controls__btn(
+            button.controls__btn(type="button"
               @click.prevent="editThisReview(review)"
             )
               span.controls__text Править
               div(class=`controls__icon controls__icon_pencil`)
           li.controls__item
-            button.controls__btn(
+            button.controls__btn(type="button"
               @click.prevent="deleteReview(review.id)"
             )
               span.controls__text Удалить
@@ -83,7 +83,7 @@ export default {
   padding: 30px 20px;
   min-height: 380px;
 
-  @include w_500 {
+  @include phones {
     min-height: 111px;
   }
 
@@ -95,18 +95,19 @@ export default {
     padding-top: 0;
     padding-bottom: 20px;
 
-    @include w_500 {
+    @include phones {
       padding-left: 0;
       padding-bottom: 30px;
       padding-right: 0;
     }
   }
+  
   .admin-block__content {
     padding-top: 23px;
     padding-left: 11px;
     padding-right: 25px;
 
-    @include w_500 {
+    @include phones {
       padding-left: 0;
       padding-right: 0;
     }
@@ -122,7 +123,7 @@ export default {
   font-weight: 600;
   line-height: 30px;
 
-  @include w_500 {
+  @include phones {
     font-size: 14px;
     line-height: 24px;
   }
@@ -157,7 +158,7 @@ export default {
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-      background: svg-load('user-empty.svg', fill=#fff) center center no-repeat;
+      background: svg-load('user.svg', fill=#fff) center center no-repeat;
     }
   }
 }
@@ -176,7 +177,7 @@ export default {
   min-width: 75px;
   min-height: 75px;
 
-  @include w_650 {
+  @include phones {
     width: 50px;
     height: 50px;
     min-width: 50px;

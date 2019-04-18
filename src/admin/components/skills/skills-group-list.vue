@@ -7,12 +7,12 @@
         .controls
           ul.controls__list
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="editMode = true"
               )
                 div(class=`controls__icon controls__icon_pencil`)          
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="removeThisGroup"
               )
                 div(class=`controls__icon controls__icon_trash`)          
@@ -32,12 +32,12 @@
         .controls
           ul.controls__list
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="editGroupValidate"
               )
                 div(class=`controls__icon controls__icon_tick`)          
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="editMode = false"
               )
                 div(class=`controls__icon controls__icon_cross`)          

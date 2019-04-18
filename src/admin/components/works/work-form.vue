@@ -16,7 +16,7 @@
                         :style="{'backgroundImage': `url(${this.renderedPhoto})`}"
                       )
                         input(
-                          type="file",
+                          type="file", 
                           class="form__file-input"
                           name="photo"
                           v-validate="'required|image|size:1500'"
@@ -34,11 +34,10 @@
                         .form__input-container
                           input(
                             type="text"
-                            placeholder="Дизайн сайта для автосалона Porsche"
                             name="title"
                             v-validate="'required|max:50'"
                             v-model="work.title"
-                            ).form__input
+                            ).form__input                
                         .form__error(v-show="errors.has('title')") {{ errors.first('title') }}
                   .form__row
                     .form__col
@@ -47,12 +46,11 @@
                         .form__input-container
                           input(
                             type="text"
-                            placeholder="https://porsche-pulkovo.ru"
                             name="link"
                             v-validate="'required|url:{require_protocol:true}'"
                             v-model="work.link"
-                            ).form__input
-                        .form__error(v-show="errors.has('link')") {{ errors.first('link') }}
+                            ).form__input  
+                        .form__error(v-show="errors.has('link')") {{ errors.first('link') }}                                    
                   .form__row
                     .form__col
                       .form__group(v-bind:class="{ form__group_error: errors.has('description') }")
@@ -62,9 +60,8 @@
                             name="description"
                             v-validate="'required'"
                             v-model="work.description"
-                            placeholder="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей"
                           ).form__input.form__input_text
-                        .form__error(v-show="errors.has('description')") {{ errors.first('description') }}
+                        .form__error(v-show="errors.has('description')") {{ errors.first('description') }}                                    
                   .form__row
                     .form__col
                       .form__group(v-bind:class="{ form__group_error: errors.has('techs') }")
@@ -75,7 +72,6 @@
                             name="techs"
                             v-validate="'required'"
                             v-model="work.techs"
-                            placeholder="jQuery, Vue.js, HTML5"
                             ).form__input
                         .form__error(v-show="errors.has('techs')") {{ errors.first('techs') }}
                       .new-work__skills
@@ -83,41 +79,49 @@
                           li.works__skills-item(
                             v-for="(tag,index) in tags"
                           ) {{tag}}
-                            button(
+                            button(type="button"
                               @click.prevent="removeTag(index)"
-                            ).works__skills-close
+                            ).works__skills-close 
                   .form__row.new-work__controls
                     .form__col
-                      button(type="button" @click.prevent="cancelViewForm").admin-btn.admin-btn_empty Отмена
-                      button(type="button" @click.prevent="validateForm").admin-btn Сохранить
+                      button(type="button" @click.prevent="$emit('hideFormWork')").admin-btn.admin-btn_empty Отмена
+                      button(type="button" @click.prevent="validateForm").admin-btn Сохранить                  
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState, mapMutations } from "vuex";
 export default {
-  props:{
-    editedWork: Object
-  },
   data() {
     return {
-      renderedPhoto: this.editedWork.photo ? `https://webdev-api.loftschool.com/${this.editedWork.photo}` : '',
-      work: {
-        id: this.editedWork.id ? this.editedWork.id : null,
-        title: this.editedWork.title ? this.editedWork.title : '',
-        techs: this.editedWork.techs ? this.editedWork.techs : '',
-        photo: '',
-        link: this.editedWork.link ? this.editedWork.link : '',
-        description: this.editedWork.description ? this.editedWork.description : '',
-      }
+      dataRenderedPhoto: ""
     };
   },
-  computed:{
-    tags(){
-      return this.work.techs.split(',').filter(item=>item!=='');
+  computed: {
+    ...mapState("works", {
+      work: state => state.editedWork
+    }),
+    renderedPhoto: {
+      get() {
+        if (this.work.id && !this.dataRenderedPhoto)
+          return `https://webdev-api.loftschool.com/${this.work.photo}`;
+        else {
+          return this.dataRenderedPhoto;
+        }
+      },
+      set(photo) {
+        this.dataRenderedPhoto = photo;
+      }
+    },
+    tags() {
+      if (this.work.techs)
+        return this.work.techs.split(",").filter(item => item !== "");
+      else return [];
     }
   },
   methods: {
-    ...mapActions('works', ['addWork', 'editWork']),
+    ...mapActions("works", ["addWork", "editWork"]),
+    ...mapMutations("works", ["SET_EDITED_WORK"]),
+    ...mapActions("errors", ["setError"]),
     appendFile(e) {
       this.$validator.validate("photo").then(valid => {
         const file = e.target.files[0];
@@ -130,14 +134,17 @@ export default {
               this.renderedPhoto = reader.result;
             };
           } catch (error) {
-            alert(error);
+            this.setError({
+              message: error,
+              type: "error"
+            });
           }
         }
       });
     },
     validateForm() {
-      if(this.work.id && !this.work.photo){
-        this.$validator.detach('photo');
+      if (this.work.id && this.work.photo) {
+        this.$validator.detach("photo");
       }
       this.$validator.validate().then(valid => {
         if (valid) {
@@ -145,30 +152,31 @@ export default {
         }
       });
     },
-    async saveWork(){
+    async saveWork() {
       try {
-        if(this.work.id){
+        if (this.work.id) {
           this.editWork(this.work);
-        }else{
+        } else {
           await this.addWork(this.work);
         }
-        this.work = {};
-        this.renderedPhoto = '';
+        this.setError({
+          message: this.work.id ? `Работа изменена` : `Работа добавлена`,
+          type: "success"
+        });
+        this.SET_EDITED_WORK({});
+        this.renderedPhoto = "";
         this.$validator.reset();
-        this.$emit('cancelEditForm');
+        this.$emit("hideFormWork");
       } catch (error) {
-        alert(error);
+        this.setError({
+          message: error,
+          type: "error"
+        });
       }
     },
-    removeTag(index){
-      let newTagsArr = this.tags.filter((item,i)=> i!==index);
-      this.work.techs = newTagsArr.join(',');
-    },
-    cancelViewForm(){
-        this.work = {};
-        this.renderedPhoto = '';
-        this.$validator.reset();
-        this.$emit('cancelEditForm');
+    removeTag(index) {
+      let newTagsArr = this.tags.filter((item, i) => i !== index);
+      this.work.techs = newTagsArr.join(",");
     }
   }
 };
@@ -177,31 +185,33 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../../styles/mixins.pcss";
+@import "../../../styles/blocks/works.pcss";
 .new-work {
+  position: relative;
   margin-bottom: 32px;
   .admin-block {
     padding-left: 0;
     padding-right: 0;
   }
-  @include w_650 {
+  @include phones {
     margin-bottom: 8px;
   }
 }
 .new-work__title {
-  color: $title-color;
   font-size: 18px;
   font-weight: 700;
   padding-top: 20px;
   padding-bottom: 10px;
-  @include w_650 {
+  @include phones {
     font-size: 16px;
+    //padding-top: 0;
   }
 }
 .new-work__left {
-  @include w_850 {
+  @include tablets {
     margin-bottom: 95px;
   }
-  @include w_650 {
+  @include phones {
     margin-bottom: 70px;
   }
 }
@@ -210,21 +220,21 @@ export default {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 30px;
-  @include w_850 {
+  @include tablets {
     grid-template-columns: 1fr;
     grid-column-gap: 0;
   }
-  @include w_650 {
+  @include phones {
     display: block;
   }
 }
 .new-work__admin-block__content {
   padding: 48px 10px 0 10px;
   margin: 0;
-  @include w_850 {
+  @include tablets {
     padding: 25px 13% 0 13%;
   }
-  @include w_650 {
+  @include phones {
     padding: 0;
     padding-top: 30px;
   }
@@ -238,7 +248,7 @@ export default {
     margin-bottom: 20px;
     padding-left: 0;
     margin-bottom: 5px;
-    @include w_650 {
+    @include phones {
       font-size: 14px;
       margin-bottom: 13px;
     }
@@ -249,9 +259,9 @@ export default {
     color: #414c63;
     font-size: 16px;
     font-weight: 600;
-    border-bottom: 1px solid #414c63;
+    border-bottom: 2px solid #414c63;
     line-height: 24px;
-    @include w_650 {
+    @include phones {
       font-size: 14px;
       padding-bottom: 15px;
     }
@@ -260,10 +270,10 @@ export default {
     margin-bottom: 25px;
     &:nth-last-child(2) {
       margin-bottom: 5px;
-      @include w_850 {
+      @include tablets {
         margin-bottom: 27px;
       }
-      @include w_650 {
+      @include phones {
         margin-bottom: 20px;
       }
     }
@@ -272,7 +282,7 @@ export default {
     }
   }
   .form__col {
-    @include w_650 {
+    @include phones {
       margin-bottom: 0;
     }
   }
@@ -281,7 +291,7 @@ export default {
     line-height: 30px;
     padding: 20px 80px 20px 20px;
     height: 146px;
-    @include w_650 {
+    @include phones {
       height: 204px;
     }
   }
@@ -289,33 +299,19 @@ export default {
 .new-work__skills {
   padding-top: 19px;
   .works__skills-item {
-    border-radius: 23px;
-    background-color: rgba(122,160,197,.1);
     opacity: 0.7;
-    color: black;
+    color: #283340;
     font-size: 13px;
     font-weight: 600;
-    padding: 10px 14px 10px 10px;
+    padding: 10px 35px 10px 10px;
     text-transform: none;
   }
-}
-.works__skills-list {
-  display: flex;
-}
-.works__skills-close {
-  background: svg-load('remove.svg', width=100%, height=100%);
-  width: 10px;
-  height: 10px;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  margin-left: 10px;
 }
 .new-work__controls {
   .form__col {
     display: flex;
     justify-content: flex-end;
-    @include w_850 {
+    @include tablets {
       justify-content: center;
     }
   }
@@ -329,7 +325,178 @@ export default {
     }
   }
 }
-.form__file-input-text {
-  text-align: center;
+.works {
+  display: flex;
+  align-items: flex-start;
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.works__slider {
+  width: 66%;
+  height: 549px;
+  margin-right: 160px;
+
+  @include desktop {
+    height: 354px;
+    margin-right: 109px;
+    width: 58%;
+  }
+
+  @include tablets {
+    margin-right: 0;
+    width: 91%;
+    margin-bottom: 100px;
+  }
+
+  @include phones {
+    // width: 113%;
+    // margin-left: -7%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-height: 186px;
+    margin-bottom: 58px;
+  }
+
+  @include phones {
+    // width: 124%;
+    // margin-left: -12%;    
+  }
+}
+
+.works__name {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 28px;
+
+  @include tablets {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  @include phones {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: left;
+  }
+}
+
+.works__desc {
+  opacity: 0.7;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 34px;
+
+  @include tablets {
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 10%;
+    margin-bottom: 23px;
+  }
+
+  @include phones {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.works__link-site {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.works__link-text {
+  color: #4b6fd7;
+  font-size: 18px;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include tablets {
+    font-size: 14px;
+  }
+}
+
+.works__link-icon {
+  width: 15px;
+  height: 15px;
+  fill: #4b6fd7;
+  margin-right: 20px;
+}
+
+.works__skills-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+  @include tablets {
+    margin-bottom: 0;
+  }
+}
+
+.works__skills-item {
+  position: relative;
+  padding: 13px 18px;
+  border-radius: 23px;
+  background-color: rgba(#7aa0c5, 0.1);
+  opacity: 0.7;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 15px;
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include phones {
+    font-size: 13px;
+    margin-right: 12px;
+  }
+}
+
+.works__content {
+  width: 23%;
+
+  @include desktop {
+    width: 32%;
+  }
+
+  @include tablets {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include phones {
+    padding: 0;
+    align-items: flex-start;
+  }
+}
+
+.works__skills-close {
+  position: absolute;
+  display: block;
+  width: 11px;
+  height: 11px;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  background: svg-load('remove.svg') center center no-repeat;
 }
 </style>

@@ -52,7 +52,7 @@ export default {};
     }
   }
   
-  @include w_650 {
+  @include phones {
     padding: 25px 18px 0 18px;
   }
 }
@@ -65,7 +65,7 @@ export default {};
     text-shadow: 0px 1px 1px;
   }
   
-  @include w_650 {
+  @include phones {
     font-size: 14px;
   }
 }

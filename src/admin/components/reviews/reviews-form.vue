@@ -164,7 +164,7 @@ export default {
   .admin-block__content {
     margin-bottom: 0;
 
-    @include w_500 {
+    @include phones {
       padding-right: 10px;
     }
   }
@@ -173,12 +173,12 @@ export default {
   }
   .admin-block__header {
 
-    @include w_500 {
+    @include phones {
       padding-left: 0;
     }
   }
 
-  @include w_500 {
+  @include phones {
     margin-bottom: 11px;
   }
 }
@@ -196,7 +196,7 @@ export default {
   flex-direction: column;
   align-items: center;
 
-  @include w_500 {
+  @include phones {
     margin-bottom: 45px;
   }
 }
@@ -207,11 +207,11 @@ export default {
   grid-template-rows: 1fr;
   grid-column-gap: 30px;
 
-  @include w_850 {
+  @include tablets {
     grid-template-columns: 200px 1fr;
   }
 
-  @include w_500 {
+  @include phones {
     grid-template-columns: 1fr;
   }
   .form__label {
@@ -221,11 +221,11 @@ export default {
     font-weight: 600;
     opacity: .7;
 
-    @include w_850 {
+    @include tablets {
       margin-bottom: 5px;
     }
 
-    @include w_500 {
+    @include phones {
       font-size: 14px;
       margin-bottom: 13px;
     }
@@ -235,11 +235,11 @@ export default {
     font-weight: 600;
     padding-left: 0;
 
-    @include w_850 {
+    @include tablets {
       width: 68%;
     }
 
-    @include w_500 {
+    @include phones {
       width: 100%;
       font-size: 14px;
     }
@@ -254,12 +254,12 @@ export default {
     border: 1px solid rgba(#414c63, .2);
     line-height: 30px;
 
-    @include w_850 {
+    @include tablets {
       width: 100%;
       height: 148px;
     }
 
-    @include w_500 {
+    @include phones {
       font-size: 14px;
       line-height: 24px;
       margin-top: 0;
@@ -268,7 +268,7 @@ export default {
   .form__col {
     margin-right: 30px;
 
-    @include w_850 {
+    @include tablets {
       margin-bottom: 40px;
       margin-right: 0;
       &:last-child {
@@ -276,7 +276,7 @@ export default {
       }
     }
 
-    @include w_500 {
+    @include phones {
       margin-bottom: 24px;
     }
   }
@@ -285,12 +285,12 @@ export default {
     &:nth-last-child(2) {
       margin-bottom: 25px;
 
-      @include w_500 {
+      @include phones {
         margin-bottom: 30px;
       }
     }
 
-    @include w_850 {
+    @include tablets {
       display: flex;
       flex-direction: column;
       &:last-child {
@@ -298,7 +298,7 @@ export default {
       }
     }
 
-    @include w_500 {
+    @include phones {
       margin-bottom: 24px;
       &:last-child {
         margin-bottom: 17px;
@@ -311,7 +311,7 @@ export default {
   padding-top: 34px;
   padding-left: 12px;
 
-  @include w_500 {
+  @include phones {
     padding-top: 12px;
     padding-left: 0;
   }

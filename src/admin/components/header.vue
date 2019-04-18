@@ -49,7 +49,7 @@ export default {
   grid-template: "avatar name title controls" 1fr / 65px 1fr 1fr 1fr;
   align-items: center;
 
-  @include w_650 {
+  @include phones {
     grid-template-columns: 45px 1fr;
     grid-template-rows: 22.5px 22.5px;
     grid-column-gap: 11px;
@@ -59,7 +59,7 @@ export default {
 .admin-header__controls {
   text-align: right;
 
-  @include w_650 {
+  @include phones {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     text-align: left;
@@ -70,7 +70,7 @@ export default {
   font-size: 18px;
   font-weight: 600;
 
-  @include w_650 {
+  @include phones {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
@@ -80,7 +80,7 @@ export default {
   opacity: 0.5;
   font-size: 14px;
 
-  @include w_650 {
+  @include phones {
     display: none;
   }
 }

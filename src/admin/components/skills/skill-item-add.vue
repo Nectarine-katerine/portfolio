@@ -25,7 +25,7 @@
   .admin-about__new-add
     .form__col
       .form__group
-        button.admin-add.admin-add_big(
+        button.admin-add.admin-add_big(type="button"
           @click.prevent="validateNewSkill"
         )
           .admin-add__icon
@@ -98,7 +98,7 @@ export default {
     }
   }
 
-  @include w_650 {
+  @include phones {
     justify-content: flex-start;
   }
 }
@@ -111,7 +111,7 @@ export default {
      width: 48%;
    }
 
-   @include w_650 {
+   @include phones {
      width: 55%;
    }
 }
@@ -128,7 +128,7 @@ export default {
 .admin-about__new-add {
   margin-right: 10px;
 
-  @include w_650{
+  @include phones{
     margin-right: 0;
   }
 }

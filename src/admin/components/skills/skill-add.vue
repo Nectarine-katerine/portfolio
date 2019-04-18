@@ -15,12 +15,12 @@
           .form__error(v-show="errors.has('groupName')") {{ errors.first('groupName') }}
       ul.controls__list
         li.controls__item
-          button.controls__btn(
+          button.controls__btn(type="button"
             @click.prevent="abbGroupValidate"
           )
             div(class=`controls__icon controls__icon_tick`)          
         li.controls__item
-          button.controls__btn(
+          button.controls__btn(type="button"
             @click.prevent="$emit('handleAddForm')"
           )
             div(class=`controls__icon controls__icon_cross`)          

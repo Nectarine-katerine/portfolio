@@ -7,12 +7,12 @@
         .controls.controls_justify
           ul.controls__list
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="editMode = true"
               )
                 div(class=`controls__icon controls__icon_pencil`)          
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="removeThisSkill"
               )
                 div(class=`controls__icon controls__icon_trash`)          
@@ -27,12 +27,12 @@
         .controls.controls_justify
           ul.controls__list
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="saveSkill"
               )
                 div(class=`controls__icon controls__icon_tick`)          
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="editMode = false"
               )
                 div(class=`controls__icon controls__icon_cross`)          
@@ -91,6 +91,7 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../../styles/mixins.pcss";
+@import "../../../styles/layout/base.pcss";
 
 .admin-about__td-name {
   width: 51%;
@@ -100,7 +101,7 @@ export default {
     width: 29%;
   }
   
-  @include w_650{
+  @include phones{
     width: 32%;
   }
 }

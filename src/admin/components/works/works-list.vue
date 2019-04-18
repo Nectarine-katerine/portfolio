@@ -8,23 +8,23 @@
           ).admin-works__img
           .admin-works__skills
             ul.works__skills-list
-              li.works__skills-item(v-for="tag in mapTags(work.techs)") {{tag}}
+              li.works__skills-item(v-for="tag in mapTags(work.techs)") {{tag}} 
       .admin-block__content
         .admin-works__title {{work.title}}
-        .admin-works__text
+        .admin-works__text 
           p {{work.description}}
         a(:href="work.link" target="__blank").admin-works__link {{work.link}}
-      .admin-block__footer
+      .admin-block__footer      
         .controls
           ul.controls__list.admin-works__controls
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="editThisWork(work)"
               )
                 span.controls__text Править
-                div(class=`controls__icon controls__icon_pencil`)
+                div(class=`controls__icon controls__icon_pencil`)          
             li.controls__item
-              button.controls__btn(
+              button.controls__btn(type="button"
                 @click.prevent="deleteWork(work.id)"
               )
                 span.controls__text Удалить
@@ -102,7 +102,7 @@ export default {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 17px;
-  @include w_650 {
+  @include phones {
     margin-bottom: 10px;
   }
 }
@@ -112,7 +112,7 @@ export default {
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 17px;
-  @include w_650 {
+  @include phones {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -127,7 +127,7 @@ export default {
   &:hover {
     text-decoration: underline;
   }
-  @include w_650 {
+  @include phones {
     margin-bottom: 30px;
   }
 }
@@ -164,7 +164,7 @@ export default {
 .admin-block__content {
   padding: 30px 30px 40px 30px;
   margin-bottom: 0;
-  @include w_650 {
+  @include phones {
     padding: 24px 0 28px 20px;
   }
 }
@@ -177,9 +177,40 @@ export default {
   }
 }
 
-.works__container {
-  position: relative;
-  height: initial;
+.works__slider {
+  width: 66%;
+  height: 549px;
+  margin-right: 160px;
+
+  @include desktop {
+    height: 354px;
+    margin-right: 109px;
+    width: 58%;
+  }
+
+  @include tablets {
+    margin-right: 0;
+    width: 91%;
+    margin-bottom: 100px;
+  }
+
+  @include phones {
+    // width: 113%;
+    // margin-left: -7%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-height: 186px;
+    margin-bottom: 58px;
+  }
+
+  @include phones {
+    // width: 124%;
+    // margin-left: -12%;    
+  }
 }
 
 .works__name {
@@ -263,6 +294,7 @@ export default {
   padding: 13px 18px;
   border-radius: 23px;
   background-color: rgba(#7aa0c5, 0.1);
+  opacity: 0.7;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
@@ -308,6 +340,6 @@ export default {
   top: 50%;
   right: 10%;
   transform: translateY(-50%);
-  background: svg-load("remove.svg") center center no-repeat;
+  background: svg-load('remove.svg') center center no-repeat;
 }
 </style>

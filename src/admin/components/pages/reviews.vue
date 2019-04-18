@@ -86,11 +86,11 @@ export default {
   grid-column-gap: 31px;
   grid-row-gap: 30px;
 
-  @include w_850 {
+  @include tablets {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include w_650 {
+  @include phones {
     grid-template-columns: 1fr;
     grid-row-gap: 10px;
     grid-column-gap: 0;
@@ -101,7 +101,7 @@ export default {
   padding: 30px 20px;
   min-height: 380px;
 
-  @include w_500 {
+  @include phones {
     min-height: 111px;
   }
 
@@ -113,7 +113,7 @@ export default {
     padding-top: 0;
     padding-bottom: 20px;
 
-    @include w_500 {
+    @include phones {
       padding-left: 0;
       padding-bottom: 30px;
       padding-right: 0;
@@ -124,7 +124,7 @@ export default {
     padding-left: 11px;
     padding-right: 25px;
 
-    @include w_500 {
+    @include phones {
       padding-left: 0;
       padding-right: 0;
     }
@@ -139,7 +139,7 @@ export default {
   font-weight: 600;
   line-height: 30px;
 
-  @include w_500 {
+  @include phones {
     font-size: 14px;
     line-height: 24px;
   }
@@ -163,7 +163,6 @@ export default {
     height: 100%;
     user-select: none;
     background: rgba(#ccc, 0.5)
-      svg-load("loader.svg", fill=#414c63, width=80px, height=80px) center
       center no-repeat;
   }
 }

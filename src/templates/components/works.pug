@@ -1,5 +1,5 @@
 script(type="text/x-template")#works-container
-  .works    
+  .works-slider   
     slider(
       :works="works",
       :currentWork="currentWork",
@@ -12,11 +12,11 @@ script(type="text/x-template")#works-container
     )
 
 script(type="text/x-template")#works-slider
-  .works__slider
-    .slider
-      .slider__container(ref="sliderContainer")
+  .works-slider__pics
+    .works-slider__pics-content
+      .works-slider__fullpic-container(ref="sliderContainer")
         transition-group(name="slide")
-          img.slider__img(
+          img.works-slider__fullpic(
             v-for="(work, index) in works"
             :key="work.id"
             v-if="index+1 === currentWork.number"
@@ -27,49 +27,51 @@ script(type="text/x-template")#works-slider
           :currentWork="currentWork",
           @select="workId => $emit('select', workId)"
         )
-
-      controls(
-        @slide="direction => $emit('slide', direction)"
-      )
-      transition(name="fade" mode="out-in")
-        .slider__count(
-          v-for="(work, index) in works"
-          :key="index"
-          v-if="index+1 === currentWork.number"
-          ) {{currentWork.number}}
+        controls(
+          @slide="direction => $emit('slide', direction)"
+        )
+        transition(name="fade" mode="out-in")
+          .works-slider__count(
+            v-for="(work, index) in works"
+            :key="index"
+            v-if="index+1 === currentWork.number"
+            ) {{currentWork.number}}
 
 script(type="text/x-template")#works-thumbs
-  ul.slider__list-prev(ref="sliderThumbs")
-    li.slider__item-prev(
+  ul.works-slider__thumbs(ref="sliderThumbs")
+    li.works-slider__thumb-item(
       v-for="(work, index) in works" :key="work.id"
       :class="{active: currentWork.id === work.id}"
       )
-      button.slider__item-link(href="#" @click.prevent="$emit('select', work.originIndex)")
-        img.slider__item-img(:src="work.photo")
+      a.works-slider__thumb-link(href="#" @click.prevent="$emit('select', work.originIndex)")
+        img.works-slider__thumb(:src="work.photo")
 
 script(type="text/x-template")#works-controls
-  .slider__controls
-    a.slider__controls-link.slider__controls-link_top(@click.prevent="$emit('slide', 'next')")
-      +icon('arrow-down', 'slider__controls-arrow')
-    a.slider__controls-link.slider__controls-link_bottom(@click.prevent="$emit('slide', 'prev')")    
-      +icon('arrow-down', 'slider__controls-arrow')
+  .works-slider__buttons
+    button.arrow__right.works-slider__btn.works-slider__btn_next(type="button" @click.prevent="$emit('slide', 'next')")
+      +icon('arrow-down', 'arrow__right-icon slider__controls-arrow')
+    button.arrow__left.works-slider__btn.works-slider__btn_prev(type="button" @click.prevent="$emit('slide', 'prev')")    
+      +icon('arrow-down', 'arrow__left-icon slider__controls-arrow')
 
 script(type="text/x-template")#works-info
   transition(name="fade" mode="out-in")
-    .works__content(
+    .works-slider__data(
       v-for="(work, index) in works"
       :key="index"
       v-if="index+1 === currentWork.number"
     )
+    
       tags(
         :skills="skillsToArray(currentWork.techs)"
       )
-      h3.section-title.section-title__works.section-title__works_font-size {{currentWork.title}}
-      .works__desc {{currentWork.description}}
-      a.works__link-site(:href="currentWork.link" target="_blank") 
-        +icon('link', 'works__link-icon') 
-        span.works__link-text Посмотреть сайт
+      h3.works-slider__title {{currentWork.title}}
+      .works-slider__desc
+        p {{currentWork.description}}
+      .works-slider__link
+        +icon('link', 'works-slider__link-icon')
+        a.works__link(:href="currentWork.link" target="_blank") Посмотреть сайт
+
 
 script(type="text/x-template")#works-tags
-  ul.works__skills-list
-    li.works__skills-item(v-for="skill in skills") {{skill}}
+  ul.works-slider__tags
+    li.works-slider__tag-item.tag(v-for="skill in skills") {{skill}}

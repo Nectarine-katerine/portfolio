@@ -35,6 +35,7 @@ export default {
 @import "../styles/layout/base.pcss";
 @import "../styles/admin/form-admin.pcss";
 @import "../styles/admin/btn-admin.pcss";
+@import "../styles/admin/base-admin.pcss";
 
 .admin-wrapper {
   display: grid;
@@ -59,7 +60,7 @@ export default {
     width: 92.2%;
   }
 
-  @include w_650 {
+  @include phones {
     width: 87.5%;
   }
 }
@@ -69,7 +70,7 @@ export default {
   font-weight: 700;
   color: $title-color;
 
-  @include w_650 {
+  @include phones {
     font-size: 18px;
   }
 }
@@ -82,7 +83,7 @@ export default {
   flex-direction: column;
   position: relative;
 
-  @include w_650 {
+  @include phones {
     padding: 7px 10px 35px 20px;
     width: 100vw;
     position: relative;
@@ -125,7 +126,7 @@ export default {
   margin-bottom: 50px;
   flex: 1;
 
-  @include w_650 {
+  @include phones {
     margin-bottom: 35px;
   }
 }
@@ -157,7 +158,7 @@ export default {
     }
   }
 
-  @include w_650 {
+  @include phones {
     font-size: 14px;
   }
 
@@ -174,7 +175,7 @@ export default {
     min-height: 556px;
     padding: 50% 30% 0 30%;
 
-    @include w_650 {
+    @include phones {
       min-height: 111px;
       font-size: 16px;
       padding: 0;
@@ -191,7 +192,7 @@ export default {
       border: 2px solid #ffffff;
       margin: 0;
 
-      @include w_650 {
+      @include phones {
         width: 50px;
         height: 50px;
         top: 50%;
@@ -202,7 +203,7 @@ export default {
         width: 34px;
         height: 34px;
         background: svg-load('remove.svg', fill=#fff);
-        @include w_650{
+        @include phones{
           width: 12px;
           height: 11px;
         }
@@ -215,7 +216,7 @@ export default {
   &_middle {
     min-height: 380px;
 
-    @include w_500{
+    @include phones{
       min-height: 111px;
     }
   }
@@ -271,11 +272,11 @@ export default {
       background-image: none;
       text-decoration: underline;
     }
-    @include w_650 {
+    @include phones {
       padding: 18px;
     }
   }
-  @include w_650 {
+  @include phones {
     font-size: 14px;
   }
 }
@@ -325,7 +326,7 @@ export default {
   font-weight: 600;
   margin-right: 10px;
   
-  @include w_500 {
+  @include phones {
     font-size: 14px;
   }
 }
