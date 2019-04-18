@@ -94,7 +94,6 @@
 
 <script>
 import { mapActions } from "vuex";
-
 export default {
   props:{
     editedWork: Object
@@ -140,7 +139,6 @@ export default {
       if(this.work.id && !this.work.photo){
         this.$validator.detach('photo');
       }
-
       this.$validator.validate().then(valid => {
         if (valid) {
           this.saveWork();
@@ -179,72 +177,58 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../../styles/mixins.pcss";
-
 .new-work {
   margin-bottom: 32px;
   .admin-block {
     padding-left: 0;
     padding-right: 0;
   }
-
   @include w_650 {
     margin-bottom: 8px;
   }
 }
-
 .new-work__title {
   color: $title-color;
   font-size: 18px;
   font-weight: 700;
   padding-top: 20px;
   padding-bottom: 10px;
-
   @include w_650 {
     font-size: 16px;
   }
 }
-
 .new-work__left {
-
   @include w_850 {
     margin-bottom: 95px;
   }
-
   @include w_650 {
     margin-bottom: 70px;
   }
 }
-
 .new-work__form-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 30px;
-
   @include w_850 {
     grid-template-columns: 1fr;
     grid-column-gap: 0;
   }
-
   @include w_650 {
     display: block;
   }
 }
-
 .new-work__admin-block__content {
   padding: 48px 10px 0 10px;
   margin: 0;
-
   @include w_850 {
     padding: 25px 13% 0 13%;
   }
-
   @include w_650 {
     padding: 0;
     padding-top: 30px;
   }
 }
-
 .new-work__form-content {
   .form__label {
     opacity: 0.5;
@@ -254,7 +238,6 @@ export default {
     margin-bottom: 20px;
     padding-left: 0;
     margin-bottom: 5px;
-
     @include w_650 {
       font-size: 14px;
       margin-bottom: 13px;
@@ -268,7 +251,6 @@ export default {
     font-weight: 600;
     border-bottom: 1px solid #414c63;
     line-height: 24px;
-
     @include w_650 {
       font-size: 14px;
       padding-bottom: 15px;
@@ -278,11 +260,9 @@ export default {
     margin-bottom: 25px;
     &:nth-last-child(2) {
       margin-bottom: 5px;
-
       @include w_850 {
         margin-bottom: 27px;
       }
-
       @include w_650 {
         margin-bottom: 20px;
       }
@@ -292,7 +272,6 @@ export default {
     }
   }
   .form__col {
-
     @include w_650 {
       margin-bottom: 0;
     }
@@ -302,13 +281,11 @@ export default {
     line-height: 30px;
     padding: 20px 80px 20px 20px;
     height: 146px;
-
     @include w_650 {
       height: 204px;
     }
   }
 }
-
 .new-work__skills {
   padding-top: 19px;
   .works__skills-item {
@@ -322,11 +299,9 @@ export default {
     text-transform: none;
   }
 }
-
 .works__skills-list {
   display: flex;
 }
-
 .works__skills-close {
   background: svg-load('remove.svg', width=100%, height=100%);
   width: 10px;
@@ -336,18 +311,15 @@ export default {
   cursor: pointer;
   margin-left: 10px;
 }
-
 .new-work__controls {
   .form__col {
     display: flex;
     justify-content: flex-end;
-
     @include w_850 {
       justify-content: center;
     }
   }
 }
-
 .form__file-input-container {
   &.filled {
     background: center center no-repeat;
@@ -357,7 +329,6 @@ export default {
     }
   }
 }
-
 .form__file-input-text {
   text-align: center;
 }

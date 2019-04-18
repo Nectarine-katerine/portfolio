@@ -4,7 +4,7 @@ import axios from "axios";
 const graph = {
   template: "#graph",
   props: {
-    skillNsme: String,
+    skillName: String,
     skillPercent: Number
   },
   methods: {

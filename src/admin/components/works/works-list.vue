@@ -1,34 +1,34 @@
 <template lang="pug">
-transition(name="bounceOut")
-  li.admin-works__item.admin-block()
-    .admin-block__header
-      .admin-works__img-container
-        img(
-          :src="`https://webdev-api.loftschool.com/${work.photo}`"
-        ).admin-works__img
-        .admin-works__skills
-          ul.works__skills-list
-            li.works__skills-item(v-for="tag in mapTags(work.techs)") {{tag}}
-    .admin-block__content
-      .admin-works__title {{work.title}}
-      .admin-works__text
-        p {{work.description}}
-      a(:href="work.link" target="__blank").admin-works__link {{work.link}}
-    .admin-block__footer
-      .controls
-        ul.controls__list.admin-works__controls
-          li.controls__item
-            button.controls__btn(
-              @click.prevent="editThisWork(work)"
-            )
-              span.controls__text Править
-              div(class=`controls__icon controls__icon_pencil`)
-          li.controls__item
-            button.controls__btn(
-              @click.prevent="deleteWork(work.id)"
-            )
-              span.controls__text Удалить
-              div(class=`controls__icon controls__icon_cross`)
+  transition(name="bounceOut")
+    li.admin-works__item.admin-block()
+      .admin-block__header
+        .admin-works__img-container
+          img(
+            :src="`https://webdev-api.loftschool.com/${work.photo}`"
+          ).admin-works__img
+          .admin-works__skills
+            ul.works__skills-list
+              li.works__skills-item(v-for="tag in mapTags(work.techs)") {{tag}}
+      .admin-block__content
+        .admin-works__title {{work.title}}
+        .admin-works__text
+          p {{work.description}}
+        a(:href="work.link" target="__blank").admin-works__link {{work.link}}
+      .admin-block__footer
+        .controls
+          ul.controls__list.admin-works__controls
+            li.controls__item
+              button.controls__btn(
+                @click.prevent="editThisWork(work)"
+              )
+                span.controls__text Править
+                div(class=`controls__icon controls__icon_pencil`)
+            li.controls__item
+              button.controls__btn(
+                @click.prevent="deleteWork(work.id)"
+              )
+                span.controls__text Удалить
+                div(class=`controls__icon controls__icon_cross`)
 </template>
 
 <script>
@@ -167,5 +167,147 @@ export default {
   @include w_650 {
     padding: 24px 0 28px 20px;
   }
+}
+.works {
+  display: flex;
+  align-items: flex-start;
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.works__container {
+  position: relative;
+  height: initial;
+}
+
+.works__name {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 28px;
+
+  @include tablets {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  @include phones {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: left;
+  }
+}
+
+.works__desc {
+  opacity: 0.7;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 34px;
+
+  @include tablets {
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 10%;
+    margin-bottom: 23px;
+  }
+
+  @include phones {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.works__link-site {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.works__link-text {
+  color: #4b6fd7;
+  font-size: 18px;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include tablets {
+    font-size: 14px;
+  }
+}
+
+.works__link-icon {
+  width: 15px;
+  height: 15px;
+  fill: #4b6fd7;
+  margin-right: 20px;
+}
+
+.works__skills-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+  @include tablets {
+    margin-bottom: 0;
+  }
+}
+
+.works__skills-item {
+  position: relative;
+  padding: 13px 18px;
+  border-radius: 23px;
+  background-color: rgba(#7aa0c5, 0.1);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 15px;
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include phones {
+    font-size: 13px;
+    margin-right: 12px;
+  }
+}
+
+.works__content {
+  width: 23%;
+
+  @include desktop {
+    width: 32%;
+  }
+
+  @include tablets {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include phones {
+    padding: 0;
+    align-items: flex-start;
+  }
+}
+
+.works__skills-close {
+  position: absolute;
+  display: block;
+  width: 11px;
+  height: 11px;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  background: svg-load("remove.svg") center center no-repeat;
 }
 </style>

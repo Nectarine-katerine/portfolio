@@ -12,7 +12,7 @@
               v-validate="'required'"
               v-model="user.name"
               ).form__input
-              //+icon('user', 'form__input-icon')  
+              // +icon('user', 'form__input-icon')  
             .form__error(v-show="errors.has('login')") {{ errors.first('login') }}
       .form__row
         .form__col
@@ -23,7 +23,7 @@
               name="password"
               v-validate="'required'"
               v-model="user.password").form__input
-              //+icon('envelope', 'form__input-icon')  
+              // +icon('envelope', 'form__input-icon')  
             .form__error(v-show="errors.has('password')") {{ errors.first('password') }}
       .form__row
         button(

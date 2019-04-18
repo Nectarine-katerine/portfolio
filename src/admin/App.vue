@@ -49,7 +49,7 @@ export default {
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
     ),
-    resolve("../images/content/admin_bg.png") center center no-repeat;
+    resolve("./images/content/main_bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -59,7 +59,7 @@ export default {
     width: 92.2%;
   }
 
-  @include phones {
+  @include w_650 {
     width: 87.5%;
   }
 }
@@ -69,7 +69,7 @@ export default {
   font-weight: 700;
   color: $title-color;
 
-  @include phones {
+  @include w_650 {
     font-size: 18px;
   }
 }
@@ -82,7 +82,7 @@ export default {
   flex-direction: column;
   position: relative;
 
-  @include phones {
+  @include w_650 {
     padding: 7px 10px 35px 20px;
     width: 100vw;
     position: relative;
@@ -125,7 +125,7 @@ export default {
   margin-bottom: 50px;
   flex: 1;
 
-  @include phones {
+  @include w_650 {
     margin-bottom: 35px;
   }
 }
@@ -157,7 +157,7 @@ export default {
     }
   }
 
-  @include phones {
+  @include w_650 {
     font-size: 14px;
   }
 
@@ -174,7 +174,7 @@ export default {
     min-height: 556px;
     padding: 50% 30% 0 30%;
 
-    @include phones {
+    @include w_650 {
       min-height: 111px;
       font-size: 16px;
       padding: 0;
@@ -191,7 +191,7 @@ export default {
       border: 2px solid #ffffff;
       margin: 0;
 
-      @include phones {
+      @include w_650 {
         width: 50px;
         height: 50px;
         top: 50%;
@@ -202,7 +202,7 @@ export default {
         width: 34px;
         height: 34px;
         background: svg-load('remove.svg', fill=#fff);
-        @include phones{
+        @include w_650{
           width: 12px;
           height: 11px;
         }

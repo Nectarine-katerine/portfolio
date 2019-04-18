@@ -140,6 +140,7 @@ export default {
 
 .admin-about__name {
   width: 59%;
+  color: $text-color;
 }
 
 .admin-about__name-text {
@@ -147,6 +148,7 @@ export default {
   font-size: 18px;
   font-weight: 600;
   padding: 14px 0;
+  color: $text-color;
 }
 
 .admin-about__form {

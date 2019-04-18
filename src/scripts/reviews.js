@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import Flickity from 'vue-flickity';
+import axios from "axios";
 
 const controls = {
   template: '#reviews-controls'
 }
 
 new Vue({
-  el: "#reviews-component",
+  el: "#feedback-component",
   template: "#reviews-container",
   components: {
     Flickity,
@@ -15,12 +16,9 @@ new Vue({
   data() {
     return {
       flickityOptions: {
-        //initialIndex: 3,
         prevNextButtons: false,
-        pageDots: false,
-        wrapAround: true,
         groupCells: true,
-        resize: true
+        pageDots: false
       },
       reviews: []
     }
@@ -29,21 +27,24 @@ new Vue({
     next() {
       this.$refs.flickity.next();
     },
-    
+
     previous() {
       this.$refs.flickity.previous();
     },
-    imagesRequired(data){
-      return data.map(item=>{
-        const requredImg = require(`../images/content/${item.photo}`);
-        item.photo = requredImg;
+    imagesRequired(data) {
+      return data.map(item => {
+        item.photo = `https://webdev-api.loftschool.com/${item.photo}`;
 
         return item;
       })
     },
   },
-  created(){
-    const data = require("../data/reviews.json");
-    this.reviews = this.imagesRequired(data);
-  }      
+  async created() {
+    try {
+      const response = await axios.get('https://webdev-api.loftschool.com/reviews/114');
+      this.reviews = this.imagesRequired(response.data);
+    } catch (error) {
+
+    }
+  }
 });

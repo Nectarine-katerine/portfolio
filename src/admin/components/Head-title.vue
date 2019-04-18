@@ -36,7 +36,7 @@ export default {
     padding: 45px 0;
   }
   
-  @include phones{
+  @include w_650 {
     padding: 30px 0;
     flex-direction: column;
     align-items: flex-start;
@@ -46,7 +46,7 @@ export default {
 .admin-head__title{
   margin-right: 54px;
   
-  @include phones {
+  @include w_650 {
     margin-right: 0;
     margin-bottom: 30px;
   }

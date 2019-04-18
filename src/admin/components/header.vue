@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header
+  header.admin-header
     .container.container_admin.admin-header__container
       .avatar.avatar__w45.admin-avatar
         img(src="../../images/content/me.jpeg")
@@ -36,7 +36,7 @@ export default {
 @import "../../styles/mixins.pcss";
 @import "../../styles/admin/avatar-admin.pcss";
 
-.header {
+.admin-header {
   grid-area: header;
   background-color: #3e3e59;
   background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
@@ -49,7 +49,7 @@ export default {
   grid-template: "avatar name title controls" 1fr / 65px 1fr 1fr 1fr;
   align-items: center;
 
-  @include phones{
+  @include w_650 {
     grid-template-columns: 45px 1fr;
     grid-template-rows: 22.5px 22.5px;
     grid-column-gap: 11px;
@@ -59,7 +59,7 @@ export default {
 .admin-header__controls {
   text-align: right;
 
-  @include phones {
+  @include w_650 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     text-align: left;
@@ -70,7 +70,7 @@ export default {
   font-size: 18px;
   font-weight: 600;
 
-  @include phones {
+  @include w_650 {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
@@ -80,7 +80,7 @@ export default {
   opacity: 0.5;
   font-size: 14px;
 
-  @include phones {
+  @include w_650 {
     display: none;
   }
 }

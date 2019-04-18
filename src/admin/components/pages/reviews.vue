@@ -19,7 +19,7 @@
               @click.prevent="showFormReview = !showFormReview"
             ).admin-add.admin-add_bigest.admin-add_middle
               .admin-add__icon
-              | Добавить работу
+              | Добавить отзыв
           reviewsList(
             v-for="review in reviews"
             :key="review.id"

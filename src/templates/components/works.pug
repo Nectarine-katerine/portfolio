@@ -1,57 +1,75 @@
-script(type="text/x-template")#slider-container
-  .works-slider
-    display(
+script(type="text/x-template")#works-container
+  .works    
+    slider(
       :works="works",
       :currentWork="currentWork",
-      :currentIndex="currentIndex"
-      @slide="handleSlide"
-      @clickThumb="handleClickThumb"
+      @slide="handleSlide",
+      @select="selectWork"
     )
     info(
-      :currentWork="currentWork"
+      :currentWork="currentWork",
+      :works="works"
     )
 
-script(type="text/x-template")#slider-display
-  .works-slider__pics(:data-slide="currentIndex + 1")
-    .works-slider__pics-content
-      .works-slider__fullpic-container
-        img(:src="currentWork.photo" alt="Текущее фото выполненной работы - автор: Екатерина Исмиляева").works-slider__fullpic
-        btns(
-          @slide="direction => $emit('slide', direction)"
-        )
+script(type="text/x-template")#works-slider
+  .works__slider
+    .slider
+      .slider__container(ref="sliderContainer")
+        transition-group(name="slide")
+          img.slider__img(
+            v-for="(work, index) in works"
+            :key="work.id"
+            v-if="index+1 === currentWork.number"
+            :src="work.photo"
+            )
         thumbs(
-          :works="works"
-          :currentWork="currentWork"
-          @clickThumb="index => $emit('clickThumb', index)"
+          :works="reversedWorks",
+          :currentWork="currentWork",
+          @select="workId => $emit('select', workId)"
         )
 
-script(type="text/x-template")#slider-btns
-  .works-slider__buttons
-    button(type="button" @click.prevent="$emit('slide', 'next')").works-slider__btn.works-slider__btn_next
-    button(type="button" @click.prevent="$emit('slide', 'prev')").works-slider__btn.works-slider__btn_prev
+      controls(
+        @slide="direction => $emit('slide', direction)"
+      )
+      transition(name="fade" mode="out-in")
+        .slider__count(
+          v-for="(work, index) in works"
+          :key="index"
+          v-if="index+1 === currentWork.number"
+          ) {{currentWork.number}}
 
-script(type="text/x-template")#slider-thumbs
-  ul.works-slider__thumbs
-    li.works-slider__thumb-item(
-      v-for="(work, index) in works" :key="index"
-      :class="{active: currentWork.id === work.id }"
+script(type="text/x-template")#works-thumbs
+  ul.slider__list-prev(ref="sliderThumbs")
+    li.slider__item-prev(
+      v-for="(work, index) in works" :key="work.id"
+      :class="{active: currentWork.id === work.id}"
+      )
+      button.slider__item-link(href="#" @click.prevent="$emit('select', work.originIndex)")
+        img.slider__item-img(:src="work.photo")
+
+script(type="text/x-template")#works-controls
+  .slider__controls
+    a.slider__controls-link.slider__controls-link_top(@click.prevent="$emit('slide', 'next')")
+      +icon('arrow-down', 'slider__controls-arrow')
+    a.slider__controls-link.slider__controls-link_bottom(@click.prevent="$emit('slide', 'prev')")    
+      +icon('arrow-down', 'slider__controls-arrow')
+
+script(type="text/x-template")#works-info
+  transition(name="fade" mode="out-in")
+    .works__content(
+      v-for="(work, index) in works"
+      :key="index"
+      v-if="index+1 === currentWork.number"
     )
-      a(href="#" @click.prevent="$emit('clickThumb', index)").works-slider__thumb-link
-        img(:src="work.photo" alt="Миниатуры выполненных работ - автор: Екатерина Исмиляева").works-slider__thumb
+      tags(
+        :skills="skillsToArray(currentWork.techs)"
+      )
+      h3.section-title.section-title__works.section-title__works_font-size {{currentWork.title}}
+      .works__desc {{currentWork.description}}
+      a.works__link-site(:href="currentWork.link" target="_blank") 
+        +icon('link', 'works__link-icon') 
+        span.works__link-text Посмотреть сайт
 
-script(type="text/x-template")#slider-info
-  .works-slider__data
-    tags(
-      :tagsArray="tagsArray"
-    )
-    .works-slider__title {{currentWork.title}}
-    .works-slider__desc
-      p {{currentWork.desc}}
-    .works-slider__link
-      +icon('link', 'works-slider__link-icon')
-      a(:href="currentWork.link").works__link Посмотреть сайт
-
-script(type="text/x-template")#slider-tags
-  ul.works-slider__tags
-    li.works-slider__tag-item(v-for="tag in tagsArray")
-      .tag {{tag}}
+script(type="text/x-template")#works-tags
+  ul.works__skills-list
+    li.works__skills-item(v-for="skill in skills") {{skill}}
