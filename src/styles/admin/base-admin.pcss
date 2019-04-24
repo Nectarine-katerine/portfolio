@@ -52,3 +52,11 @@ button[type="button"] {
 input {
   outline: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $text-color;
+  background: none;
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -1,12 +1,11 @@
 <template lang="pug">
-  header.admin-header
-    .container.container_admin.admin-header__container
-      .avatar.avatar__w45.admin-avatar
-        img(src="../../images/content/me.jpeg")
-      .admin-header__name Исмиляева Екатерина
-      .admin-header__title Панель администрирования
-      .admin-header__controls
-        a(@click.prevent="exit").admin-header__link Выйти
+  header.header
+    .container.header__container
+      .header__photo
+        img(src="../../images/content/me.jpeg").header__pic
+      .header__name Исмиляева Екатерина
+      h3.header__title Панель администрирования
+      button(type="button" @click.prevent="exit").header__exit-btn Выйти
 </template>
 
 <script>
@@ -34,63 +33,84 @@ export default {
 <style lang="postcss" scoped>
 
 @import "../../styles/mixins.pcss";
-@import "../../styles/admin/avatar-admin.pcss";
 
-.admin-header {
-  grid-area: header;
-  background-color: #3e3e59;
+.header {
   background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
-  padding: 16px 0;
-  color: #fff;
 }
 
-.admin-header__container {
+.header__container {
   display: grid;
-  grid-template: "avatar name title controls" 1fr / 65px 1fr 1fr 1fr;
+  grid-template-columns: 0.3fr 1fr 1fr 3fr;
+  grid-template-rows: 1 fr;
+  padding: 16px 0;
   align-items: center;
+  grid-template-areas: 
+  "header__photo header__name header__title header__exit-btn";
 
+  @include tablets {
+    grid-template-columns: 0.4fr 1.5fr 1.5fr 2fr;
+  }
+  
   @include phones {
-    grid-template-columns: 45px 1fr;
-    grid-template-rows: 22.5px 22.5px;
-    grid-column-gap: 11px;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows: 1 fr 1 fr;
+    grid-column-gap: 10px;
+    grid-template-areas: 
+    "header__photo header__name"
+    "header__photo header__exit-btn";
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
-.admin-header__controls {
-  text-align: right;
-
-  @include phones {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    text-align: left;
-  }
+.header__photo {
+  width: 45px;
+  height: 45px;
+  grid-area: header__photo;
 }
 
-.admin-header__name {
-  font-size: 18px;
+.header__pic {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.header__name {
+  color: #ffffff;
   font-weight: 600;
-
-  @include phones {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
+  font-size: 18px;
+  grid-area: header__name;
 }
 
-.admin-header__title {
-  opacity: 0.5;
+.header__title {
+  color: rgba(#fff, 0.5);
   font-size: 14px;
+  grid-area: header__title;
 
   @include phones {
     display: none;
   }
 }
 
-.admin-header__link {
-  font-size: 16px;
-  opacity: 0.7;
+.header__exit-btn {
+  justify-self: end;
+  padding: 0;
+  display: block;
+  outline: none;
+  background: transparent;
   text-decoration: underline;
-  &:hover {
-    opacity: 1;
+  border: none;
+  color:rgba(#fff, 0.7);
+  font-family: "Open Sans";
+  font-size: 14px;
+  cursor: pointer;
+  grid-area: header__exit-btn;
+
+  @include phones {
+    justify-self: start;
   }
 }
 </style>

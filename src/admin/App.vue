@@ -29,7 +29,7 @@ export default {
 
 
 <style lang="postcss">
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800&subset=cyrillic";
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";

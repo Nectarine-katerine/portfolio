@@ -1,25 +1,25 @@
 <template lang="pug">
-  nav.admin-nav
-    .container.container_admin
-      ul.admin-nav__list
+  nav.menu
+    .container.menu__container
+      ul.menu__list
         li(
-          :class="{'admin-nav__item_active': $route.name=='about'}"
-        ).admin-nav__item
+          :class="{'menu__item_active': $route.name=='about'}"
+        ).menu__item
           router-link(
             :to="{name:'about'}",
-          ).admin-nav__link Обо мне
+          ).menu__link Обо мне
         li(
-          :class="{'admin-nav__item_active': $route.name=='works'}"
-        ).admin-nav__item
+          :class="{'menu__item_active': $route.name=='works'}"
+        ).menu__item
           router-link(
             :to="{name:'works'}",
-          ).admin-nav__link Работы
+          ).menu__link Работы
         li(
-          :class="{'admin-nav__item_active': $route.name=='reviews'}"
-        ).admin-nav__item
+          :class="{'menu__item_active': $route.name=='reviews'}"
+        ).menu__item
           router-link(
             :to="{name:'reviews'}",
-          ).admin-nav__link Отзывы
+          ).menu__link Отзывы
 </template>
 
 
@@ -30,43 +30,53 @@ export default {};
 
 <style lang="postcss" scoped>
 @import "../../styles/mixins.pcss";
-.admin-nav {
-  grid-area: nav;
-  background-color: #ffffff;
+
+.menu {
+  background: #fff;
 }
 
-.admin-nav__list {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.menu__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 0.1fr 0.1fr 0.1fr;
+  grid-template-rows: 1fr;
+
+  @include phones {
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
-.admin-nav__item {
-  height: 100%;
-  padding: 30px;
-  &_active {
-    border-bottom: 3px solid #383bcf;
-    .admin-nav__link {
-      color: #383bcf;
-      font-weight: 600;
+.menu__item {
+  border-bottom: 3px solid transparent;
+  text-align: center;
+  transition: border-color 0.3s;
+  margin-right: 5px;
+  
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &_active, &:hover {
+    border-color: #383bcf;
+    transition: border-color 0.3s;
+
+    .menu__link {
+      color:  #383bcf;
+      transition: color 0.3s;
     }
   }
-  
-  @include phones {
-    padding: 25px 18px 0 18px;
-  }
 }
 
-.admin-nav__link {
-  color: #414c63;
-  font-size: 16px;
+.menu__link {
+  display: inline-block;
   text-decoration: none;
-  &:hover {
-    text-shadow: 0px 1px 1px;
-  }
-  
-  @include phones {
-    font-size: 14px;
-  }
+  color: #414c63;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  padding: 30px 0;
+  transition: color 0.3s;
 }
 </style>

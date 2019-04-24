@@ -140,7 +140,6 @@ export default {
 .admin-works__img-container {
   position: relative;
   width: 100%;
-  height: 190px;
 }
 .admin-works__img {
   width: 100%;
